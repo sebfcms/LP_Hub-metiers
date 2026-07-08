@@ -11,9 +11,9 @@ const CONFIG = {
      - offres   : CORS ouvert + clé API valide
      --------------------------------------------------------- */
   FEATURES: {
-    alertes: true, // boutons "Créer mon alerte" + modale
-    ticker: true, // ticker offres défilantes sous le hero
-    offres: true, // bloc "Dernières offres" (grille 6 cards)
+    alertes: false, // boutons "Créer mon alerte" + modale
+    ticker: false, // ticker offres défilantes sous le hero
+    offres: false, // bloc "Dernières offres" (grille 6 cards)
   },
 
   /* ── API ──────────────────────────────────────────────────
