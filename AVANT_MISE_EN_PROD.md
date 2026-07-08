@@ -1,6 +1,6 @@
 # ✅ Checklist avant mise en production
 
-> À faire par Seb + valider avec le CTO avant déploiement sur cadremploi.fr/tech
+> À faire par Seb + valider avec la tech avant déploiement sur cadremploi.fr/tech
 
 ---
 
@@ -9,11 +9,13 @@
 **Fichier :** `index.html` · ligne ~26
 
 **Actuellement (staging) :**
+
 ```html
 <meta name="robots" content="noindex, nofollow" />
 ```
 
 **À changer en prod :**
+
 ```html
 <meta name="robots" content="index, follow" />
 ```
@@ -25,15 +27,29 @@
 **Fichier :** `index.html` · lignes ~44 et ~65
 
 **Actuellement (staging — pointe vers GitHub Pages) :**
+
 ```html
-<meta property="og:image" content="https://sebfcms.github.io/LP_Hub-metiers/assets/og-tech-cadremploi.png" />
-<meta name="twitter:image" content="https://sebfcms.github.io/LP_Hub-metiers/assets/og-tech-cadremploi.png" />
+<meta
+  property="og:image"
+  content="https://sebfcms.github.io/LP_Hub-metiers/assets/og-tech-cadremploi.png"
+/>
+<meta
+  name="twitter:image"
+  content="https://sebfcms.github.io/LP_Hub-metiers/assets/og-tech-cadremploi.png"
+/>
 ```
 
 **À changer en prod (demander le chemin exact au CTO) :**
+
 ```html
-<meta property="og:image" content="https://www.cadremploi.fr/tech/assets/og-tech-cadremploi.png" />
-<meta name="twitter:image" content="https://www.cadremploi.fr/tech/assets/og-tech-cadremploi.png" />
+<meta
+  property="og:image"
+  content="https://www.cadremploi.fr/tech/assets/og-tech-cadremploi.png"
+/>
+<meta
+  name="twitter:image"
+  content="https://www.cadremploi.fr/tech/assets/og-tech-cadremploi.png"
+/>
 ```
 
 ---
@@ -43,6 +59,7 @@
 **Fichier :** `js/config.js` · lignes ~13-17
 
 **Actuellement (désactivé) :**
+
 ```javascript
 FEATURES: {
   alertes: false,   // boutons "Créer mon alerte" + modale
@@ -52,6 +69,7 @@ FEATURES: {
 ```
 
 **À activer en prod quand CORS ouvert + clé API valide (CTO) :**
+
 ```javascript
 FEATURES: {
   alertes: true,
@@ -60,7 +78,7 @@ FEATURES: {
 },
 ```
 
-> ⚠️ Ne pas activer avant que le CTO ait ouvert le CORS sur l'endpoint staging/prod.
+> ⚠️ Ne pas activer avant validation de l'intagration (pas pu tester et faire correctement l'implémentation) puis que la tech ait ouvert le CORS sur l'endpoint staging/prod &
 
 ---
 
@@ -80,12 +98,12 @@ CHIFFRES: {
 
 ---
 
-## 5. GTM & CMP — Vérifier les IDs
+## 5. Contenu & Lien
 
-**Fichier :** `index.html` · balises GTM en haut et bas de page
+**Fichier :** `index.html` · contenu & lien
 
-- Vérifier que l'ID GTM est bien celui de **production** (pas staging)
-- Vérifier que la CMP est configurée pour le domaine `cadremploi.fr`
+- bien valider les contenus
+- vérifier les liens vers les offres (bon format) et s'assurer d'un bon volume d'offres (à faire apres APEC et autres sources)`cadremploi.fr`
 
 ---
 
@@ -94,9 +112,12 @@ CHIFFRES: {
 **Fichier :** `index.html` · ligne ~27
 
 Vérifier que l'URL finale correspond bien à l'URL de déploiement :
+
 ```html
 <link rel="canonical" href="https://www.cadremploi.fr/tech" />
 ```
+
+ou changer l'url final pour penser un peu plus en hub (car demain on aura santé, industrie...)
 
 ---
 
@@ -104,18 +125,14 @@ Vérifier que l'URL finale correspond bien à l'URL de déploiement :
 
 **Fichier :** `js/config.js`
 
-Demander au CTO d'ouvrir le CORS sur l'endpoint prod :
+Demander à la tech d'ouvrir le CORS sur l'endpoint prod :
+
 ```
 GET https://ce-search-api.staging.fcms.io/web/offers
 ```
+
 → autoriser le domaine `https://www.cadremploi.fr`
-
----
-
-## 8. Image OG — Déposer le fichier sur le serveur
-
-Le fichier `assets/og-tech-cadremploi.png` (1200×630px) doit être déposé
-par le CTO sur le serveur prod et accessible à l'URL déclarée dans les balises OG.
+attention après il faudra appeler l'API de production
 
 ---
 
