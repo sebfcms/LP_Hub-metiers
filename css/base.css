@@ -1,0 +1,247 @@
+/* ============================================================
+   css/base.css
+   Reset + utilitaires globaux
+   ============================================================ */
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font);
+  background: var(--white);
+  color: var(--fg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+button {
+  font-family: var(--font);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+
+/* ── Conteneur centré (utilisé sur toutes les sections) ── */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--px);
+}
+
+/* ── Section générique ── */
+.section {
+  padding: var(--py) var(--px);
+}
+.section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.section--pale {
+  background: var(--naval-pale);
+}
+.section--dark {
+  background: var(--naval-dark);
+}
+
+/* ── En-têtes de section ── */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 28px;
+}
+.section-eyebrow {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--red);
+  margin-bottom: 8px;
+}
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+.section-sub {
+  font-size: 0.875rem;
+  color: var(--muted-fg);
+  margin-top: 4px;
+}
+
+/* ── Boutons ── */
+.btn-red {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 26px;
+  background: var(--red);
+  color: var(--white);
+  border-radius: var(--r-pill);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  transition: opacity var(--transition);
+}
+.btn-red:hover {
+  background-color: #c4004d;
+  opacity: 1;
+}
+
+.btn-naval {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--naval);
+  border: 2px solid var(--naval);
+  border-radius: var(--r-pill);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  transition: all var(--transition);
+}
+.btn-naval:hover {
+  background: var(--naval);
+  color: var(--white);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--r-pill);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  transition: all var(--transition);
+}
+.btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.btn-outline-sm {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--naval);
+  border: 2px solid var(--naval);
+  border-radius: var(--r-pill);
+  padding: 5px 16px;
+  white-space: nowrap;
+  transition: all var(--transition);
+}
+.btn-outline-sm:hover {
+  background: var(--naval);
+  color: var(--white);
+}
+
+/* ── Tags offres ── */
+.tag {
+  font-size: 0.65rem;
+  padding: 2px 8px;
+  border-radius: var(--r-pill);
+  font-weight: 500;
+}
+.tag--cdi {
+  background: var(--green-pale);
+  color: hsl(158, 75%, 25%);
+}
+.tag--remote {
+  background: hsl(285, 30%, 96%);
+  color: #6b3fa0;
+}
+.tag--salary {
+  background: var(--muted-bg);
+  color: var(--muted-fg);
+}
+.tag--new {
+  background: var(--red-pale);
+  color: var(--red);
+  font-weight: 700;
+}
+
+/* ── Live badge ── */
+.live-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--green);
+}
+.live-badge__dot {
+  width: 7px;
+  height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+/* ── Animations ── */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes tick {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.anim-slide-in {
+  animation: slideIn 0.35s ease forwards;
+}
+
+/* ── Responsive helpers ── */
+@media (max-width: 768px) {
+  :root {
+    --px: 16px;
+    --py: 32px;
+  }
+  .hide-mobile {
+    display: none !important;
+  }
+}
+@media (min-width: 769px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}

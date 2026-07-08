@@ -1,0 +1,83 @@
+/* ============================================================
+   css/tokens.css
+   Design tokens Cadremploi — SOURCE UNIQUE DE VÉRITÉ
+   Basé sur specs-cadremploi-homepage.md (Mai 2026)
+   Modifier ici = appliqué partout
+   ============================================================ */
+
+:root {
+  /* ── Couleurs brand (charte officielle) ── */
+  --naval:        #32559A;   /* Primary blue */
+  --naval-dark:   #1d3d75;   /* Variante foncée hero/CVthèque */
+  --naval-pale:   #F3F6FC;   /* Background neutre */
+  --hero-bg:      #6588CD;   /* Bleu clair hero & section conseils */
+  --footer-blue:  #2D5AB4;   /* Royal Blue bande haute footer */
+  --red:          #E6005A;   /* Accent rouge/rose — CTAs forts */
+  --red-pale:     #FFE6EF;   /* Rose pâle */
+  --green:        hsl(158, 75%, 40%);
+  --green-pale:   hsl(158, 70%, 96%);
+  --purple:       #814488;   /* CV-thèque */
+
+  /* ── Tool blocks (charte officielle) ── */
+  --tool-blue:    #ECF0F9;
+  --tool-mauve:   #F6EEF6;
+  --tool-pink:    #FFE6EF;
+  --tool-gray:    #F0F0F0;
+
+  /* ── Couleurs neutres ── */
+  --border:       hsl(220, 10%, 85%);
+  --muted-bg:     hsl(220, 15%, 97%);
+  --muted-fg:     hsl(220, 12%, 45%);
+  --fg:           hsl(220, 20%, 12%);
+  --white:        #ffffff;
+
+  /* ── Radius (Vuetify — charte officielle) ── */
+  --r-xs:   2px;
+  --r-sm:   4px;
+  --r-md:   4px;
+  --r-lg:   8px;
+  --r-xl:   24px;   /* rounded-2xl — cards standard */
+  --r-2xl:  24px;   /* alias rounded-2xl */
+  --r-3xl:  28px;   /* rounded-3xl — logos entreprises */
+  --r-pill: 9999px;
+
+  /* ── Ombres (Material elevation — charte officielle) ── */
+  --sh-1: 0 2px 1px -1px rgba(0,0,0,.2),
+          0 1px 1px 0 rgba(0,0,0,.14),
+          0 1px 3px 0 rgba(0,0,0,.12);   /* elevation-1 — cards repos */
+  --sh-4: 0 2px 4px -1px rgba(0,0,0,.2),
+          0 4px 5px 0 rgba(0,0,0,.14),
+          0 1px 10px 0 rgba(0,0,0,.12);  /* elevation-4 — cards hover */
+  --sh-8: 0 5px 5px -3px rgba(0,0,0,.2),
+          0 8px 10px 1px rgba(0,0,0,.14),
+          0 3px 14px 2px rgba(0,0,0,.12); /* elevation-8 — modales/widgets */
+
+  /* ── Typographies (charte officielle) ── */
+  --font:         'Inter', system-ui, -apple-system, sans-serif;      /* body */
+  --font-display: 'Arial Black', 'Helvetica Neue', sans-serif;        /* logo */
+  --font-footer:  'Poppins', 'Inter', system-ui, sans-serif;         /* footer */
+
+  /* ── Layout ── */
+  --max-width: 1200px;
+  --px:        32px;   /* padding horizontal des sections */
+  --py:        56px;   /* padding vertical des sections */
+
+  /* ── Animations ── */
+  --transition: 0.15s ease;
+
+  /* ── Catégories profils CVthèque (couleurs avatar) ── */
+  --cat-dev-bg:    #EEF2FF;
+  --cat-dev-fg:    #3730A3;
+  --cat-data-bg:   #F0FDF4;
+  --cat-data-fg:   #166534;
+  --cat-pm-bg:     #FFF0F6;
+  --cat-pm-fg:     #9B0037;
+  --cat-cloud-bg:  #F0F9FF;
+  --cat-cloud-fg:  #0369A1;
+  --cat-secu-bg:   #FFF7ED;
+  --cat-secu-fg:   #C2410C;
+  --cat-design-bg: #FDF4FF;
+  --cat-design-fg: #7E22CE;
+  --cat-mgmt-bg:   #F1F5F9;
+  --cat-mgmt-fg:   #1d3d75;
+}
