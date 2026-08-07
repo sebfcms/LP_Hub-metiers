@@ -259,21 +259,21 @@
       })(window, document, "script", "dataLayer", "GTM-MZKFFW5");
     </script>
     <!-- End Google Tag Manager -->
-  
-  <!-- Styles header/footer prod -->
-  <style>
 
+    <!-- Styles header/footer prod -->
+    <style>
       /* Import des polices Google Fonts - Inter, Open Sans, Source Sans Pro */
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&family=Open+Sans:wght@300;400;600;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap');
-      
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&family=Open+Sans:wght@300;400;600;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap");
+
       /* Reset et styles de base */
       * {
         box-sizing: border-box;
       }
-      
+
       html,
       body {
-        font-family: Inter, 'Source Sans Pro', 'Open Sans', 'Noto Sans', Arial, sans-serif;
+        font-family:
+          Inter, "Source Sans Pro", "Open Sans", "Noto Sans", Arial, sans-serif;
         font-size: 16px;
         line-height: 1.5;
         -webkit-font-smoothing: antialiased;
@@ -282,65 +282,120 @@
         padding: 0;
         width: 100%;
       }
-      
+
       /* Classes utilitaires Vuetify essentielles */
-      .d-none { display: none !important; }
-      .d-flex { display: flex !important; }
-      .d-inline-block { display: inline-block !important; }
-      .align-center { align-items: center !important; }
-      .flex-fill { flex: 1 !important; }
-      .flex-column { flex-direction: column !important; }
+      .d-none {
+        display: none !important;
+      }
+      .d-flex {
+        display: flex !important;
+      }
+      .d-inline-block {
+        display: inline-block !important;
+      }
+      .align-center {
+        align-items: center !important;
+      }
+      .flex-fill {
+        flex: 1 !important;
+      }
+      .flex-column {
+        flex-direction: column !important;
+      }
       /* Classes de gap - échelle Vuetify : 1 unité = 4px */
-      .ga-1 { gap: 4px !important; }
-      .ga-3 { gap: 12px !important; }
-      .ga-4 { gap: 16px !important; }
-      
+      .ga-1 {
+        gap: 4px !important;
+      }
+      .ga-3 {
+        gap: 12px !important;
+      }
+      .ga-4 {
+        gap: 16px !important;
+      }
+
       /* Gaps responsive - appliquent les valeurs par breakpoint */
-      .ga-md-2 { gap: 8px !important; }
-      .ga-lg-4 { gap: 16px !important; }
-      
+      .ga-md-2 {
+        gap: 8px !important;
+      }
+      .ga-lg-4 {
+        gap: 16px !important;
+      }
+
       /* Sur petits écrans (< 1280px), ga-md-2 prend le dessus */
       @media (max-width: 1279px) {
         nav[aria-label="Principale"].ga-lg-4 {
           gap: 8px !important;
         }
       }
-      
+
       /* Sur grands écrans (>= 1280px), ga-lg-4 prend le dessus */
       @media (min-width: 1280px) {
         nav[aria-label="Principale"].ga-lg-4 {
           gap: 16px !important;
         }
       }
-      .pa-4 { padding: 16px !important; }
-      .ps-2 { padding-left:8px !important; }
-      .py-3 { padding-top: 12px !important; padding-bottom: 12px !important; }
-      .py-md-4 { padding-top: 16px !important; padding-bottom: 16px !important; }
-      .mb-2 { margin-bottom: 8px !important; }
-      .ml-2 { margin-left: 8px !important; }
-      .me-4 { margin-right: 16px !important; }
-      .me-6 { margin-right: 24px !important; }
-      .mx-3 { margin-left: 12px !important; margin-right: 12px !important; }
-      .text-right { 
-        text-align: right !important; 
+      .pa-4 {
+        padding: 16px !important;
+      }
+      .ps-2 {
+        padding-left: 8px !important;
+      }
+      .py-3 {
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+      }
+      .py-md-4 {
+        padding-top: 16px !important;
+        padding-bottom: 16px !important;
+      }
+      .mb-2 {
+        margin-bottom: 8px !important;
+      }
+      .ml-2 {
+        margin-left: 8px !important;
+      }
+      .me-4 {
+        margin-right: 16px !important;
+      }
+      .me-6 {
+        margin-right: 24px !important;
+      }
+      .mx-3 {
+        margin-left: 12px !important;
+        margin-right: 12px !important;
+      }
+      .text-right {
+        text-align: right !important;
         justify-content: flex-end !important;
       }
-      .text-caption { 
-        font-size: 12px !important; 
-        line-height: 1.25 !important; 
+      .text-caption {
+        font-size: 12px !important;
+        line-height: 1.25 !important;
       }
-      
+
       /* Si un élément a .text-right ET .text-caption, l'alignement à droite prime */
       .text-right.text-caption {
         text-align: right !important;
       }
-      .font-weight-medium { font-weight: 500 !important; }
-      .font-weight-bold { font-weight: 700 !important; }
-      .text-decoration-underline { text-decoration: underline !important; }
-      .rounded-lg { border-radius: 8px !important; }
-      .elevation-0 { box-shadow: none !important; }
-      .bg-white { background-color: #ffffff !important; }
-      
+      .font-weight-medium {
+        font-weight: 500 !important;
+      }
+      .font-weight-bold {
+        font-weight: 700 !important;
+      }
+      .text-decoration-underline {
+        text-decoration: underline !important;
+      }
+      .rounded-lg {
+        border-radius: 8px !important;
+      }
+      .elevation-0 {
+        box-shadow: none !important;
+      }
+      .bg-white {
+        background-color: #ffffff !important;
+      }
+
       /* Variables CSS Vuetify (couleurs du thème ceTheme) */
       :root {
         --v-theme-grey-800: 44, 48, 58;
@@ -362,7 +417,7 @@
         --v-activated-opacity: 0.12;
         --v-theme-overlay-multiplier: 1;
       }
-      
+
       /* Classes de couleur avec haute spécificité - CORRECTION */
       /* Les textes de navigation utilisent pale-grey-40, pas grey-800 */
       .text-grey-800,
@@ -375,7 +430,7 @@
         color: #596073 !important;
         color: rgb(var(--v-theme-pale-grey-40)) !important;
       }
-      
+
       /* Pour les boutons variant text, utiliser pale-grey-40 */
       .v-btn--variant-text.text-grey-800,
       .v-btn--variant-text.text-grey-800 *,
@@ -388,20 +443,22 @@
         color: #596073 !important;
         color: rgb(var(--v-theme-pale-grey-40)) !important;
       }
-      
-      .text-pale-grey-40 { 
+
+      .text-pale-grey-40 {
         color: #596073 !important;
         color: rgb(var(--v-theme-pale-grey-40)) !important;
       }
-      
+
       .text-blue-600,
       .v-icon.text-blue-600 {
         color: #32559a !important;
         color: rgb(var(--v-theme-blue-600)) !important;
       }
-      
-      .text-high-emphasis { opacity: 1 !important; }
-      
+
+      .text-high-emphasis {
+        opacity: 1 !important;
+      }
+
       /* Classes responsive */
       /* Par défaut, tous les éléments sont visibles */
       .hidden-md-and-down,
@@ -409,57 +466,79 @@
       .hidden-md-and-up {
         display: initial;
       }
-      
+
       /* < 960px (mobile uniquement) */
       @media (max-width: 959px) {
-        .d-md-flex { display: none !important; }
-        .hidden-md-and-down { display: none !important; }
-        .d-none.d-md-block { display: none !important; }
-        .py-md-4 { padding-top: 12px !important; padding-bottom: 12px !important; }
-        
+        .d-md-flex {
+          display: none !important;
+        }
+        .hidden-md-and-down {
+          display: none !important;
+        }
+        .d-none.d-md-block {
+          display: none !important;
+        }
+        .py-md-4 {
+          padding-top: 12px !important;
+          padding-bottom: 12px !important;
+        }
+
         /* Sur mobile, le bouton hamburger est visible et le v-toolbar__prepend a un margin-right */
         .v-toolbar__prepend {
           margin-right: 16px !important;
         }
       }
-      
+
       /* >= 1468px (tablettes et desktop) */
       @media (min-width: 960px) {
-        .d-md-flex { display: flex !important; }
-        .d-md-block { display: block !important; }
-        .hidden-md-and-up { display: none !important; }
-        .hidden-md-and-down { display: initial !important; }
-        .py-md-4 { padding-top: 16px !important; padding-bottom: 16px !important; }
-        
+        .d-md-flex {
+          display: flex !important;
+        }
+        .d-md-block {
+          display: block !important;
+        }
+        .hidden-md-and-up {
+          display: none !important;
+        }
+        .hidden-md-and-down {
+          display: initial !important;
+        }
+        .py-md-4 {
+          padding-top: 16px !important;
+          padding-bottom: 16px !important;
+        }
+
         /* Sur desktop, le bouton hamburger est caché et le v-toolbar__prepend ne doit pas avoir de margin */
         .v-toolbar__prepend {
           display: none !important;
         }
       }
-      
+
       /* >= 1280px (grands écrans) */
       @media (min-width: 1280px) {
-        .hidden-lg-and-up { display: none !important; }
-        
+        .hidden-lg-and-up {
+          display: none !important;
+        }
+
         /* Exception pour l'icône Mon compte : reste visible jusqu'à 1468px */
         #btn-mon-compte .hidden-lg-and-up {
           display: inline !important;
         }
       }
-      
+
       /* >= 1468px : cacher l'icône Mon compte en mode desktop */
       @media (min-width: 1468px) {
         #btn-mon-compte .hidden-lg-and-up {
           display: none !important;
         }
       }
-      
+
       /* Reset pour les liens et boutons */
       a {
         color: inherit;
         text-decoration: none;
       }
-      
+
       button {
         background: none;
         border: none;
@@ -468,7 +547,7 @@
         color: inherit;
         cursor: pointer;
       }
-      
+
       /* Styles Vuetify pour les boutons - d'après VBtn.sass */
       .v-btn {
         --color: currentColor;
@@ -498,45 +577,48 @@
         border-width: 0;
         cursor: pointer;
       }
-      
+
       .v-btn.v-btn--density-default {
         height: calc(var(--v-btn-height) + 0px);
       }
-      
+
       .v-btn .v-icon {
         --v-icon-size-multiplier: 1;
       }
-      
+
       .v-btn__content,
       .v-btn__append {
         align-items: center;
         display: flex;
-        transition: transform, opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        transition:
+          transform,
+          opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       }
-      
+
       .v-btn__append {
         grid-area: append;
-        margin-inline: calc(var(--v-btn-height) / 4.5) calc(var(--v-btn-height) / -9);
+        margin-inline: calc(var(--v-btn-height) / 4.5)
+          calc(var(--v-btn-height) / -9);
       }
-      
+
       .v-btn__content {
         grid-area: content;
         justify-content: center;
         white-space: nowrap;
       }
-      
+
       .v-btn__content img {
         display: inline-block;
         vertical-align: middle;
       }
-      
+
       .v-btn__overlay {
         background-color: currentColor;
         border-radius: inherit;
         opacity: 0;
         transition: opacity 0.2s ease-in-out;
       }
-      
+
       .v-btn__overlay,
       .v-btn__underlay {
         pointer-events: none;
@@ -546,36 +628,40 @@
         width: 100%;
         height: 100%;
       }
-      
+
       .v-btn:hover > .v-btn__overlay {
-        opacity: calc(var(--v-hover-opacity) * var(--v-theme-overlay-multiplier));
+        opacity: calc(
+          var(--v-hover-opacity) * var(--v-theme-overlay-multiplier)
+        );
       }
-      
+
       .v-btn:focus-visible > .v-btn__overlay {
-        opacity: calc(var(--v-focus-opacity) * var(--v-theme-overlay-multiplier));
+        opacity: calc(
+          var(--v-focus-opacity) * var(--v-theme-overlay-multiplier)
+        );
       }
-      
-      .v-btn--variant-plain, 
-      .v-btn--variant-outlined, 
+
+      .v-btn--variant-plain,
+      .v-btn--variant-outlined,
       .v-btn--variant-text {
         background: transparent;
         color: inherit;
       }
-      
+
       .v-btn--variant-text .v-btn__overlay {
         background: currentColor;
       }
-      
+
       .v-btn--variant-outlined {
         border: thin solid currentColor;
       }
-      
+
       .v-btn--size-default {
         font-size: var(--v-btn-size);
         min-width: 64px;
         padding: 0 16px;
       }
-      
+
       .v-btn--size-small {
         --v-btn-size: 0.8125rem;
         --v-btn-height: 24px;
@@ -583,53 +669,53 @@
         min-width: 42px;
         padding: 0 10px;
       }
-      
+
       /* Surcharges de BaseButton.vue - appliquées après les styles Vuetify */
       .v-btn {
         min-width: unset !important;
-        padding:  4px;
-        column-gap: .4rem;
+        padding: 4px;
+        column-gap: 0.4rem;
         max-width: unset;
       }
-      
+
       /* Boutons de navigation (variant text) - padding réduit */
       nav[aria-label="Principale"] .v-btn--variant-text {
-        padding: .75rem .8rem;
+        padding: 0.75rem 0.8rem;
       }
-      
+
       /* Effet hover sur les boutons de navigation */
       nav[aria-label="Principale"] .v-btn--variant-text:hover {
         background-color: rgba(89, 96, 115, 0.08) !important;
       }
-      
+
       /* Réduire le gap uniquement pour les boutons dropdown */
       .dropdown-toggle {
-        column-gap: .25rem;
+        column-gap: 0.25rem;
       }
-      
+
       .v-btn--size-small {
         padding-block: 0.5rem;
       }
-      
+
       .v-btn--density-default:not(.v-btn--icon) {
         height: auto;
         align-self: center;
       }
-      
+
       .v-btn:not(.v-btn--variant-text) {
         border: 1px solid var(--color);
       }
-      
+
       .v-btn:focus-visible {
         box-shadow: 0 0 0 3px var(--color);
       }
-      
+
       .v-btn--icon {
         border-radius: 50%;
         min-width: 0;
         padding: 0;
       }
-      
+
       .v-btn--icon.v-btn--density-default {
         width: calc(var(--v-btn-height) + 12px);
         height: calc(var(--v-btn-height) + 12px);
@@ -647,20 +733,20 @@
         border: none !important;
         outline: none !important;
       }
-      
+
       .v-app-bar-nav-icon *,
       .v-app-bar-nav-icon .v-btn__overlay,
       .v-app-bar-nav-icon .v-btn__underlay {
         border: none !important;
         outline: none !important;
       }
-      
+
       .v-app-bar-nav-icon .v-btn__overlay,
       .v-app-bar-nav-icon .v-btn__underlay {
         display: none !important;
         opacity: 0 !important;
       }
-      
+
       .v-app-bar-nav-icon:hover,
       .v-app-bar-nav-icon:focus,
       .v-app-bar-nav-icon:active {
@@ -668,23 +754,23 @@
         border: none !important;
         outline: none !important;
       }
-      
+
       .v-app-bar-nav-icon:before,
       .v-app-bar-nav-icon:after {
         display: none !important;
         content: none !important;
       }
-      
+
       .v-app-bar-nav-icon .v-icon {
         color: #2c303a !important;
       }
-      
+
       .v-app-bar-nav-icon svg,
       .v-app-bar-nav-icon svg path {
         fill: #2c303a !important;
         stroke: none !important;
       }
-      
+
       /* Styles pour les icônes */
       .v-icon {
         display: inline-flex;
@@ -693,23 +779,23 @@
         vertical-align: middle;
         line-height: 1;
       }
-      
+
       .v-icon.notranslate {
         transform: none;
       }
-      
+
       .v-icon--size-default {
         width: 24px;
         height: 24px;
         font-size: 24px;
       }
-      
+
       .v-icon__svg {
         width: 100%;
         height: 100%;
         fill: currentColor;
       }
-      
+
       /* Toolbar */
       .v-toolbar {
         display: flex;
@@ -719,13 +805,13 @@
         padding: 0;
         margin: 0;
       }
-      
+
       .v-app-bar {
-        box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
         padding: 0 !important;
         margin: 0 !important;
       }
-      
+
       .v-toolbar__content {
         display: flex;
         align-items: center;
@@ -737,22 +823,22 @@
         position: relative;
         overflow: hidden;
       }
-      
+
       .v-toolbar__content > .v-btn:first-child {
         margin-inline-start: 4px;
       }
-      
+
       .v-toolbar__content > .v-btn:last-child {
         margin-inline-end: 4px;
       }
-      
+
       @media (max-width: 1467px) {
         .v-toolbar__content {
           padding: 0 8px 0 0;
           position: relative;
         }
       }
-      
+
       /* Navigation principale */
       nav[aria-label="Principale"] {
         display: flex;
@@ -763,38 +849,38 @@
         font-weight: 500;
         flex: 0 1 auto;
       }
-      
+
       nav[aria-label="Principale"] .v-btn {
         font-weight: 500;
       }
-      
+
       .v-toolbar__prepend {
         margin-inline: 4px auto;
         align-items: center;
         align-self: stretch;
         display: flex;
       }
-      
+
       .v-spacer {
         flex: 1 1 auto;
       }
-      
+
       /* V-sheet */
       .v-sheet {
         display: block;
         background-color: white;
       }
-      
+
       /* V-overlay pour les modals */
       .v-overlay__content {
         position: relative;
       }
-      
+
       /* V-form */
       .v-form {
         width: 100%;
       }
-      
+
       /* V-label */
       .v-label {
         display: block;
@@ -804,7 +890,7 @@
         margin-bottom: 8px;
         line-height: 17.6px;
       }
-      
+
       /* V-field */
       .v-field__input {
         width: 100%;
@@ -820,39 +906,39 @@
         box-sizing: border-box;
         display: block;
       }
-      
+
       .v-field__input::placeholder {
         color: #999;
       }
-      
+
       .v-field__input:focus {
         border-color: #3e6ac1;
       }
-      
+
       /* Styles pour le header app bar */
       .header-app-bar {
         background-color: white !important;
       }
-      
+
       .v-app-bar {
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
-      
+
       .d-print-none {
         /* Caché à l'impression */
       }
-      
+
       @media print {
         .d-print-none {
           display: none !important;
         }
       }
-      
+
       .dropdown-wrapper {
         position: static;
         display: inline-block;
       }
-      
+
       .dropdown-menu {
         position: fixed;
         top: 72px;
@@ -866,25 +952,26 @@
         z-index: 10000 !important;
         opacity: 0;
         visibility: hidden;
-        transition: opacity 0.2s ease, visibility 0.2s ease;
+        transition:
+          opacity 0.2s ease,
+          visibility 0.2s ease;
         border-top: 4px solid #3e6ac1;
       }
-      
+
       .dropdown-menu.show {
         display: block !important;
         opacity: 1 !important;
         visibility: visible !important;
       }
-      
+
       .dropdown-menu .v-sheet {
         background: white;
       }
-      
+
       .dropdown-menu .pa-4 {
         padding: 16px;
       }
-      
-    
+
       #login-submit-btn {
       }
 
@@ -893,7 +980,9 @@
         padding-bottom: 12px;
         margin: 0;
         margin-bottom: 12px;
-        font-family: "Inter", "Source Sans Pro", "Open Sans", "Noto Sans", "Arial", sans-serif;
+        font-family:
+          "Inter", "Source Sans Pro", "Open Sans", "Noto Sans", "Arial",
+          sans-serif;
         font-size: 24px;
         font-weight: 500;
         line-height: 24px;
@@ -907,22 +996,22 @@
         font-size: 14px;
         line-height: 26px;
       }
-      
+
       .sous-menu-container > div:not(:last-child) {
         width: 300px;
         margin-bottom: 1rem;
       }
-      
+
       .menu-column strong {
         color: #2c303a;
         font-weight: 700;
       }
-      
+
       .my-2 {
         margin-top: 8px;
         margin-bottom: 8px;
       }
-      
+
       .level2 {
         display: block;
         color: black;
@@ -931,33 +1020,35 @@
         font-size: 14px;
         line-height: 26px;
       }
-      
+
       .level2:hover {
         color: #3e6ac1;
       }
-      
+
       .dropdown-toggle {
         cursor: pointer;
         user-select: none;
-        transition: background-color 0.2s ease, color 0.2s ease;
+        transition:
+          background-color 0.2s ease,
+          color 0.2s ease;
       }
-      
+
       .dropdown-toggle:hover {
         background-color: rgba(89, 96, 115, 0.08);
       }
-      
+
       .dropdown-toggle[aria-expanded="true"] {
-        background-color: #DDDEDF;
+        background-color: #dddedf;
       }
-      
+
       .dropdown-toggle[aria-expanded="true"] svg {
         transform: rotate(180deg);
       }
-      
+
       .dropdown-toggle svg {
         transition: transform 0.2s ease;
       }
-      
+
       /* Bouton S'inscrire - ajustement pour correspondre à l'original */
       .v-btn--variant-outlined.v-btn--size-small {
         padding: 8px 16px !important;
@@ -969,17 +1060,17 @@
         min-height: 33.5px !important;
         border-color: rgb(var(--v-theme-blue-600)) !important;
       }
-      
+
       .v-btn--variant-outlined.v-btn--size-small:hover {
         background-color: rgba(var(--v-theme-blue-600), 0.08) !important;
       }
-      
+
       /* Bouton Mon compte - forcer l'espacement à droite */
       #btn-mon-compte,
       .js-connection-espace-perso {
         margin-right: 24px !important;
       }
-      
+
       /* Sur mobile, réduire la marge du bouton Mon compte */
       @media (max-width: 1467px) {
         #btn-mon-compte,
@@ -987,19 +1078,19 @@
           margin-right: 8px !important;
         }
       }
-      
+
       /* Style du logo - 160px de large (comme l'original TheHeader.vue) */
       .cadremploi-logo {
         display: flex;
         flex: 0 0 160px;
         margin-left: 0.5rem;
       }
-      
+
       .cadremploi-logo img {
         max-width: 100%;
         height: auto;
       }
-      
+
       /* Sur mobile, réduire la taille du logo */
       @media (max-width: 1467px) {
         .cadremploi-logo {
@@ -1007,19 +1098,19 @@
           max-width: 140px;
           margin-left: 0.5rem;
         }
-        
+
         .cadremploi-logo img {
           width: 140px;
           height: auto;
         }
       }
-      
+
       @media (min-width: 1920px) {
         .cadremploi-logo {
           width: 240px;
         }
       }
-      
+
       /* S'assurer que le header permet l'overflow et a la bonne bordure */
       #header {
         overflow: visible !important;
@@ -1031,26 +1122,26 @@
         width: 100% !important;
         box-sizing: border-box;
       }
-      
+
       #header .v-toolbar__content {
         overflow: visible !important;
       }
-      
+
       #header nav {
         overflow: visible !important;
       }
-      
+
       #header .v-toolbar__prepend {
         margin: 0 !important;
         padding: 0 !important;
       }
-      
+
       /* S'assurer que les liens dans le header respectent les couleurs */
       #header nav a,
       #header nav button {
         text-decoration: none;
       }
-      
+
       /* Appliquer la couleur grise aux éléments de navigation */
       #header nav a.text-grey-800,
       #header nav button.text-grey-800,
@@ -1059,14 +1150,14 @@
         color: #596073 !important;
         color: rgb(var(--v-theme-pale-grey-40)) !important;
       }
-      
+
       /* Forcer la couleur sur le contenu des boutons de navigation */
       nav[aria-label="Principale"] .v-btn.text-grey-800,
       nav[aria-label="Principale"] .v-btn.text-grey-800 span {
         color: #596073 !important;
         color: rgb(var(--v-theme-pale-grey-40)) !important;
       }
-      
+
       /* Modal de connexion */
       .auth-modal-overlay {
         position: fixed;
@@ -1083,21 +1174,21 @@
         transition: opacity 0.3s ease;
         padding: 16px;
       }
-      
+
       @media (max-width: 1467px) {
         .auth-modal-overlay {
           padding: 0;
         }
       }
-      
+
       .auth-modal-overlay.show {
         opacity: 1;
       }
-      
+
       .auth-modal-overlay.show .modal-container {
         transform: translateY(0);
       }
-      
+
       .modal-container {
         background: white;
         border-radius: 4px;
@@ -1110,7 +1201,7 @@
         transition: transform 0.3s ease;
         z-index: 100000;
       }
-      
+
       @media (max-width: 959px) {
         .modal-container {
           padding: 24px 24px 32px 24px;
@@ -1123,26 +1214,26 @@
           -webkit-overflow-scrolling: touch;
           z-index: 100001;
         }
-        
+
         .auth-modal-overlay {
           align-items: center;
           justify-content: center;
         }
-        
+
         .modal-container::-webkit-scrollbar {
           display: none;
         }
-        
+
         .modal-container {
           -ms-overflow-style: none;
           scrollbar-width: none;
         }
       }
-      
+
       .bg-white {
         background-color: white;
       }
-      
+
       .close-modal-btn {
         position: absolute;
         top: 16px;
@@ -1158,7 +1249,7 @@
         transition: background-color 0.2s;
         z-index: 1;
       }
-      
+
       @media (max-width: 1467px) {
         .close-modal-btn {
           top: 16px;
@@ -1166,75 +1257,75 @@
           padding: 8px;
         }
       }
-      
+
       .close-modal-btn:hover {
         background-color: #f5f5f5;
       }
-      
+
       .close-modal-btn svg {
         fill: #666;
         width: 24px;
         height: 24px;
       }
-      
+
       @media (max-width: 1467px) {
         .close-modal-btn svg {
           width: 20px;
           height: 20px;
         }
       }
-      
+
       .modal-content {
         padding-top: 16px;
         width: 100%;
       }
-      
+
       @media (max-width: 1467px) {
         .modal-content {
           padding-top: 8px;
           width: 100%;
         }
       }
-      
+
       .modal-content .d-flex {
         width: 100%;
       }
-      
+
       .modal-content .v-form {
         width: 100%;
       }
-      
+
       .divider {
         display: flex;
         align-items: center;
         gap: 16px;
         margin: 32px 0;
       }
-      
+
       @media (max-width: 1467px) {
         .divider {
           margin: 24px 0;
         }
       }
-      
+
       .divider-line {
         flex: 1;
         height: 1px;
         background: #d0d0d0;
       }
-      
+
       .divider-text {
         font-size: 14px;
         color: #666;
         white-space: nowrap;
       }
-      
+
       @media (max-width: 1467px) {
         .divider-text {
           font-size: 12px;
         }
       }
-      
+
       .social-btn {
         width: 100%;
         height: 54px !important;
@@ -1247,36 +1338,36 @@
         justify-content: center !important;
         gap: 8px !important;
       }
-      
+
       @media (max-width: 1467px) {
         .social-btn {
           height: 48px !important;
           padding: 12px !important;
         }
       }
-      
+
       .social-btn:hover {
         background-color: #eeeeee !important;
       }
-      
+
       .social-icon {
         width: 36px;
         height: 20px;
         display: block;
       }
-      
+
       .field-wrapper {
         margin-bottom: 20px;
         width: 100%;
       }
-      
+
       @media (max-width: 1467px) {
         .field-wrapper {
           margin-bottom: 16px;
           width: 100%;
         }
       }
-      
+
       .v-label {
         display: block;
         font-size: 16px;
@@ -1285,14 +1376,14 @@
         margin-bottom: 8px;
         line-height: 17.6px;
       }
-      
+
       @media (max-width: 1467px) {
         .v-label {
           font-size: 14px;
           margin-bottom: 6px;
         }
       }
-      
+
       .v-field__input {
         width: 100% !important;
         max-width: 100% !important;
@@ -1307,7 +1398,7 @@
         box-sizing: border-box !important;
         display: block !important;
       }
-      
+
       @media (max-width: 1467px) {
         .v-field__input {
           width: 100% !important;
@@ -1317,13 +1408,13 @@
           font-size: 14px !important;
         }
       }
-      
+
       .modal-content input {
         width: 100% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
       }
-      
+
       /* Icône d'œil pour le mot de passe */
       .v-field__append-inner {
         position: absolute;
@@ -1334,28 +1425,28 @@
         align-items: center;
         pointer-events: auto;
       }
-      
+
       .v-icon--clickable {
         cursor: pointer;
         color: #666;
         transition: color 0.2s;
       }
-      
+
       .v-icon--clickable:hover {
         color: #32559a;
       }
-      
+
       .v-icon--size-default {
         width: 24px;
         height: 24px;
       }
-      
+
       .v-icon__svg {
         width: 100%;
         height: 100%;
         fill: currentColor;
       }
-      
+
       /* "J'ai oublié mon mot de passe" - aligné à droite */
       .modal-content .text-right.mb-2.text-caption,
       .modal-content .text-right.text-caption,
@@ -1366,11 +1457,11 @@
         display: block !important;
         width: 100% !important;
       }
-      
+
       .modal-content .text-right a {
         display: inline-block !important;
       }
-      
+
       /* "Vous avez déjà un compte" - aligné à gauche */
       /* SAUF si l'élément a aussi .text-right */
       .modal-content .d-flex.flex-column .text-caption:not(.text-right),
@@ -1379,7 +1470,7 @@
         display: block !important;
         width: 100% !important;
       }
-      
+
       /* Force sur mobile aussi */
       @media (max-width: 1467px) {
         .modal-content .text-right.mb-2,
@@ -1387,19 +1478,19 @@
           text-align: right !important;
         }
       }
-      
+
       .v-field__input::placeholder {
         color: #999 !important;
       }
-      
+
       .v-field__input:focus {
         border-color: #3e6ac1 !important;
       }
-      
+
       .v-form .connection-button {
-        width: 100%
+        width: 100%;
       }
-      
+
       .connection-button {
         width: 100%;
         height: 45px !important;
@@ -1411,7 +1502,7 @@
         border-radius: 8px !important;
         cursor: pointer;
       }
-      
+
       @media (max-width: 1467px) {
         .connection-button {
           height: 45px !important;
@@ -1419,32 +1510,32 @@
           font-size: 14px !important;
         }
       }
-      
+
       .bg-red-600 {
         background-color: #e6005a !important;
         color: white !important;
       }
-      
+
       .bg-red-600:hover {
         background-color: #cc0050 !important;
       }
-      
+
       .v-btn--disabled {
         pointer-events: none;
         opacity: 0.26 !important;
       }
-      
+
       .v-btn--disabled .v-btn__overlay {
         opacity: 0 !important;
       }
-      
+
       /* État d'erreur pour les champs */
       .v-field__input.error,
       input.v-field__input.error {
         border-color: #e6005a !important;
         border-color: rgb(var(--v-theme-red-600)) !important;
       }
-      
+
       .error-message {
         color: #e6005a;
         color: rgb(var(--v-theme-red-600));
@@ -1452,20 +1543,20 @@
         margin-top: 4px;
         line-height: 1.25;
       }
-      
+
       .text-blue-600 {
         color: rgb(50, 85, 154) !important;
       }
-      
+
       .text-pale-grey-40 {
         color: #596073 !important;
       }
-      
+
       .text-right {
         text-align: right !important;
         justify-content: flex-end !important;
       }
-      
+
       /* Force l'alignement à droite pour TOUS les .text-right */
       [class*="text-right"],
       .text-right,
@@ -1475,11 +1566,11 @@
         text-align: right !important;
         justify-content: flex-end !important;
       }
-      
+
       .v-form {
         width: 100%;
       }
-      
+
       /* Menu mobile */
       .mobile-menu-overlay {
         position: fixed;
@@ -1492,11 +1583,11 @@
         opacity: 0;
         transition: opacity 0.3s ease;
       }
-      
+
       .mobile-menu-overlay.show {
         opacity: 1;
       }
-      
+
       .mobile-menu-drawer {
         position: fixed;
         top: 76px;
@@ -1511,15 +1602,15 @@
         overflow-y: auto;
         z-index: 1001;
       }
-      
+
       .mobile-menu-overlay.show .mobile-menu-drawer {
         transform: translateX(0);
       }
-      
+
       .mobile-menu-content {
         padding: 24px 0;
       }
-      
+
       .mobile-menu-item {
         display: block;
         padding: 16px 24px;
@@ -1529,14 +1620,14 @@
         font-weight: 400;
         transition: background-color 0.2s;
       }
-      
+
       .mobile-menu-item:hover {
         background-color: #f5f5f5;
       }
-      
+
       .mobile-menu-group {
       }
-      
+
       .mobile-menu-group-toggle {
         width: 100%;
         display: flex;
@@ -1552,32 +1643,32 @@
         cursor: pointer;
         transition: background-color 0.2s;
       }
-      
+
       .mobile-menu-group-toggle:hover {
         background-color: #f5f5f5;
       }
-      
+
       .mobile-menu-group-toggle.active .mobile-menu-icon {
         transform: rotate(180deg);
       }
-      
+
       .mobile-menu-icon {
         flex-shrink: 0;
         fill: #596073;
         transition: transform 0.3s ease;
       }
-      
+
       .mobile-menu-group-items {
         background: #f9f9f9;
         overflow: hidden;
         max-height: 0;
         transition: max-height 0.3s ease;
       }
-      
+
       .mobile-menu-group-items.show {
         max-height: 1000px;
       }
-      
+
       .mobile-menu-subitem {
         display: block;
         padding: 12px 24px 12px 48px;
@@ -1586,11 +1677,11 @@
         font-size: 14px;
         transition: background-color 0.2s;
       }
-      
+
       .mobile-menu-subitem:hover {
         background-color: #f0f0f0;
       }
-      
+
       .mobile-menu-section-title {
         display: block;
         padding: 16px 24px 8px 48px;
@@ -1599,18 +1690,18 @@
         font-weight: 600;
         margin-top: 12px;
       }
-      
+
       .mobile-menu-section-title:first-child {
         margin-top: 0;
       }
-      
+
       .mobile-menu-buttons {
         padding: 24px 24px;
         display: flex;
         flex-direction: column;
         gap: 12px;
       }
-      
+
       .mobile-menu-btn {
         display: block;
         padding: 12px 24px;
@@ -1622,14 +1713,15 @@
         text-decoration: none;
         font-size: 16px;
         font-weight: 500;
-        transition: background-color 0.2s, color 0.2s;
+        transition:
+          background-color 0.2s,
+          color 0.2s;
       }
-      
+
       .mobile-menu-btn:hover {
         background: #3e6ac1;
         color: white;
       }
-    
 
       /* Reset et styles de base */
       * {
@@ -1644,12 +1736,12 @@
       .top-footer {
         padding: 16px 0;
       }
-      
+
       .top-footer a {
         cursor: default;
         text-decoration: none;
       }
-      
+
       .top-footer a:hover {
         opacity: 0.8;
       }
@@ -1692,7 +1784,7 @@
         padding-top: 24px;
         padding-bottom: 24px;
       }
-      
+
       @media (max-width: 959px) {
         .py-6 {
           padding-top: 48px;
@@ -1815,23 +1907,23 @@
         flex-direction: column;
         gap: 16px;
       }
-      
+
       .reseaux-sociaux .title {
         width: 100%;
         margin-bottom: 0;
       }
-      
+
       .social-buttons-wrapper {
         display: flex;
         flex-direction: row;
         gap: 12px;
         align-items: center;
       }
-      
+
       .reseaux-sociaux .v-btn.mr-4 {
         margin-right: 0 !important;
       }
-      
+
       .reseaux-sociaux .v-btn {
         display: inline-flex;
       }
@@ -1853,14 +1945,14 @@
         --v-btn-height: 36px;
         font-size: var(--v-btn-size);
       }
-      
+
       /* Surcharger les variables Vuetify pour les boutons sociaux */
       .reseaux-sociaux .v-btn--size-small {
         --v-btn-size: 0.875rem !important;
         --v-btn-height: 36px !important;
         line-height: 36px !important;
       }
-      
+
       /* Forcer la taille 36x36 pour les boutons sociaux */
       .reseaux-sociaux .v-btn,
       .reseaux-sociaux .v-btn--icon,
@@ -1880,9 +1972,12 @@
       .v-btn--variant-elevated {
         background: white !important;
         color: #2c303a !important;
-        box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12) !important;
+        box-shadow:
+          0 3px 1px -2px rgba(0, 0, 0, 0.2),
+          0 2px 2px 0 rgba(0, 0, 0, 0.14),
+          0 1px 5px 0 rgba(0, 0, 0, 0.12) !important;
       }
-      
+
       .v-btn--variant-elevated *,
       .v-btn--variant-elevated::before,
       .v-btn--variant-elevated::after {
@@ -1893,15 +1988,18 @@
 
       .v-btn--variant-elevated:hover {
         background: #f5f5f5 !important;
-        box-shadow: 0 3px 3px -2px rgba(0,0,0,.3), 0 3px 4px 0 rgba(0,0,0,.2), 0 1px 8px 0 rgba(0,0,0,.16) !important;
+        box-shadow:
+          0 3px 3px -2px rgba(0, 0, 0, 0.3),
+          0 3px 4px 0 rgba(0, 0, 0, 0.2),
+          0 1px 8px 0 rgba(0, 0, 0, 0.16) !important;
       }
-      
+
       .v-btn--variant-elevated:focus,
       .v-btn--variant-elevated:active {
         outline: none !important;
         border: none !important;
       }
-      
+
       /* Supprimer tout cercle/border sur les liens et boutons sociaux */
       .reseaux-sociaux a,
       .reseaux-sociaux a:focus,
@@ -1911,14 +2009,20 @@
       .reseaux-sociaux .v-btn:active {
         border: none !important;
         outline: none !important;
-        box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12) !important;
+        box-shadow:
+          0 3px 1px -2px rgba(0, 0, 0, 0.2),
+          0 2px 2px 0 rgba(0, 0, 0, 0.14),
+          0 1px 5px 0 rgba(0, 0, 0, 0.12) !important;
       }
-      
+
       .reseaux-sociaux a:hover {
-        box-shadow: 0 3px 3px -2px rgba(0,0,0,.3), 0 3px 4px 0 rgba(0,0,0,.2), 0 1px 8px 0 rgba(0,0,0,.16) !important;
+        box-shadow:
+          0 3px 3px -2px rgba(0, 0, 0, 0.3),
+          0 3px 4px 0 rgba(0, 0, 0, 0.2),
+          0 1px 8px 0 rgba(0, 0, 0, 0.16) !important;
         background: #f5f5f5 !important;
       }
-      
+
       /* Forcer la taille 36x36 pour les liens sociaux aussi */
       .reseaux-sociaux a {
         width: 36px !important;
@@ -1953,13 +2057,13 @@
         align-items: center;
         justify-content: center;
       }
-      
+
       /* S'assurer que le contenu des boutons sociaux ne dépasse pas 36x36 */
       .reseaux-sociaux .v-btn__content {
         width: 100%;
         height: 100%;
       }
-      
+
       .reseaux-sociaux .v-btn__overlay,
       .reseaux-sociaux .v-btn__underlay {
         border-radius: 50% !important;
@@ -1978,14 +2082,14 @@
         width: 20px;
         height: 20px;
       }
-      
+
       /* Ajuster la taille des icônes dans les boutons sociaux */
       .reseaux-sociaux .v-icon {
         font-size: 20px !important;
         width: 20px !important;
         height: 20px !important;
       }
-      
+
       .reseaux-sociaux .v-icon__svg {
         width: 20px !important;
         height: 20px !important;
@@ -1996,12 +2100,12 @@
         width: 100%;
         height: 100%;
       }
-      
+
       /* Forcer la couleur des icônes sociales */
       .reseaux-sociaux .v-btn--variant-elevated .v-icon {
         color: #2c303a !important;
       }
-      
+
       .reseaux-sociaux .v-btn--variant-elevated svg {
         fill: #2c303a !important;
       }
@@ -2016,291 +2120,768 @@
           padding: 0 16px;
         }
       }
-    
-  </style>
-</head>
+    </style>
+  </head>
   <body>
     <!-- ══════════════════════════════════════════
      HEADER — repris depuis la prod Cadremploi
      ══════════════════════════════════════════ -->
-<header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default elevation-0 v-theme--ceTheme v-locale--is-ltr v-app-bar d-print-none header-app-bar" style="top: 0px; z-index: 1006; position: relative; width: 100%;" id="header" data-v-ba1a373a="">
-      <div class="v-toolbar__content" style="height:72px; width:100%;">
+    <header
+      class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default elevation-0 v-theme--ceTheme v-locale--is-ltr v-app-bar d-print-none header-app-bar"
+      style="top: 0px; z-index: 1006; position: relative; width: 100%"
+      id="header"
+      data-v-ba1a373a=""
+    >
+      <div class="v-toolbar__content" style="height: 72px; width: 100%">
         <div class="v-toolbar__prepend">
-          <button type="button" class="v-btn v-btn--icon v-theme--ceTheme v-btn--density-default v-btn--size-small v-btn--variant-plain hidden-md-and-up v-app-bar-nav-icon" style="" aria-label="Menu mobile" data-v-ba1a373a="">
+          <button
+            type="button"
+            class="v-btn v-btn--icon v-theme--ceTheme v-btn--density-default v-btn--size-small v-btn--variant-plain hidden-md-and-up v-app-bar-nav-icon"
+            style=""
+            aria-label="Menu mobile"
+            data-v-ba1a373a=""
+          >
             <span class="v-btn__overlay"></span>
             <span class="v-btn__underlay"></span>
             <span class="v-btn__content" data-no-activator="">
-              <i class="v-icon notranslate v-theme--ceTheme v-icon--size-default" style="" aria-hidden="true">
-                <svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
-                  <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path>
+              <i
+                class="v-icon notranslate v-theme--ceTheme v-icon--size-default"
+                style=""
+                aria-hidden="true"
+              >
+                <svg
+                  class="v-icon__svg"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"
+                  ></path>
                 </svg>
               </i>
             </span>
           </button>
         </div>
         <a href="/" class="cadremploi-logo" data-v-ba1a373a="">
-          <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201237.9%20130.8'%20style='fill:currentColor'%20xml:space='preserve'%3e%3cpath%20d='M182.6%201.2h20.3l54.8%20125.4h-23.1l-12.6-30h-58.9l-12.8%2030.1h-22.4L182.6%201.2zm31.4%2076-21.5-49.8-21.3%2049.8H214zm66.8-75.1h46.4c39.1%200%2066.2%2026.9%2066.2%2061.9v.4c0%2035-27%2062.3-66.2%2062.3h-46.4V2.1zm46.5%20104.6c26.2%200%2043.2-17.6%2043.2-42v-.4c0-24.4-17.1-42.3-43.2-42.3h-24.5v84.7h24.5zM421.7%202.1h55.5c15.6%200%2027.9%204.6%2035.9%2012.4%206.6%206.8%2010.3%2016%2010.3%2026.9v.4c0%2020.5-12.3%2032.7-29.7%2037.7l33.6%2047.1h-25.8L471%2083.3h-27.4v43.4h-21.9V2.1zm54%2061.8c15.6%200%2025.6-8.2%2025.6-20.8v-.4c0-13.3-9.6-20.6-25.8-20.6h-31.8v41.8h32zm76.4-61.8h92.3v19.6H574v32.4h62.4v19.6H574v33.4h71.3v19.6h-93.2V2.1zm121%200h23.3L734.3%2061l37.9-58.9h23.3v124.5h-21.9V37.4l-39.3%2058.7h-.7l-39-58.4v88.9h-21.5V2.1zm156.2%200h49.1c29%200%2047.3%2016.5%2047.3%2041.6v.4c0%2027.9-22.4%2042.5-49.8%2042.5h-24.7v40h-21.9V2.1zm47.3%2064.8c16.5%200%2026.9-9.3%2026.9-22.2v-.4c0-14.6-10.5-22.2-26.9-22.2h-25.4v44.8h25.4zm73.3-64.8h21.9v104.6h65.5v19.9H950V2.1zm106.4%2062.6v-.4c0-35%2027-64.4%2065.3-64.4s64.9%2029%2064.9%2064v.4c0%2035-27%2064.4-65.3%2064.4a63%2063%200%200%201-64.9-64zm107.3%200v-.4c0-24.2-17.6-44.3-42.3-44.3-24.7%200-42%2019.7-42%2043.9v.4c0%2024.2%2017.6%2044.3%2042.3%2044.3%2024.7.1%2042-19.7%2042-43.9zm52.5-25.2v87.1h21.9V25a80.2%2080.2%200%200%201-21.9%2014.5zm0-37.4v33.5a83.4%2083.4%200%200%200%2021.9-14.5v-19h-21.9zM1.4%2078.3c2.8%204.3%2030.3%2036.3%2069.4%2029.5-2.3.3-4.7.5-7.2.5-23.7%200-40.8-19.8-40.8-43.9V64c0-24.2%2017.1-43.6%2040.8-43.6%2014.1%200%2024.7%206.2%2034.6%2015.4l13.9-16.1A65%2065%200%200%200%2063.7.5%2062.8%2062.8%200%200%200%200%2064.4a72.5%2072.5%200%200%200%201.4%2013.9zm98.1%2015.5a51.3%2051.3%200%200%201-27.8%2016.3C32.8%20117.9%204.4%2086.7%201.5%2082.4a62.1%2062.1%200%200%200%2062.8%2048.4c23.1-.6%2037-9.5%2049.5-23.2L99.5%2093.8c-8.6%208.4%200%200%200%200z'%20style='fill:%232c303a'%20/%3e%3c/svg%3e" width="240" height="36" alt="Cadremploi" data-v-ba1a373a="">
+          <img
+            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201237.9%20130.8'%20style='fill:currentColor'%20xml:space='preserve'%3e%3cpath%20d='M182.6%201.2h20.3l54.8%20125.4h-23.1l-12.6-30h-58.9l-12.8%2030.1h-22.4L182.6%201.2zm31.4%2076-21.5-49.8-21.3%2049.8H214zm66.8-75.1h46.4c39.1%200%2066.2%2026.9%2066.2%2061.9v.4c0%2035-27%2062.3-66.2%2062.3h-46.4V2.1zm46.5%20104.6c26.2%200%2043.2-17.6%2043.2-42v-.4c0-24.4-17.1-42.3-43.2-42.3h-24.5v84.7h24.5zM421.7%202.1h55.5c15.6%200%2027.9%204.6%2035.9%2012.4%206.6%206.8%2010.3%2016%2010.3%2026.9v.4c0%2020.5-12.3%2032.7-29.7%2037.7l33.6%2047.1h-25.8L471%2083.3h-27.4v43.4h-21.9V2.1zm54%2061.8c15.6%200%2025.6-8.2%2025.6-20.8v-.4c0-13.3-9.6-20.6-25.8-20.6h-31.8v41.8h32zm76.4-61.8h92.3v19.6H574v32.4h62.4v19.6H574v33.4h71.3v19.6h-93.2V2.1zm121%200h23.3L734.3%2061l37.9-58.9h23.3v124.5h-21.9V37.4l-39.3%2058.7h-.7l-39-58.4v88.9h-21.5V2.1zm156.2%200h49.1c29%200%2047.3%2016.5%2047.3%2041.6v.4c0%2027.9-22.4%2042.5-49.8%2042.5h-24.7v40h-21.9V2.1zm47.3%2064.8c16.5%200%2026.9-9.3%2026.9-22.2v-.4c0-14.6-10.5-22.2-26.9-22.2h-25.4v44.8h25.4zm73.3-64.8h21.9v104.6h65.5v19.9H950V2.1zm106.4%2062.6v-.4c0-35%2027-64.4%2065.3-64.4s64.9%2029%2064.9%2064v.4c0%2035-27%2064.4-65.3%2064.4a63%2063%200%200%201-64.9-64zm107.3%200v-.4c0-24.2-17.6-44.3-42.3-44.3-24.7%200-42%2019.7-42%2043.9v.4c0%2024.2%2017.6%2044.3%2042.3%2044.3%2024.7.1%2042-19.7%2042-43.9zm52.5-25.2v87.1h21.9V25a80.2%2080.2%200%200%201-21.9%2014.5zm0-37.4v33.5a83.4%2083.4%200%200%200%2021.9-14.5v-19h-21.9zM1.4%2078.3c2.8%204.3%2030.3%2036.3%2069.4%2029.5-2.3.3-4.7.5-7.2.5-23.7%200-40.8-19.8-40.8-43.9V64c0-24.2%2017.1-43.6%2040.8-43.6%2014.1%200%2024.7%206.2%2034.6%2015.4l13.9-16.1A65%2065%200%200%200%2063.7.5%2062.8%2062.8%200%200%200%200%2064.4a72.5%2072.5%200%200%200%201.4%2013.9zm98.1%2015.5a51.3%2051.3%200%200%201-27.8%2016.3C32.8%20117.9%204.4%2086.7%201.5%2082.4a62.1%2062.1%200%200%200%2062.8%2048.4c23.1-.6%2037-9.5%2049.5-23.2L99.5%2093.8c-8.6%208.4%200%200%200%200z'%20style='fill:%232c303a'%20/%3e%3c/svg%3e"
+            width="240"
+            height="36"
+            alt="Cadremploi"
+            data-v-ba1a373a=""
+          />
         </a>
-        <nav class="d-none d-md-flex align-center ga-lg-4 ga-md-2 ps-2 font-weight-medium" aria-label="Principale" data-v-ba1a373a="">
-          <a href="/emploi/liste_offres" class="v-btn v-theme--ceTheme text-grey-800 v-btn--density-default rounded-lg v-btn--size-default v-btn--variant-text">
-            <span class="v-btn__content" data-no-activator="">Trouver un emploi</span>
+        <nav
+          class="d-none d-md-flex align-center ga-lg-4 ga-md-2 ps-2 font-weight-medium"
+          aria-label="Principale"
+          data-v-ba1a373a=""
+        >
+          <a
+            href="/emploi/liste_offres"
+            class="v-btn v-theme--ceTheme text-grey-800 v-btn--density-default rounded-lg v-btn--size-default v-btn--variant-text"
+          >
+            <span class="v-btn__content" data-no-activator=""
+              >Trouver un emploi</span
+            >
           </a>
-          
-          <div class="dropdown-wrapper" style="position: relative;">
-            <button class="v-btn v-theme--ceTheme text-grey-800 v-btn--density-default rounded-lg v-btn--size-default v-btn--variant-text dropdown-toggle" aria-haspopup="menu" aria-expanded="false" data-dropdown="explorer">
-              <span class="v-btn__content" data-no-activator="">Explorer les opportunités</span>
+
+          <div class="dropdown-wrapper" style="position: relative">
+            <button
+              class="v-btn v-theme--ceTheme text-grey-800 v-btn--density-default rounded-lg v-btn--size-default v-btn--variant-text dropdown-toggle"
+              aria-haspopup="menu"
+              aria-expanded="false"
+              data-dropdown="explorer"
+            >
+              <span class="v-btn__content" data-no-activator=""
+                >Explorer les opportunités</span
+              >
               <span class="v-btn__append">
-                <i class="v-icon notranslate v-theme--ceTheme v-icon--size-default text-blue-600" aria-hidden="true">
-                  <svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
-                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                <i
+                  class="v-icon notranslate v-theme--ceTheme v-icon--size-default text-blue-600"
+                  aria-hidden="true"
+                >
+                  <svg
+                    class="v-icon__svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
+                    ></path>
                   </svg>
                 </i>
               </span>
             </button>
-            <div class="dropdown-menu" id="menu-explorer" style="display: none;">
+            <div class="dropdown-menu" id="menu-explorer" style="display: none">
               <div class="v-sheet v-theme--ceTheme elevation-0 pa-4">
-                <div data-ga-action="clic_header_offre_emploi" class="sous-menu-container">
+                <div
+                  data-ga-action="clic_header_offre_emploi"
+                  class="sous-menu-container"
+                >
                   <div class="menu-column">
-                    <a class="level2" href="/emploi/top_recruteurs" data-ga-label="entreprises">Les entreprises qui recrutent</a>
-                    <a class="level2" href="/emploi/annuaire_cabinets" data-ga-label="cabinets">Les cabinets de recrutement</a>
+                    <a
+                      class="level2"
+                      href="/emploi/top_recruteurs"
+                      data-ga-label="entreprises"
+                      >Les entreprises qui recrutent</a
+                    >
+                    <a
+                      class="level2"
+                      href="/emploi/annuaire_cabinets"
+                      data-ga-label="cabinets"
+                      >Les cabinets de recrutement</a
+                    >
                   </div>
                   <div class="menu-column">
-                    <a class="level2" href="/emploi/liste_offres?tyc=1" data-ga-label="cdi">Offres d'emploi CDI</a>
-                    <a class="level2" href="/emploi/liste_offres?tyc=2" data-ga-label="cdd">Offres d'emploi CDD</a>
-                    <a class="level2" href="/emploi/liste_offres?sct=70010" data-ga-label="interim">Offres d'emploi Intérim</a>
+                    <a
+                      class="level2"
+                      href="/emploi/liste_offres?tyc=1"
+                      data-ga-label="cdi"
+                      >Offres d'emploi CDI</a
+                    >
+                    <a
+                      class="level2"
+                      href="/emploi/liste_offres?tyc=2"
+                      data-ga-label="cdd"
+                      >Offres d'emploi CDD</a
+                    >
+                    <a
+                      class="level2"
+                      href="/emploi/liste_offres?sct=70010"
+                      data-ga-label="interim"
+                      >Offres d'emploi Intérim</a
+                    >
                   </div>
                   <div class="menu-column">
-                    <a class="level2" href="/emploi/liste_offres?tyc=7" data-ga-label="freelance">Offres d'emploi Freelance</a>
-                    <a class="level2" href="/emploi/liste_offres?rub=_jeunes_diplomes" data-ga-label="jeunes_dip">Offres d'emploi Jeunes Diplômés</a>
-                    <a class="level2" href="/emploi/liste_offres?tyc=8" data-ga-label="stages">Offres d'emploi Stage</a>
+                    <a
+                      class="level2"
+                      href="/emploi/liste_offres?tyc=7"
+                      data-ga-label="freelance"
+                      >Offres d'emploi Freelance</a
+                    >
+                    <a
+                      class="level2"
+                      href="/emploi/liste_offres?rub=_jeunes_diplomes"
+                      data-ga-label="jeunes_dip"
+                      >Offres d'emploi Jeunes Diplômés</a
+                    >
+                    <a
+                      class="level2"
+                      href="/emploi/liste_offres?tyc=8"
+                      data-ga-label="stages"
+                      >Offres d'emploi Stage</a
+                    >
                   </div>
                   <div class="menu-column">
-                    <a class="level2" href="/emploi/liste_offres?tyc=13" data-ga-label="alternance_apprentissage">Offres d'emploi Alternance / Apprentissage</a>
+                    <a
+                      class="level2"
+                      href="/emploi/liste_offres?tyc=13"
+                      data-ga-label="alternance_apprentissage"
+                      >Offres d'emploi Alternance / Apprentissage</a
+                    >
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="dropdown-wrapper" style="position: relative;">
-            <button class="v-btn v-theme--ceTheme text-grey-800 v-btn--density-default rounded-lg v-btn--size-default v-btn--variant-text dropdown-toggle" aria-haspopup="menu" aria-expanded="false" data-dropdown="actualite">
+          <div class="dropdown-wrapper" style="position: relative">
+            <button
+              class="v-btn v-theme--ceTheme text-grey-800 v-btn--density-default rounded-lg v-btn--size-default v-btn--variant-text dropdown-toggle"
+              aria-haspopup="menu"
+              aria-expanded="false"
+              data-dropdown="actualite"
+            >
               <span class="v-btn__content" data-no-activator="">Actualité</span>
               <span class="v-btn__append">
-                <i class="v-icon notranslate v-theme--ceTheme v-icon--size-default text-blue-600" aria-hidden="true">
-                  <svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
-                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                <i
+                  class="v-icon notranslate v-theme--ceTheme v-icon--size-default text-blue-600"
+                  aria-hidden="true"
+                >
+                  <svg
+                    class="v-icon__svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
+                    ></path>
                   </svg>
                 </i>
               </span>
             </button>
-            <div class="dropdown-menu" id="menu-actualite" style="display: none;">
+            <div
+              class="dropdown-menu"
+              id="menu-actualite"
+              style="display: none"
+            >
               <div class="v-sheet v-theme--ceTheme elevation-0 pa-4">
-                <div data-ga-action="clic_header_actualites" class="sous-menu-container">
+                <div
+                  data-ga-action="clic_header_actualites"
+                  class="sous-menu-container"
+                >
                   <div class="menu-column">
-                    <strong class="my-2 d-inline-block">S'informer sur l'emploi des cadres</strong>
-                    <a class="level2" href="/editorial/actualites/actu-emploi.html" data-ga-label="derniere_actu">Les dernières actualités</a>
-                    <a class="level2" href="/actualites-emploi/" data-ga-label="actualites_emploi">Tendances Emploi</a>
+                    <strong class="my-2 d-inline-block"
+                      >S'informer sur l'emploi des cadres</strong
+                    >
+                    <a
+                      class="level2"
+                      href="/editorial/actualites/actu-emploi.html"
+                      data-ga-label="derniere_actu"
+                      >Les dernières actualités</a
+                    >
+                    <a
+                      class="level2"
+                      href="/actualites-emploi/"
+                      data-ga-label="actualites_emploi"
+                      >Tendances Emploi</a
+                    >
                   </div>
                   <div class="menu-column">
-                    <strong class="my-2 d-inline-block">La Playlist Cadremploi</strong>
-                    <a class="level2" href="/editorial/actualites/cadremploi-tv.html" data-ga-label="emissions">Regarder nos émissions</a>
+                    <strong class="my-2 d-inline-block"
+                      >La Playlist Cadremploi</strong
+                    >
+                    <a
+                      class="level2"
+                      href="/editorial/actualites/cadremploi-tv.html"
+                      data-ga-label="emissions"
+                      >Regarder nos émissions</a
+                    >
                   </div>
                   <div class="menu-column">
-                    <strong class="my-2 d-inline-block">Nos partenaires prennent la parole</strong>
-                    <a class="level2" href="/editorial/actualites/actu-metiers-regions.html" data-ga-label="secteur_region">L'actualité des partenaires</a>
-                    <a class="level2" href="/editorial/podcasts.html" data-ga-label="job_podcasts">Podcasts RH</a>
+                    <strong class="my-2 d-inline-block"
+                      >Nos partenaires prennent la parole</strong
+                    >
+                    <a
+                      class="level2"
+                      href="/editorial/actualites/actu-metiers-regions.html"
+                      data-ga-label="secteur_region"
+                      >L'actualité des partenaires</a
+                    >
+                    <a
+                      class="level2"
+                      href="/editorial/podcasts.html"
+                      data-ga-label="job_podcasts"
+                      >Podcasts RH</a
+                    >
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="dropdown-wrapper" style="position: relative;">
-            <button class="v-btn v-theme--ceTheme text-grey-800 v-btn--density-default rounded-lg v-btn--size-default v-btn--variant-text dropdown-toggle" aria-haspopup="menu" aria-expanded="false" data-dropdown="conseil">
+          <div class="dropdown-wrapper" style="position: relative">
+            <button
+              class="v-btn v-theme--ceTheme text-grey-800 v-btn--density-default rounded-lg v-btn--size-default v-btn--variant-text dropdown-toggle"
+              aria-haspopup="menu"
+              aria-expanded="false"
+              data-dropdown="conseil"
+            >
               <span class="v-btn__content" data-no-activator="">Conseil</span>
               <span class="v-btn__append">
-                <i class="v-icon notranslate v-theme--ceTheme v-icon--size-default text-blue-600" aria-hidden="true">
-                  <svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
-                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                <i
+                  class="v-icon notranslate v-theme--ceTheme v-icon--size-default text-blue-600"
+                  aria-hidden="true"
+                >
+                  <svg
+                    class="v-icon__svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
+                    ></path>
                   </svg>
                 </i>
               </span>
             </button>
-            <div class="dropdown-menu" id="menu-conseil" style="display: none;">
+            <div class="dropdown-menu" id="menu-conseil" style="display: none">
               <div class="v-sheet v-theme--ceTheme elevation-0 pa-4">
-                <div data-ga-action="clic_header_conseils" class="sous-menu-container">
+                <div
+                  data-ga-action="clic_header_conseils"
+                  class="sous-menu-container"
+                >
                   <div class="menu-column">
-                    <strong class="my-2 d-inline-block">Mieux vivre son job</strong>
-                    <a class="level2" href="/editorial/conseils/conseils-carriere.html" data-ga-label="job_gestion_carriere">Gérer ma carrière</a>
-                    <a class="level2" href="/editorial/conseils/salaire.html" data-ga-label="job_salaire">Savoir parler salaire</a>
-                    <a class="level2" href="/editorial/conseils/droit-du-travail.html" data-ga-label="job_droits">Connaître ses droits au travail</a>
-                    <a class="level2" href="/editorial/international.html" data-ga-label="job_international">Travailler à l'international</a>
-                    <a class="level2" href="/actualites-emploi/nos-conseils-pratiques/" data-ga-label="job_conseils_pratiques">Nos conseils pratiques</a>
+                    <strong class="my-2 d-inline-block"
+                      >Mieux vivre son job</strong
+                    >
+                    <a
+                      class="level2"
+                      href="/editorial/conseils/conseils-carriere.html"
+                      data-ga-label="job_gestion_carriere"
+                      >Gérer ma carrière</a
+                    >
+                    <a
+                      class="level2"
+                      href="/editorial/conseils/salaire.html"
+                      data-ga-label="job_salaire"
+                      >Savoir parler salaire</a
+                    >
+                    <a
+                      class="level2"
+                      href="/editorial/conseils/droit-du-travail.html"
+                      data-ga-label="job_droits"
+                      >Connaître ses droits au travail</a
+                    >
+                    <a
+                      class="level2"
+                      href="/editorial/international.html"
+                      data-ga-label="job_international"
+                      >Travailler à l'international</a
+                    >
+                    <a
+                      class="level2"
+                      href="/actualites-emploi/nos-conseils-pratiques/"
+                      data-ga-label="job_conseils_pratiques"
+                      >Nos conseils pratiques</a
+                    >
                   </div>
                   <div class="menu-column">
-                    <strong class="my-2 d-inline-block">Chercher ailleurs</strong>
-                    <a class="level2" href="/editorial/conseils/conseils-candidature/cv.html" data-ga-label="search_redaction_cv">Rédiger son CV</a>
-                    <a class="level2" href="/editorial/conseils/conseils-candidature/lettre-de-motivation.html" data-ga-label="search_lettre_motivation">Assurer sa lettre de motivation</a>
-                    <a class="level2" href="/editorial/conseils/conseils-candidature/entretien-embauche.html" data-ga-label="search_entretien">Préparer son entretien d'embauche</a>
-                    <a class="level2" href="/editorial/conseils/conseils-candidature.html" data-ga-label="search_postuler">Postuler au bon moment</a>
-                    <a class="level2" href="/emploi/entreprendre" data-ga-label="search_entrepreneuriat">Se lancer dans l'entrepreneuriat</a>
+                    <strong class="my-2 d-inline-block"
+                      >Chercher ailleurs</strong
+                    >
+                    <a
+                      class="level2"
+                      href="/editorial/conseils/conseils-candidature/cv.html"
+                      data-ga-label="search_redaction_cv"
+                      >Rédiger son CV</a
+                    >
+                    <a
+                      class="level2"
+                      href="/editorial/conseils/conseils-candidature/lettre-de-motivation.html"
+                      data-ga-label="search_lettre_motivation"
+                      >Assurer sa lettre de motivation</a
+                    >
+                    <a
+                      class="level2"
+                      href="/editorial/conseils/conseils-candidature/entretien-embauche.html"
+                      data-ga-label="search_entretien"
+                      >Préparer son entretien d'embauche</a
+                    >
+                    <a
+                      class="level2"
+                      href="/editorial/conseils/conseils-candidature.html"
+                      data-ga-label="search_postuler"
+                      >Postuler au bon moment</a
+                    >
+                    <a
+                      class="level2"
+                      href="/emploi/entreprendre"
+                      data-ga-label="search_entrepreneuriat"
+                      >Se lancer dans l'entrepreneuriat</a
+                    >
                   </div>
                   <div class="menu-column">
                     <strong class="my-2 d-inline-block">Se former</strong>
-                    <a class="level2" href="/editorial/tag/management" data-ga-label="learn_management">Améliorer son management</a>
-                    <a class="level2" href="/editorial/formation/conseils-secteur.html" data-ga-label="learn_decouvrir">Découvrir les formations par secteur</a>
-                    <a class="level2" href="/editorial/formation/cpf-cif-vae.html" data-ga-label="learn_choisir_CPF_VAE">Choisir le bon dispositif CPF et VAE</a>
-                    <a class="level2" href="/editorial/formation/mba-ms-masters.html" data-ga-label="learn_choisir_MBA_MS">Choisir un MBA / MS / Masters</a>
-                    <a class="level2" href="/editorial/formation/langues.html" data-ga-label="learn_linguistiques">Développer ses compétences linguistiques</a>
+                    <a
+                      class="level2"
+                      href="/editorial/tag/management"
+                      data-ga-label="learn_management"
+                      >Améliorer son management</a
+                    >
+                    <a
+                      class="level2"
+                      href="/editorial/formation/conseils-secteur.html"
+                      data-ga-label="learn_decouvrir"
+                      >Découvrir les formations par secteur</a
+                    >
+                    <a
+                      class="level2"
+                      href="/editorial/formation/cpf-cif-vae.html"
+                      data-ga-label="learn_choisir_CPF_VAE"
+                      >Choisir le bon dispositif CPF et VAE</a
+                    >
+                    <a
+                      class="level2"
+                      href="/editorial/formation/mba-ms-masters.html"
+                      data-ga-label="learn_choisir_MBA_MS"
+                      >Choisir un MBA / MS / Masters</a
+                    >
+                    <a
+                      class="level2"
+                      href="/editorial/formation/langues.html"
+                      data-ga-label="learn_linguistiques"
+                      >Développer ses compétences linguistiques</a
+                    >
                   </div>
                   <div class="menu-column">
-                    <strong class="my-2 d-inline-block">Trouver mon premier job</strong>
-                    <a class="level2" href="/editorial/conseils/toutes-nos-fiches-metiers.html" data-ga-label="find_fiches">Fiches métiers</a>
-                    <a class="level2" href="/outils/salaire-brut-net" data-ga-label="calculateur-salaire">Salaire brut net</a>
+                    <strong class="my-2 d-inline-block"
+                      >Trouver mon premier job</strong
+                    >
+                    <a
+                      class="level2"
+                      href="/editorial/conseils/toutes-nos-fiches-metiers.html"
+                      data-ga-label="find_fiches"
+                      >Fiches métiers</a
+                    >
+                    <a
+                      class="level2"
+                      href="/outils/salaire-brut-net"
+                      data-ga-label="calculateur-salaire"
+                      >Salaire brut net</a
+                    >
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <a href="/depot-cv" class="v-btn v-theme--ceTheme text-grey-800 v-btn--density-default rounded-lg v-btn--size-default v-btn--variant-text me-4">
-            <span class="v-btn__content" data-no-activator="">Déposer mon CV</span>
+          <a
+            href="/depot-cv"
+            class="v-btn v-theme--ceTheme text-grey-800 v-btn--density-default rounded-lg v-btn--size-default v-btn--variant-text me-4"
+          >
+            <span class="v-btn__content" data-no-activator=""
+              >Déposer mon CV</span
+            >
           </a>
-          <a href="/emploi/createur_cv" class="v-btn v-theme--ceTheme text-grey-800 v-btn--density-default rounded-lg v-btn--size-default v-btn--variant-text me-4">
-            <span class="v-btn__content" data-no-activator="">Créer mon CV</span>
+          <a
+            href="/emploi/createur_cv"
+            class="v-btn v-theme--ceTheme text-grey-800 v-btn--density-default rounded-lg v-btn--size-default v-btn--variant-text me-4"
+          >
+            <span class="v-btn__content" data-no-activator=""
+              >Créer mon CV</span
+            >
           </a>
         </nav>
-        
+
         <div class="v-spacer" style=""></div>
-        
-        <a href="/emploi/creer_compte" class="v-btn v-theme--ceTheme text-blue-600 v-btn--density-default rounded-lg v-btn--size-small v-btn--variant-outlined hidden-md-and-down mx-3">
+
+        <a
+          href="/emploi/creer_compte"
+          class="v-btn v-theme--ceTheme text-blue-600 v-btn--density-default rounded-lg v-btn--size-small v-btn--variant-outlined hidden-md-and-down mx-3"
+        >
           <span class="v-btn__content" data-no-activator="">S'inscrire</span>
         </a>
-        
-        <button class="v-btn v-theme--ceTheme text-blue-600 v-btn--density-default rounded-lg v-btn--size-small v-btn--variant-text js-connection-espace-perso me-6" aria-label="Connexion" id="btn-mon-compte">
+
+        <button
+          class="v-btn v-theme--ceTheme text-blue-600 v-btn--density-default rounded-lg v-btn--size-small v-btn--variant-text js-connection-espace-perso me-6"
+          aria-label="Connexion"
+          id="btn-mon-compte"
+        >
           <span class="v-btn__content" data-no-activator="">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE4AAABPCAMAAAByKAOKAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABFUExURQAAAB2q4h2q4h2q4h2q4szm+R2q4l7A6pzO8OHy/eT0/eT0/eT0/eT0/R2q4uT0/ajU8jmv5B2q4uT0/Wi66DSu5E+z5hYQricAAAASdFJOUwDWmcBx5j0V7/NDxoBosKWm0/7DYbgAAAJASURBVFjDzZjpjsIwDIRpmhMK3U1S3v9Rl7NbkYljB7Ta+YnEp/HRJPZux5C9afe2nNWnIa4aRm1dL8vqDWnDVB0+HWY9iFrm0anYkHICZ5EhLpAFu0pzrI2RrbFp0EaR9IcCXTNI0VQU61QN2KFWW7w3Jl0VjM+oCR2flu+kVcGzeWWkywvsBiwdDjxaDgnJc+qhubSUTLtfLJ+G/NlWGc51Wkq5UQ7NqcKmHguZvjJUn0jR4ZaffaBxpb3hDXPInibMmRYu1Ju5NLekpnLV3kkeK4p2fPRclMeKPo3oakdmaONC7Sgtz6WcGFpwMUCsnoMDR6nFsbJwHl9EqqsSEHeCqeNUApY2XnDg19SLc/CeZuFSRLXQn8TpP8BlHi6j70J1th3slBGcdVycYeLy/8Gp7srC3KFGMf2VRThWLQLsO/SRLaEv1gqOY6+8uO/nJ3zxmi5z18sHzl7NcA10UX2tG3lZ76cxHiXOPeY0vsna9qC5+6MMD65k9rC5gRqcvNicqr1RGtnz+B+OnMS8qIPXF1R16DSiUH9fx6MMF4lCEPa8CKeplzuFW6jM1Ysryp1tDe1Z0icvQ+MgGPHQSOsaEyM14pU825hnMz3i+eb+Y/028nOXQB9Rmz2Dqkzv2XvepfhcXZyfpybQV5LrgvyubVLmDl461BdRHbyZ2hodpbSJ3mntgyhz++b+bv5I2uQGw5G5+5w4A+gkWKa2gBLYDXg8EDk7duy2K8Qu1rMs07xhHuZp38/aUC9icX4A9kdOHTe/tywAAAAASUVORK5CYII=" width="30" height="30" alt="" class="hidden-lg-and-up btn-mon-compte-icon">
-            <span class="hidden-md-and-down btn-mon-compte-text">Mon compte</span>
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE4AAABPCAMAAAByKAOKAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABFUExURQAAAB2q4h2q4h2q4h2q4szm+R2q4l7A6pzO8OHy/eT0/eT0/eT0/eT0/R2q4uT0/ajU8jmv5B2q4uT0/Wi66DSu5E+z5hYQricAAAASdFJOUwDWmcBx5j0V7/NDxoBosKWm0/7DYbgAAAJASURBVFjDzZjpjsIwDIRpmhMK3U1S3v9Rl7NbkYljB7Ta+YnEp/HRJPZux5C9afe2nNWnIa4aRm1dL8vqDWnDVB0+HWY9iFrm0anYkHICZ5EhLpAFu0pzrI2RrbFp0EaR9IcCXTNI0VQU61QN2KFWW7w3Jl0VjM+oCR2flu+kVcGzeWWkywvsBiwdDjxaDgnJc+qhubSUTLtfLJ+G/NlWGc51Wkq5UQ7NqcKmHguZvjJUn0jR4ZaffaBxpb3hDXPInibMmRYu1Ju5NLekpnLV3kkeK4p2fPRclMeKPo3oakdmaONC7Sgtz6WcGFpwMUCsnoMDR6nFsbJwHl9EqqsSEHeCqeNUApY2XnDg19SLc/CeZuFSRLXQn8TpP8BlHi6j70J1th3slBGcdVycYeLy/8Gp7srC3KFGMf2VRThWLQLsO/SRLaEv1gqOY6+8uO/nJ3zxmi5z18sHzl7NcA10UX2tG3lZ76cxHiXOPeY0vsna9qC5+6MMD65k9rC5gRqcvNicqr1RGtnz+B+OnMS8qIPXF1R16DSiUH9fx6MMF4lCEPa8CKeplzuFW6jM1Ysryp1tDe1Z0icvQ+MgGPHQSOsaEyM14pU825hnMz3i+eb+Y/028nOXQB9Rmz2Dqkzv2XvepfhcXZyfpybQV5LrgvyubVLmDl461BdRHbyZ2hodpbSJ3mntgyhz++b+bv5I2uQGw5G5+5w4A+gkWKa2gBLYDXg8EDk7duy2K8Qu1rMs07xhHuZp38/aUC9icX4A9kdOHTe/tywAAAAASUVORK5CYII="
+              width="30"
+              height="30"
+              alt=""
+              class="hidden-lg-and-up btn-mon-compte-icon"
+            />
+            <span class="hidden-md-and-down btn-mon-compte-text"
+              >Mon compte</span
+            >
           </span>
         </button>
-        
       </div>
     </header>
-    
+
     <!-- Menu mobile -->
-    <div class="mobile-menu-overlay" id="mobile-menu-overlay" style="display: none;">
+    <div
+      class="mobile-menu-overlay"
+      id="mobile-menu-overlay"
+      style="display: none"
+    >
       <div class="mobile-menu-drawer" id="mobile-menu-drawer">
         <div class="mobile-menu-content">
-          <a href="/emploi/liste_offres" class="mobile-menu-item">Trouver un emploi</a>
-          
+          <a href="/emploi/liste_offres" class="mobile-menu-item"
+            >Trouver un emploi</a
+          >
+
           <div class="mobile-menu-group">
             <button class="mobile-menu-group-toggle" data-group="explorer">
               <span>Explorer les opportunités</span>
-              <svg class="mobile-menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+              <svg
+                class="mobile-menu-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <path
+                  d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
+                ></path>
               </svg>
             </button>
-            <div class="mobile-menu-group-items" id="mobile-group-explorer" style="display: none;">
-              <a href="/emploi/top_recruteurs" class="mobile-menu-subitem">Les entreprises qui recrutent</a>
-              <a href="/emploi/annuaire_cabinets" class="mobile-menu-subitem">Les cabinets de recrutement</a>
-              <a href="/emploi/liste_offres?tyc=1" class="mobile-menu-subitem">Offres d'emploi CDI</a>
-              <a href="/emploi/liste_offres?tyc=2" class="mobile-menu-subitem">Offres d'emploi CDD</a>
-              <a href="/emploi/liste_offres?sct=70010" class="mobile-menu-subitem">Offres d'emploi Intérim</a>
-              <a href="/emploi/liste_offres?tyc=7" class="mobile-menu-subitem">Offres d'emploi Freelance</a>
-              <a href="/emploi/liste_offres?rub=_jeunes_diplomes" class="mobile-menu-subitem">Offres d'emploi Jeunes Diplômés</a>
-              <a href="/emploi/liste_offres?tyc=8" class="mobile-menu-subitem">Offres d'emploi Stage</a>
-              <a href="/emploi/liste_offres?tyc=13" class="mobile-menu-subitem">Offres d'emploi Alternance / Apprentissage</a>
+            <div
+              class="mobile-menu-group-items"
+              id="mobile-group-explorer"
+              style="display: none"
+            >
+              <a href="/emploi/top_recruteurs" class="mobile-menu-subitem"
+                >Les entreprises qui recrutent</a
+              >
+              <a href="/emploi/annuaire_cabinets" class="mobile-menu-subitem"
+                >Les cabinets de recrutement</a
+              >
+              <a href="/emploi/liste_offres?tyc=1" class="mobile-menu-subitem"
+                >Offres d'emploi CDI</a
+              >
+              <a href="/emploi/liste_offres?tyc=2" class="mobile-menu-subitem"
+                >Offres d'emploi CDD</a
+              >
+              <a
+                href="/emploi/liste_offres?sct=70010"
+                class="mobile-menu-subitem"
+                >Offres d'emploi Intérim</a
+              >
+              <a href="/emploi/liste_offres?tyc=7" class="mobile-menu-subitem"
+                >Offres d'emploi Freelance</a
+              >
+              <a
+                href="/emploi/liste_offres?rub=_jeunes_diplomes"
+                class="mobile-menu-subitem"
+                >Offres d'emploi Jeunes Diplômés</a
+              >
+              <a href="/emploi/liste_offres?tyc=8" class="mobile-menu-subitem"
+                >Offres d'emploi Stage</a
+              >
+              <a href="/emploi/liste_offres?tyc=13" class="mobile-menu-subitem"
+                >Offres d'emploi Alternance / Apprentissage</a
+              >
             </div>
           </div>
-          
+
           <div class="mobile-menu-group">
             <button class="mobile-menu-group-toggle" data-group="actualite">
               <span>Actualité</span>
-              <svg class="mobile-menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+              <svg
+                class="mobile-menu-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <path
+                  d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
+                ></path>
               </svg>
             </button>
-            <div class="mobile-menu-group-items" id="mobile-group-actualite" style="display: none;">
-              <strong class="mobile-menu-section-title">S'informer sur l'emploi des cadres</strong>
-              <a href="/editorial/actualites/actu-emploi.html" class="mobile-menu-subitem">Les dernières actualités</a>
-              <a href="/actualites-emploi/" class="mobile-menu-subitem">Tendances Emploi</a>
-              
-              <strong class="mobile-menu-section-title">La Playlist Cadremploi</strong>
-              <a href="/editorial/actualites/cadremploi-tv.html" class="mobile-menu-subitem">Regarder nos émissions</a>
-              
-              <strong class="mobile-menu-section-title">Nos partenaires prennent la parole</strong>
-              <a href="/editorial/actualites/actu-metiers-regions.html" class="mobile-menu-subitem">L'actualité des partenaires</a>
-              <a href="/editorial/podcasts.html" class="mobile-menu-subitem">Podcasts RH</a>
+            <div
+              class="mobile-menu-group-items"
+              id="mobile-group-actualite"
+              style="display: none"
+            >
+              <strong class="mobile-menu-section-title"
+                >S'informer sur l'emploi des cadres</strong
+              >
+              <a
+                href="/editorial/actualites/actu-emploi.html"
+                class="mobile-menu-subitem"
+                >Les dernières actualités</a
+              >
+              <a href="/actualites-emploi/" class="mobile-menu-subitem"
+                >Tendances Emploi</a
+              >
+
+              <strong class="mobile-menu-section-title"
+                >La Playlist Cadremploi</strong
+              >
+              <a
+                href="/editorial/actualites/cadremploi-tv.html"
+                class="mobile-menu-subitem"
+                >Regarder nos émissions</a
+              >
+
+              <strong class="mobile-menu-section-title"
+                >Nos partenaires prennent la parole</strong
+              >
+              <a
+                href="/editorial/actualites/actu-metiers-regions.html"
+                class="mobile-menu-subitem"
+                >L'actualité des partenaires</a
+              >
+              <a href="/editorial/podcasts.html" class="mobile-menu-subitem"
+                >Podcasts RH</a
+              >
             </div>
           </div>
-          
+
           <div class="mobile-menu-group">
             <button class="mobile-menu-group-toggle" data-group="conseil">
               <span>Conseil</span>
-              <svg class="mobile-menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+              <svg
+                class="mobile-menu-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <path
+                  d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
+                ></path>
               </svg>
             </button>
-            <div class="mobile-menu-group-items" id="mobile-group-conseil" style="display: none;">
-              <strong class="mobile-menu-section-title">Mieux vivre son job</strong>
-              <a href="/editorial/conseils/conseils-carriere.html" class="mobile-menu-subitem">Gérer ma carrière</a>
-              <a href="/editorial/conseils/salaire.html" class="mobile-menu-subitem">Savoir parler salaire</a>
-              <a href="/editorial/conseils/droit-du-travail.html" class="mobile-menu-subitem">Connaître ses droits au travail</a>
-              <a href="/editorial/international.html" class="mobile-menu-subitem">Travailler à l'international</a>
-              <a href="/actualites-emploi/nos-conseils-pratiques/" class="mobile-menu-subitem">Nos conseils pratiques</a>
+            <div
+              class="mobile-menu-group-items"
+              id="mobile-group-conseil"
+              style="display: none"
+            >
+              <strong class="mobile-menu-section-title"
+                >Mieux vivre son job</strong
+              >
+              <a
+                href="/editorial/conseils/conseils-carriere.html"
+                class="mobile-menu-subitem"
+                >Gérer ma carrière</a
+              >
+              <a
+                href="/editorial/conseils/salaire.html"
+                class="mobile-menu-subitem"
+                >Savoir parler salaire</a
+              >
+              <a
+                href="/editorial/conseils/droit-du-travail.html"
+                class="mobile-menu-subitem"
+                >Connaître ses droits au travail</a
+              >
+              <a
+                href="/editorial/international.html"
+                class="mobile-menu-subitem"
+                >Travailler à l'international</a
+              >
+              <a
+                href="/actualites-emploi/nos-conseils-pratiques/"
+                class="mobile-menu-subitem"
+                >Nos conseils pratiques</a
+              >
 
-              <strong class="mobile-menu-section-title">Chercher ailleurs</strong>
-              <a href="/editorial/conseils/conseils-candidature/cv.html" class="mobile-menu-subitem">Rédiger son CV</a>
-              <a href="/editorial/conseils/conseils-candidature/lettre-de-motivation.html" class="mobile-menu-subitem">Assurer sa lettre de motivation</a>
-              <a href="/editorial/conseils/conseils-candidature/entretien-embauche.html" class="mobile-menu-subitem">Préparer son entretien d'embauche</a>
-              <a href="/editorial/conseils/conseils-candidature.html" class="mobile-menu-subitem">Postuler au bon moment</a>
-              <a href="/emploi/entreprendre" class="mobile-menu-subitem">Se lancer dans l'entrepreneuriat</a>
-              
+              <strong class="mobile-menu-section-title"
+                >Chercher ailleurs</strong
+              >
+              <a
+                href="/editorial/conseils/conseils-candidature/cv.html"
+                class="mobile-menu-subitem"
+                >Rédiger son CV</a
+              >
+              <a
+                href="/editorial/conseils/conseils-candidature/lettre-de-motivation.html"
+                class="mobile-menu-subitem"
+                >Assurer sa lettre de motivation</a
+              >
+              <a
+                href="/editorial/conseils/conseils-candidature/entretien-embauche.html"
+                class="mobile-menu-subitem"
+                >Préparer son entretien d'embauche</a
+              >
+              <a
+                href="/editorial/conseils/conseils-candidature.html"
+                class="mobile-menu-subitem"
+                >Postuler au bon moment</a
+              >
+              <a href="/emploi/entreprendre" class="mobile-menu-subitem"
+                >Se lancer dans l'entrepreneuriat</a
+              >
+
               <strong class="mobile-menu-section-title">Se former</strong>
-              <a href="/editorial/tag/management" class="mobile-menu-subitem">Améliorer son management</a>
-              <a href="/editorial/formation/conseils-secteur.html" class="mobile-menu-subitem">Découvrir les formations par secteur</a>
-              <a href="/editorial/formation/cpf-cif-vae.html" class="mobile-menu-subitem">Choisir le bon dispositif CPF et VAE</a>
-              <a href="/editorial/formation/mba-ms-masters.html" class="mobile-menu-subitem">Choisir un MBA / MS / Masters</a>
-              <a href="/editorial/formation/langues.html" class="mobile-menu-subitem">Développer ses compétences linguistiques</a>
-              
-              <strong class="mobile-menu-section-title">Trouver mon premier job</strong>
-              <a href="/editorial/conseils/fiches-metiers.html" class="mobile-menu-subitem">Fiches métiers</a>
-              <a href="/outils/salaire-brut-net" class="mobile-menu-subitem">Salaire brut net</a>
+              <a href="/editorial/tag/management" class="mobile-menu-subitem"
+                >Améliorer son management</a
+              >
+              <a
+                href="/editorial/formation/conseils-secteur.html"
+                class="mobile-menu-subitem"
+                >Découvrir les formations par secteur</a
+              >
+              <a
+                href="/editorial/formation/cpf-cif-vae.html"
+                class="mobile-menu-subitem"
+                >Choisir le bon dispositif CPF et VAE</a
+              >
+              <a
+                href="/editorial/formation/mba-ms-masters.html"
+                class="mobile-menu-subitem"
+                >Choisir un MBA / MS / Masters</a
+              >
+              <a
+                href="/editorial/formation/langues.html"
+                class="mobile-menu-subitem"
+                >Développer ses compétences linguistiques</a
+              >
+
+              <strong class="mobile-menu-section-title"
+                >Trouver mon premier job</strong
+              >
+              <a
+                href="/editorial/conseils/fiches-metiers.html"
+                class="mobile-menu-subitem"
+                >Fiches métiers</a
+              >
+              <a href="/outils/salaire-brut-net" class="mobile-menu-subitem"
+                >Salaire brut net</a
+              >
             </div>
           </div>
-          
+
           <div class="mobile-menu-buttons">
             <a href="/depot-cv" class="mobile-menu-btn">Déposer mon CV</a>
-            <a href="/emploi/createur_cv" class="mobile-menu-btn">Créer mon CV</a>
+            <a href="/emploi/createur_cv" class="mobile-menu-btn"
+              >Créer mon CV</a
+            >
           </div>
         </div>
       </div>
     </div>
-    
+
     <!-- Modal de connexion -->
-    <div class="auth-modal-overlay" id="auth-modal" style="display: none;">
-      <div class="v-overlay__content" tabindex="-1" style="max-width: 665px;">
+    <div class="auth-modal-overlay" id="auth-modal" style="display: none">
+      <div class="v-overlay__content" tabindex="-1" style="max-width: 665px">
         <div class="modal-container bg-white">
-          <button type="button" class="close-modal-btn" aria-label="Fermer" id="close-modal">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-              <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
+          <button
+            type="button"
+            class="close-modal-btn"
+            aria-label="Fermer"
+            id="close-modal"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+            >
+              <path
+                d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
+              ></path>
             </svg>
           </button>
           <div class="modal-content">
             <h5 class="title-espace-perso">Je me connecte</h5>
-            <div class="d-flex ga-3" style="margin-bottom: 24px;">
+            <div class="d-flex ga-3" style="margin-bottom: 24px">
               <div class="flex-fill">
-                <button type="button" class="v-btn v-theme--ceTheme text-blue-600 v-btn--density-default rounded-lg v-btn--size-default v-btn--variant-outlined social-btn py-3 py-md-4" id="btn-google-login" data-provider="google">
+                <button
+                  type="button"
+                  class="v-btn v-theme--ceTheme text-blue-600 v-btn--density-default rounded-lg v-btn--size-default v-btn--variant-outlined social-btn py-3 py-md-4"
+                  id="btn-google-login"
+                  data-provider="google"
+                >
                   <span class="v-btn__content" data-no-activator="">
-                    <img src="data:image/svg+xml,%3csvg%20width='28'%20height='24'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M7.45456%2020.9116V11.6869L4.57878%209.06959L2%207.61719V19.2837C2%2020.1845%202.73359%2020.9116%203.63641%2020.9116H7.45456Z'%20fill='%234285F4'/%3e%3cpath%20d='M20.5449%2020.9115H24.3631C25.2686%2020.9115%2025.9995%2020.1817%2025.9995%2019.2836V7.61719L23.0786%209.28074L20.5449%2011.6868V20.9115Z'%20fill='%2334A853'/%3e%3cpath%20d='M7.45479%2011.6869L7.06348%208.08256L7.45479%204.63281L14.0002%209.5165L20.5457%204.63281L20.9834%207.89631L20.5457%2011.6869L14.0002%2016.5706L7.45479%2011.6869Z'%20fill='%23EA4335'/%3e%3cpath%20d='M20.5449%204.63247V11.6866L25.9995%207.61692V5.44639C25.9995%203.43328%2023.6895%202.28566%2022.0723%203.49297L20.5449%204.63247Z'%20fill='%23FBBC04'/%3e%3cpath%20d='M2%207.61697L4.50866%209.48878L7.45456%2011.6866V4.63251L5.92719%203.49301C4.30719%202.28561%202%203.43332%202%205.44634V7.61697Z'%20fill='%23C5221F'/%3e%3c/svg%3e" alt="Google" class="social-icon">
+                    <img
+                      src="data:image/svg+xml,%3csvg%20width='28'%20height='24'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M7.45456%2020.9116V11.6869L4.57878%209.06959L2%207.61719V19.2837C2%2020.1845%202.73359%2020.9116%203.63641%2020.9116H7.45456Z'%20fill='%234285F4'/%3e%3cpath%20d='M20.5449%2020.9115H24.3631C25.2686%2020.9115%2025.9995%2020.1817%2025.9995%2019.2836V7.61719L23.0786%209.28074L20.5449%2011.6868V20.9115Z'%20fill='%2334A853'/%3e%3cpath%20d='M7.45479%2011.6869L7.06348%208.08256L7.45479%204.63281L14.0002%209.5165L20.5457%204.63281L20.9834%207.89631L20.5457%2011.6869L14.0002%2016.5706L7.45479%2011.6869Z'%20fill='%23EA4335'/%3e%3cpath%20d='M20.5449%204.63247V11.6866L25.9995%207.61692V5.44639C25.9995%203.43328%2023.6895%202.28566%2022.0723%203.49297L20.5449%204.63247Z'%20fill='%23FBBC04'/%3e%3cpath%20d='M2%207.61697L4.50866%209.48878L7.45456%2011.6866V4.63251L5.92719%203.49301C4.30719%202.28561%202%203.43332%202%205.44634V7.61697Z'%20fill='%23C5221F'/%3e%3c/svg%3e"
+                      alt="Google"
+                      class="social-icon"
+                    />
                     <span class="ml-2 d-md-block d-none">Google</span>
                   </span>
                 </button>
               </div>
               <div class="flex-fill">
-                <button type="button" class="v-btn v-theme--ceTheme text-blue-600 v-btn--density-default rounded-lg v-btn--size-default v-btn--variant-outlined social-btn py-3 py-md-4" id="btn-linkedin-login" data-provider="linkedin">
+                <button
+                  type="button"
+                  class="v-btn v-theme--ceTheme text-blue-600 v-btn--density-default rounded-lg v-btn--size-default v-btn--variant-outlined social-btn py-3 py-md-4"
+                  id="btn-linkedin-login"
+                  data-provider="linkedin"
+                >
                   <span class="v-btn__content" data-no-activator="">
-                    <img src="data:image/svg+xml,%3csvg%20width='39'%20height='37'%20viewBox='0%200%2039%2037'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M8.18468%204.09439C8.18414%205.17974%207.75246%206.22043%206.98462%206.98751C6.21677%207.75459%205.17565%208.18522%204.0903%208.18468C3.00494%208.18414%201.96425%207.75246%201.19717%206.98462C0.430093%206.21677%20-0.000542166%205.17565%205.12282e-07%204.09029C0.00054319%203.00494%200.43222%201.96425%201.20007%201.19717C1.96791%200.430093%203.00903%20-0.000542166%204.09439%205.12282e-07C5.17974%200.00054319%206.22043%200.43222%206.98751%201.20007C7.75459%201.96791%208.18523%203.00903%208.18468%204.09439ZM8.30745%2011.2151H0.122771V36.8331H8.30745V11.2151ZM21.2392%2011.2151H13.0955V36.8331H21.1574V23.3898C21.1574%2015.9008%2030.9176%2015.2051%2030.9176%2023.3898V36.8331H39V20.607C39%207.98211%2024.554%208.45273%2021.1574%2014.6526L21.2392%2011.2151Z'%20fill='%2332559A'/%3e%3c/svg%3e" alt="LinkedIn" class="social-icon">
+                    <img
+                      src="data:image/svg+xml,%3csvg%20width='39'%20height='37'%20viewBox='0%200%2039%2037'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M8.18468%204.09439C8.18414%205.17974%207.75246%206.22043%206.98462%206.98751C6.21677%207.75459%205.17565%208.18522%204.0903%208.18468C3.00494%208.18414%201.96425%207.75246%201.19717%206.98462C0.430093%206.21677%20-0.000542166%205.17565%205.12282e-07%204.09029C0.00054319%203.00494%200.43222%201.96425%201.20007%201.19717C1.96791%200.430093%203.00903%20-0.000542166%204.09439%205.12282e-07C5.17974%200.00054319%206.22043%200.43222%206.98751%201.20007C7.75459%201.96791%208.18523%203.00903%208.18468%204.09439ZM8.30745%2011.2151H0.122771V36.8331H8.30745V11.2151ZM21.2392%2011.2151H13.0955V36.8331H21.1574V23.3898C21.1574%2015.9008%2030.9176%2015.2051%2030.9176%2023.3898V36.8331H39V20.607C39%207.98211%2024.554%208.45273%2021.1574%2014.6526L21.2392%2011.2151Z'%20fill='%2332559A'/%3e%3c/svg%3e"
+                      alt="LinkedIn"
+                      class="social-icon"
+                    />
                     <span class="ml-2 d-md-block d-none">LinkedIn</span>
                   </span>
                 </button>
@@ -2311,46 +2892,179 @@
               <span class="divider-text">ou se connecter par e-mail</span>
               <div class="divider-line"></div>
             </div>
-            <form id="login-form" name="modaleLogin" action="/emploi/login" method="POST" class="v-form d-flex flex-column ga-1" novalidate="">
-              <input type="hidden" name="urlRedirection" value="" id="url-redirection">
-              <input type="hidden" name="recaptcha_token" value="" id="recaptcha-token">
-              
+            <form
+              id="login-form"
+              name="modaleLogin"
+              action="/emploi/login"
+              method="POST"
+              class="v-form d-flex flex-column ga-1"
+              novalidate=""
+            >
+              <input
+                type="hidden"
+                name="urlRedirection"
+                value=""
+                id="url-redirection"
+              />
+              <input
+                type="hidden"
+                name="recaptcha_token"
+                value=""
+                id="recaptcha-token"
+              />
+
               <div class="field-wrapper">
-                <label class="v-label mb-2 text-high-emphasis">Adresse email</label>
-                <input name="email" id="email-input" autocomplete="email" placeholder="Saisissez votre email" type="email" class="v-field__input" required style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px;">
-                <div id="email-error" class="error-message" style="display: none;">L'adresse email est invalide.</div>
+                <label class="v-label mb-2 text-high-emphasis"
+                  >Adresse email</label
+                >
+                <input
+                  name="email"
+                  id="email-input"
+                  autocomplete="email"
+                  placeholder="Saisissez votre email"
+                  type="email"
+                  class="v-field__input"
+                  required
+                  style="
+                    width: 100%;
+                    padding: 12px;
+                    border: 1px solid #ccc;
+                    border-radius: 8px;
+                  "
+                />
+                <div
+                  id="email-error"
+                  class="error-message"
+                  style="display: none"
+                >
+                  L'adresse email est invalide.
+                </div>
               </div>
               <div class="field-wrapper">
-                <label class="v-label mb-2 text-high-emphasis">Mot de passe</label>
-                <div style="position: relative;">
-                  <input name="password" id="password-input" autocomplete="current-password" placeholder="Saisissez votre mot de passe" type="password" class="v-field__input" required style="width: 100%; padding: 12px 48px 12px 12px; border: 1px solid #ccc; border-radius: 8px;">
+                <label class="v-label mb-2 text-high-emphasis"
+                  >Mot de passe</label
+                >
+                <div style="position: relative">
+                  <input
+                    name="password"
+                    id="password-input"
+                    autocomplete="current-password"
+                    placeholder="Saisissez votre mot de passe"
+                    type="password"
+                    class="v-field__input"
+                    required
+                    style="
+                      width: 100%;
+                      padding: 12px 48px 12px 12px;
+                      border: 1px solid #ccc;
+                      border-radius: 8px;
+                    "
+                  />
                   <div class="v-field__append-inner">
-                    <i class="v-icon notranslate v-theme--ceTheme v-icon--size-default v-icon--clickable" role="button" aria-hidden="false" tabindex="0" aria-label="Afficher/masquer le mot de passe" id="toggle-password">
-                      <svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
-                        <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"></path>
+                    <i
+                      class="v-icon notranslate v-theme--ceTheme v-icon--size-default v-icon--clickable"
+                      role="button"
+                      aria-hidden="false"
+                      tabindex="0"
+                      aria-label="Afficher/masquer le mot de passe"
+                      id="toggle-password"
+                    >
+                      <svg
+                        class="v-icon__svg"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        role="img"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"
+                        ></path>
                       </svg>
                     </i>
                   </div>
                 </div>
               </div>
               <div class="text-right mb-2 text-caption">
-                <a href="/emploi/oubli_mdp" class="font-weight-bold text-blue-600 text-decoration-underline">J'ai oublié mon mot de passe</a>
+                <a
+                  href="/emploi/oubli_mdp"
+                  class="font-weight-bold text-blue-600 text-decoration-underline"
+                  >J'ai oublié mon mot de passe</a
+                >
               </div>
-              <button type="submit" id="login-submit-btn" class="connection-button bg-red-600 rounded-lg v-btn--disabled" disabled>  
-              <span class="v-btn__overlay"></span>
+              <button
+                type="submit"
+                id="login-submit-btn"
+                class="connection-button bg-red-600 rounded-lg v-btn--disabled"
+                disabled
+              >
+                <span class="v-btn__overlay"></span>
                 <span class="v-btn__underlay"></span>
-                <span class="v-btn__content" data-no-activator="">Je me connecte</span>
+                <span class="v-btn__content" data-no-activator=""
+                  >Je me connecte</span
+                >
               </button>
             </form>
-            <div class="d-flex flex-column ga-4" style="margin-top: 24px;">
-              <div class="text-pale-grey-40 text-caption" style="font-size: 14px;">
+            <div class="d-flex flex-column ga-4" style="margin-top: 24px">
+              <div
+                class="text-pale-grey-40 text-caption"
+                style="font-size: 14px"
+              >
                 <span>Vous avez déjà un compte ? </span>
-                <a href="/emploi/creer_compte" class="font-weight-bold text-blue-600 text-decoration-underline">Je m'inscris</a>
+                <a
+                  href="/emploi/creer_compte"
+                  class="font-weight-bold text-blue-600 text-decoration-underline"
+                  >Je m'inscris</a
+                >
               </div>
-              <p class="privacy-text" id="privacy-text" style="font-size: 12px; color: #666; line-height: 1.5; margin: 0;">
-                <span id="privacy-text-short">Nous recueillons vos données à caractère personnel afin de vous fournir les services auxquels vous souscrivez et notamment... </span>
-                <span id="privacy-text-full" style="display: none;">Nous recueillons vos données à caractère personnel afin de vous fournir les services auxquels vous souscrivez et notamment : assurer la création et la gestion de votre compte, vous proposer des entreprises et offres d'emploi susceptibles de vous intéresser, vous adresser nos newsletters d'information et autres services souscrits. Nous les utiliserons également, sous réserve des options souscrites, à des fins de ciblage publicitaire et de prospection commerciale au sein de notre Groupe, ainsi qu'avec nos partenaires commerciaux (salons, formation continue, cours de langue, service CV, invitations, etc.). Vous disposez à tout moment d'un droit d'accès, de rectification, de suppression et d'opposition relativement aux données vous concernant dans les limites prévues par la loi. Vous pouvez également à tout moment revoir vos options en matière de prospection commerciale et de ciblage. Ces droits peuvent être exercés à tout moment en écrivant à l'adresse <a class="text-blue-600" href="mailto:DPO_cadremploi@figarocms.fr">DPO_cadremploi@figarocms.fr</a>. Cadremploi est un service fourni par la société Figaro Classifieds. Pour en savoir plus sur la confidentialité et la protection des données que vous nous communiquez, <a class="text-blue-600" href="https://www.cadremploi.fr/emploi/legal/politique-confidentialite">cliquez ici</a>.</span>
-                <a href="#" id="privacy-toggle" class="text-blue-600">Lire plus</a>
+              <p
+                class="privacy-text"
+                id="privacy-text"
+                style="
+                  font-size: 12px;
+                  color: #666;
+                  line-height: 1.5;
+                  margin: 0;
+                "
+              >
+                <span id="privacy-text-short"
+                  >Nous recueillons vos données à caractère personnel afin de
+                  vous fournir les services auxquels vous souscrivez et
+                  notamment...
+                </span>
+                <span id="privacy-text-full" style="display: none"
+                  >Nous recueillons vos données à caractère personnel afin de
+                  vous fournir les services auxquels vous souscrivez et
+                  notamment : assurer la création et la gestion de votre compte,
+                  vous proposer des entreprises et offres d'emploi susceptibles
+                  de vous intéresser, vous adresser nos newsletters
+                  d'information et autres services souscrits. Nous les
+                  utiliserons également, sous réserve des options souscrites, à
+                  des fins de ciblage publicitaire et de prospection commerciale
+                  au sein de notre Groupe, ainsi qu'avec nos partenaires
+                  commerciaux (salons, formation continue, cours de langue,
+                  service CV, invitations, etc.). Vous disposez à tout moment
+                  d'un droit d'accès, de rectification, de suppression et
+                  d'opposition relativement aux données vous concernant dans les
+                  limites prévues par la loi. Vous pouvez également à tout
+                  moment revoir vos options en matière de prospection
+                  commerciale et de ciblage. Ces droits peuvent être exercés à
+                  tout moment en écrivant à l'adresse
+                  <a
+                    class="text-blue-600"
+                    href="mailto:DPO_cadremploi@figarocms.fr"
+                    >DPO_cadremploi@figarocms.fr</a
+                  >. Cadremploi est un service fourni par la société Figaro
+                  Classifieds. Pour en savoir plus sur la confidentialité et la
+                  protection des données que vous nous communiquez,
+                  <a
+                    class="text-blue-600"
+                    href="https://www.cadremploi.fr/emploi/legal/politique-confidentialite"
+                    >cliquez ici</a
+                  >.</span
+                >
+                <a href="#" id="privacy-toggle" class="text-blue-600"
+                  >Lire plus</a
+                >
               </p>
             </div>
           </div>
@@ -2372,7 +3086,6 @@
           <h1 class="hero__title">
             La Tech cadre<br />
             recrute <span class="accent">ici</span>.<br />
-            
           </h1>
           <p class="hero__sub">
             De développeur confirmé à CTO, de data engineer à VP Engineering.
@@ -2386,8 +3099,6 @@
             <a
               href="https://www.cadremploi.fr/emploi/liste_offres?query=informatique"
               class="btn-red"
-             
-             
             >
               Voir les offres Tech
             </a>
@@ -2823,7 +3534,7 @@
                 critiques, hébergement sécurisé et services IT.
               </p>
               <a
-                href="https://www.cadremploi.fr/emploi/detail_offre?offreId=156534173459933798"
+                href="https://www.cadremploi.fr/emploi/liste_offres?entrepriseid=150823032908285442"
                 class="ent-card__link"
                 >Voir les offres →</a
               >
@@ -3129,7 +3840,6 @@
           <article class="edito-card edito-card--big">
             <a
               href="https://www.cadremploi.fr/editorial/actualites/actu-emploi/enleve-ta-casquette-tonton-karim-podcast-episode1"
-             
               rel="noopener"
               style="display: contents"
             >
@@ -3164,7 +3874,6 @@
           <article class="edito-card">
             <a
               href="https://www.cadremploi.fr/editorial/conseils/informatique-telecoms-web/developpeur-full-stack"
-             
               rel="noopener"
               style="display: contents"
             >
@@ -3196,7 +3905,6 @@
           <article class="edito-card">
             <a
               href="https://www.cadremploi.fr/editorial/conseils/informatique-telecoms-web/chief-data-officer"
-             
               rel="noopener"
               style="display: contents"
             >
@@ -3228,7 +3936,6 @@
           <article class="edito-card">
             <a
               href="https://www.cadremploi.fr/editorial/conseils/informatique-telecoms-web/master-data-manager"
-             
               rel="noopener"
               style="display: contents"
             >
@@ -3260,7 +3967,6 @@
           <article class="edito-card">
             <a
               href="https://www.cadremploi.fr/editorial/conseils/informatique-telecoms-web/chief-product-officer"
-             
               rel="noopener"
               style="display: contents"
             >
@@ -3297,7 +4003,7 @@
     <!-- ══════════════════════════════════════════
      FOOTER — repris depuis la prod Cadremploi
      ══════════════════════════════════════════ -->
-<footer>
+    <footer>
       <div class="top-footer bg-primary py-2">
         <div class="wrapper d-flex flex-wrap">
           <a href="/" class="mr-6">
@@ -3307,9 +4013,11 @@
               alt="Cadremploi"
               height="32"
               width="200"
-            >
+            />
           </a>
-          <span class="text-h6 font-weight-medium text-white">TOUJOURS LA RÉFÉRENCE DEPUIS 1991</span>
+          <span class="text-h6 font-weight-medium text-white"
+            >TOUJOURS LA RÉFÉRENCE DEPUIS 1991</span
+          >
         </div>
       </div>
 
@@ -3319,11 +4027,24 @@
             <div class="footer-links">
               <div class="title">Besoin d'aide ?</div>
               <a href="/emploi/contact">Contactez-nous</a>
-              <a href="https://cadremploi.zendesk.com/hc/fr" target="_blank" rel="noopener">Questions fréquentes</a>
-              <a href="/emploi/legal/conditions-generales-utilisation">Conditions Générales d'Utilisation</a>
-              <a href="/emploi/legal/politique-confidentialite">Politique de confidentialité</a>
-              <a href="/emploi/legal/politique-cookie">Informations sur les cookies</a>
-              <button class="cmp-button" id="cookies-button">Paramétrer les cookies</button>
+              <a
+                href="https://cadremploi.zendesk.com/hc/fr"
+                target="_blank"
+                rel="noopener"
+                >Questions fréquentes</a
+              >
+              <a href="/emploi/legal/conditions-generales-utilisation"
+                >Conditions Générales d'Utilisation</a
+              >
+              <a href="/emploi/legal/politique-confidentialite"
+                >Politique de confidentialité</a
+              >
+              <a href="/emploi/legal/politique-cookie"
+                >Informations sur les cookies</a
+              >
+              <button class="cmp-button" id="cookies-button">
+                Paramétrer les cookies
+              </button>
             </div>
           </div>
 
@@ -3331,11 +4052,23 @@
             <div class="footer-links">
               <div class="title">Plan du site</div>
               <a href="/emploi/createur_cv">Créer CV en ligne</a>
-              <a href="/outils/salaire-brut-net" data-ga-label="calculateur-salaire">Salaire brut net</a>
-              <a href="/emploi/plan_site/metiers">Les offres d'emploi par métier</a>
-              <a href="/emploi/plan_site/localites">Les offres d'emploi par région</a>
-              <a href="/emploi/plan_site/secteurs">Les offres d'emploi par secteurs</a>
-              <a href="/emploi/plan_site/entreprises">Toutes les entreprises qui recrutent</a>
+              <a
+                href="/outils/salaire-brut-net"
+                data-ga-label="calculateur-salaire"
+                >Salaire brut net</a
+              >
+              <a href="/emploi/plan_site/metiers"
+                >Les offres d'emploi par métier</a
+              >
+              <a href="/emploi/plan_site/localites"
+                >Les offres d'emploi par région</a
+              >
+              <a href="/emploi/plan_site/secteurs"
+                >Les offres d'emploi par secteurs</a
+              >
+              <a href="/emploi/plan_site/entreprises"
+                >Toutes les entreprises qui recrutent</a
+              >
               <a href="/emploi/plan_site/hubs">Les dossiers édito</a>
             </div>
           </div>
@@ -3345,8 +4078,15 @@
               <div class="title">Qui sommes-nous ?</div>
               <a href="/emploi/a-propos">A propos de Cadremploi</a>
               <a href="/emploi/legal/mentions-legales">Mentions légales</a>
-              <a href="https://classifieds.lefigaro.fr/tag/cadremploi/" target="_blank" rel="noopener">Espace presse</a>
-              <a href="/emploi/liste_offres?entrepriseId=150957506981652">Rejoignez-nous</a>
+              <a
+                href="https://classifieds.lefigaro.fr/tag/cadremploi/"
+                target="_blank"
+                rel="noopener"
+                >Espace presse</a
+              >
+              <a href="/emploi/liste_offres?entrepriseId=150957506981652"
+                >Rejoignez-nous</a
+              >
               <a href="https://www.groupefigaro.com/">Groupe Figaro</a>
             </div>
           </div>
@@ -3354,58 +4094,130 @@
           <div class="v-col-sm-6 v-col-md-4 order-md-5 v-col-12">
             <div class="footer-links">
               <div class="title">Vous êtes recruteurs ?</div>
-              <a href="https://espace-recruteurs.cadremploi.fr">Déposer une offre d'emploi</a>
+              <a href="https://espace-recruteurs.cadremploi.fr"
+                >Déposer une offre d'emploi</a
+              >
             </div>
           </div>
 
           <div class="v-col-sm-6 v-col-md-4 v-col-12">
             <div class="reseaux-sociaux">
-              <div class="title follow-us">Suivez-nous sur les réseaux sociaux</div>
+              <div class="title follow-us">
+                Suivez-nous sur les réseaux sociaux
+              </div>
               <div class="social-buttons-wrapper">
-              <a href="https://fr-fr.facebook.com/Cadremploi" class="v-btn v-btn--elevated v-btn--icon v-theme--ceTheme v-btn--density-default v-btn--size-small v-btn--variant-elevated mr-4" aria-label="Cadremploi sur Facebook" target="_blank" rel="noopener">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <span class="v-btn__content" data-no-activator="">
-                  <i class="v-icon notranslate v-theme--ceTheme v-icon--size-default" aria-hidden="true">
-                    <svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
-                      <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"></path>
-                    </svg>
-                  </i>
-                </span>
-              </a>
-              <a href="https://twitter.com/cadremploi" class="v-btn v-btn--elevated v-btn--icon v-theme--ceTheme v-btn--density-default v-btn--size-small v-btn--variant-elevated mr-4" aria-label="Cadremploi sur Twitter" target="_blank" rel="noopener">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <span class="v-btn__content" data-no-activator="">
-                  <i class="v-icon notranslate v-theme--ceTheme v-icon--size-default" aria-hidden="true">
-                    <svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
-                      <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path>
-                    </svg>
-                  </i>
-                </span>
-              </a>
-              <a href="https://www.instagram.com/cadremploi" class="v-btn v-btn--elevated v-btn--icon v-theme--ceTheme v-btn--density-default v-btn--size-small v-btn--variant-elevated mr-4" aria-label="Cadremploi sur Instagram" target="_blank" rel="noopener">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <span class="v-btn__content" data-no-activator="">
-                  <i class="v-icon notranslate v-theme--ceTheme v-icon--size-default" aria-hidden="true">
-                    <svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
-                      <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"></path>
-                    </svg>
-                  </i>
-                </span>
-              </a>
-              <a href="https://www.youtube.com/channel/UCoOHw1a7sPOBQ0_RaLVzYQA" class="v-btn v-btn--elevated v-btn--icon v-theme--ceTheme v-btn--density-default v-btn--size-small v-btn--variant-elevated" aria-label="Cadremploi sur YouTube" target="_blank" rel="noopener">
-                <span class="v-btn__overlay"></span>
-                <span class="v-btn__underlay"></span>
-                <span class="v-btn__content" data-no-activator="">
-                  <i class="v-icon notranslate v-theme--ceTheme v-icon--size-default" aria-hidden="true">
-                    <svg class="v-icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
-                      <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"></path>
-                    </svg>
-                  </i>
-                </span>
-              </a>
+                <a
+                  href="https://fr-fr.facebook.com/Cadremploi"
+                  class="v-btn v-btn--elevated v-btn--icon v-theme--ceTheme v-btn--density-default v-btn--size-small v-btn--variant-elevated mr-4"
+                  aria-label="Cadremploi sur Facebook"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <span class="v-btn__overlay"></span>
+                  <span class="v-btn__underlay"></span>
+                  <span class="v-btn__content" data-no-activator="">
+                    <i
+                      class="v-icon notranslate v-theme--ceTheme v-icon--size-default"
+                      aria-hidden="true"
+                    >
+                      <svg
+                        class="v-icon__svg"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        role="img"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"
+                        ></path>
+                      </svg>
+                    </i>
+                  </span>
+                </a>
+                <a
+                  href="https://twitter.com/cadremploi"
+                  class="v-btn v-btn--elevated v-btn--icon v-theme--ceTheme v-btn--density-default v-btn--size-small v-btn--variant-elevated mr-4"
+                  aria-label="Cadremploi sur Twitter"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <span class="v-btn__overlay"></span>
+                  <span class="v-btn__underlay"></span>
+                  <span class="v-btn__content" data-no-activator="">
+                    <i
+                      class="v-icon notranslate v-theme--ceTheme v-icon--size-default"
+                      aria-hidden="true"
+                    >
+                      <svg
+                        class="v-icon__svg"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        role="img"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"
+                        ></path>
+                      </svg>
+                    </i>
+                  </span>
+                </a>
+                <a
+                  href="https://www.instagram.com/cadremploi"
+                  class="v-btn v-btn--elevated v-btn--icon v-theme--ceTheme v-btn--density-default v-btn--size-small v-btn--variant-elevated mr-4"
+                  aria-label="Cadremploi sur Instagram"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <span class="v-btn__overlay"></span>
+                  <span class="v-btn__underlay"></span>
+                  <span class="v-btn__content" data-no-activator="">
+                    <i
+                      class="v-icon notranslate v-theme--ceTheme v-icon--size-default"
+                      aria-hidden="true"
+                    >
+                      <svg
+                        class="v-icon__svg"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        role="img"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"
+                        ></path>
+                      </svg>
+                    </i>
+                  </span>
+                </a>
+                <a
+                  href="https://www.youtube.com/channel/UCoOHw1a7sPOBQ0_RaLVzYQA"
+                  class="v-btn v-btn--elevated v-btn--icon v-theme--ceTheme v-btn--density-default v-btn--size-small v-btn--variant-elevated"
+                  aria-label="Cadremploi sur YouTube"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <span class="v-btn__overlay"></span>
+                  <span class="v-btn__underlay"></span>
+                  <span class="v-btn__content" data-no-activator="">
+                    <i
+                      class="v-icon notranslate v-theme--ceTheme v-icon--size-default"
+                      aria-hidden="true"
+                    >
+                      <svg
+                        class="v-icon__svg"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        role="img"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"
+                        ></path>
+                      </svg>
+                    </i>
+                  </span>
+                </a>
               </div>
             </div>
           </div>
@@ -3413,8 +4225,19 @@
           <div class="v-col-sm-6 v-col-md-4 v-col-12 order-6">
             <div class="app-store-download">
               <div class="title">Téléchargez notre appli</div>
-              <a href="https://itunes.apple.com/app/apple-store/id383089648?pt=318717&ct=footerCadremploi&mt=8" target="_blank" rel="noopener" aria-label="Application sur l'App Store">
-                <img src="https://hr-cdn.carriere.fcms.io/assets/ce-front/main-20260203103825-bd140521/_nuxt/app-store.D32XLR7N.svg" loading="lazy" width="130" height="35" alt="App Store">
+              <a
+                href="https://itunes.apple.com/app/apple-store/id383089648?pt=318717&ct=footerCadremploi&mt=8"
+                target="_blank"
+                rel="noopener"
+                aria-label="Application sur l'App Store"
+              >
+                <img
+                  src="https://hr-cdn.carriere.fcms.io/assets/ce-front/main-20260203103825-bd140521/_nuxt/app-store.D32XLR7N.svg"
+                  loading="lazy"
+                  width="130"
+                  height="35"
+                  alt="App Store"
+                />
               </a>
             </div>
           </div>
@@ -3488,516 +4311,558 @@
     <script src="js/ticker.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/main.js"></script>
-  
-  <!-- Scripts header/footer prod -->
-  <script>
-  (function() {
 
-      (function() {
-        // Vérifier si déjà initialisé pour éviter les doublons
-        if (window.__headerDropdownsInitialized) {
-          return;
-        }
-        
-        // Fonction d'initialisation
-        function initDropdowns() {
-          const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-          
-          // Vérifier si les éléments existent
-          if (dropdownToggles.length === 0) {
-            setTimeout(initDropdowns, 100);
+    <!-- Scripts header/footer prod -->
+    <script>
+      (function () {
+        (function () {
+          // Vérifier si déjà initialisé pour éviter les doublons
+          if (window.__headerDropdownsInitialized) {
             return;
           }
-          
-          let currentOpenMenu = null;
-          
-          // Fonction pour fermer tous les menus
-          function closeAllMenus() {
-            document.querySelectorAll('.dropdown-menu').forEach(menu => {
-              menu.classList.remove('show');
-              menu.style.display = 'none';
+
+          // Fonction d'initialisation
+          function initDropdowns() {
+            const dropdownToggles =
+              document.querySelectorAll(".dropdown-toggle");
+
+            // Vérifier si les éléments existent
+            if (dropdownToggles.length === 0) {
+              setTimeout(initDropdowns, 100);
+              return;
+            }
+
+            let currentOpenMenu = null;
+
+            // Fonction pour fermer tous les menus
+            function closeAllMenus() {
+              document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+                menu.classList.remove("show");
+                menu.style.display = "none";
+              });
+              document
+                .querySelectorAll(".dropdown-toggle")
+                .forEach((toggle) => {
+                  toggle.setAttribute("aria-expanded", "false");
+                });
+              currentOpenMenu = null;
+            }
+
+            // Fonction pour ouvrir un menu
+            function openMenu(toggle, menu) {
+              closeAllMenus();
+              menu.classList.add("show");
+              menu.style.display = "block";
+              toggle.setAttribute("aria-expanded", "true");
+              currentOpenMenu = menu;
+            }
+
+            // Ajouter un gestionnaire d'événements à chaque bouton
+            dropdownToggles.forEach(function (toggle) {
+              // Supprimer les anciens gestionnaires s'ils existent
+              toggle.onclick = null;
+
+              toggle.addEventListener(
+                "click",
+                function (e) {
+                  e.preventDefault();
+                  e.stopPropagation();
+
+                  const dropdownId = this.getAttribute("data-dropdown");
+                  const menu = document.getElementById("menu-" + dropdownId);
+
+                  if (menu) {
+                    if (menu.classList.contains("show")) {
+                      closeAllMenus();
+                    } else {
+                      openMenu(this, menu);
+                    }
+                  }
+                },
+                { once: false },
+              );
             });
-            document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-              toggle.setAttribute('aria-expanded', 'false');
-            });
-            currentOpenMenu = null;
+
+            // Gestionnaire pour fermer les menus quand on clique en dehors
+            const outsideClickHandler = function (e) {
+              if (!e.target.closest(".dropdown-wrapper")) {
+                closeAllMenus();
+              }
+            };
+
+            // Supprimer l'ancien gestionnaire s'il existe
+            if (window.__headerOutsideClickHandler) {
+              document.removeEventListener(
+                "click",
+                window.__headerOutsideClickHandler,
+              );
+            }
+            window.__headerOutsideClickHandler = outsideClickHandler;
+            document.addEventListener("click", outsideClickHandler);
+
+            // Gestionnaire pour la touche Escape
+            const escapeHandler = function (e) {
+              if (e.key === "Escape") {
+                closeAllMenus();
+              }
+            };
+
+            // Supprimer l'ancien gestionnaire s'il existe
+            if (window.__headerEscapeHandler) {
+              document.removeEventListener(
+                "keydown",
+                window.__headerEscapeHandler,
+              );
+            }
+            window.__headerEscapeHandler = escapeHandler;
+            document.addEventListener("keydown", escapeHandler);
+
+            // Marquer comme initialisé
+            window.__headerDropdownsInitialized = true;
+
+            // Initialiser la modal de connexion
+            initAuthModal();
+
+            // Initialiser le menu hamburger
+            initHamburgerMenu();
+
+            // Initialiser les boutons de connexion sociale
+            initSocialLoginButtons();
           }
-          
-          // Fonction pour ouvrir un menu
-          function openMenu(toggle, menu) {
-            closeAllMenus();
-            menu.classList.add('show');
-            menu.style.display = 'block';
-            toggle.setAttribute('aria-expanded', 'true');
-            currentOpenMenu = menu;
-          }
-          
-          // Ajouter un gestionnaire d'événements à chaque bouton
-          dropdownToggles.forEach(function(toggle) {
-            // Supprimer les anciens gestionnaires s'ils existent
-            toggle.onclick = null;
-            
-            toggle.addEventListener('click', function(e) {
+
+          // Fonction pour gérer le menu hamburger mobile
+          function initHamburgerMenu() {
+            const hamburgerBtn = document.querySelector(".v-app-bar-nav-icon");
+            const hamburgerIcon = hamburgerBtn
+              ? hamburgerBtn.querySelector("svg path")
+              : null;
+            const mobileMenuOverlay = document.getElementById(
+              "mobile-menu-overlay",
+            );
+            const mobileMenuDrawer =
+              document.getElementById("mobile-menu-drawer");
+
+            if (!hamburgerBtn || !mobileMenuOverlay || !hamburgerIcon) {
+              setTimeout(initHamburgerMenu, 100);
+              return;
+            }
+
+            // SVG paths
+            const hamburgerPath =
+              "M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z";
+            const closePath =
+              "M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z";
+
+            let isMenuOpen = false;
+
+            // Ouvrir/fermer le menu mobile
+            hamburgerBtn.addEventListener("click", function (e) {
               e.preventDefault();
               e.stopPropagation();
-              
-              const dropdownId = this.getAttribute('data-dropdown');
-              const menu = document.getElementById('menu-' + dropdownId);
-              
-              if (menu) {
-                if (menu.classList.contains('show')) {
-                  closeAllMenus();
-                } else {
-                  openMenu(this, menu);
-                }
-              }
-            }, { once: false });
-          });
-          
-          // Gestionnaire pour fermer les menus quand on clique en dehors
-          const outsideClickHandler = function(e) {
-            if (!e.target.closest('.dropdown-wrapper')) {
-              closeAllMenus();
-            }
-          };
-          
-          // Supprimer l'ancien gestionnaire s'il existe
-          if (window.__headerOutsideClickHandler) {
-            document.removeEventListener('click', window.__headerOutsideClickHandler);
-          }
-          window.__headerOutsideClickHandler = outsideClickHandler;
-          document.addEventListener('click', outsideClickHandler);
-          
-          // Gestionnaire pour la touche Escape
-          const escapeHandler = function(e) {
-            if (e.key === 'Escape') {
-              closeAllMenus();
-            }
-          };
-          
-          // Supprimer l'ancien gestionnaire s'il existe
-          if (window.__headerEscapeHandler) {
-            document.removeEventListener('keydown', window.__headerEscapeHandler);
-          }
-          window.__headerEscapeHandler = escapeHandler;
-          document.addEventListener('keydown', escapeHandler);
-          
-          // Marquer comme initialisé
-          window.__headerDropdownsInitialized = true;
-          
-          // Initialiser la modal de connexion
-          initAuthModal();
-          
-          // Initialiser le menu hamburger
-          initHamburgerMenu();
-          
-          // Initialiser les boutons de connexion sociale
-          initSocialLoginButtons();
-        }
-        
-        // Fonction pour gérer le menu hamburger mobile
-        function initHamburgerMenu() {
-          const hamburgerBtn = document.querySelector('.v-app-bar-nav-icon');
-          const hamburgerIcon = hamburgerBtn ? hamburgerBtn.querySelector('svg path') : null;
-          const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-          const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
-          
-          if (!hamburgerBtn || !mobileMenuOverlay || !hamburgerIcon) {
-            setTimeout(initHamburgerMenu, 100);
-            return;
-          }
-          
-          // SVG paths
-          const hamburgerPath = 'M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z';
-          const closePath = 'M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z';
-          
-          let isMenuOpen = false;
-          
-          // Ouvrir/fermer le menu mobile
-          hamburgerBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            if (!isMenuOpen) {
-              // Ouvrir le menu
-              mobileMenuOverlay.style.display = 'block';
-              setTimeout(() => {
-                mobileMenuOverlay.classList.add('show');
-              }, 10);
-              // Transformer en croix
-              hamburgerIcon.setAttribute('d', closePath);
-              isMenuOpen = true;
-            } else {
-              // Fermer le menu
-              closeMobileMenu();
-            }
-          });
-          
-          // Fermer le menu en cliquant sur l'overlay
-          mobileMenuOverlay.addEventListener('click', function(e) {
-            if (e.target === mobileMenuOverlay) {
-              closeMobileMenu();
-            }
-          });
-          
-          // Gérer les groupes pliables
-          const groupToggles = document.querySelectorAll('.mobile-menu-group-toggle');
-          groupToggles.forEach(toggle => {
-            toggle.addEventListener('click', function() {
-              const groupName = this.getAttribute('data-group');
-              const groupItems = document.getElementById('mobile-group-' + groupName);
-              const isActive = this.classList.contains('active');
-              
-              // Fermer tous les autres groupes
-              document.querySelectorAll('.mobile-menu-group-toggle').forEach(t => {
-                t.classList.remove('active');
-              });
-              document.querySelectorAll('.mobile-menu-group-items').forEach(g => {
-                g.classList.remove('show');
-                g.style.display = 'none';
-              });
-              
-              // Toggle le groupe actuel
-              if (!isActive) {
-                this.classList.add('active');
-                groupItems.style.display = 'block';
-                setTimeout(() => {
-                  groupItems.classList.add('show');
-                }, 10);
-              }
-            });
-          });
-          
-          // Fermer le menu avec la touche Échap
-          document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && mobileMenuOverlay.classList.contains('show')) {
-              closeMobileMenu();
-            }
-          });
-          
-          function closeMobileMenu() {
-            mobileMenuOverlay.classList.remove('show');
-            setTimeout(() => {
-              mobileMenuOverlay.style.display = 'none';
-            }, 300);
-            // Revenir au hamburger
-            hamburgerIcon.setAttribute('d', hamburgerPath);
-            isMenuOpen = false;
-          }
-          
-          // Rendre la fonction accessible globalement
-          window.__closeMobileMenu = closeMobileMenu;
-        }
-        
-        // Fonction pour gérer les boutons de connexion sociale
-        function initSocialLoginButtons() {
-          const btnGoogleLogin = document.getElementById('btn-google-login');
-          const btnLinkedinLogin = document.getElementById('btn-linkedin-login');
-          
-          if (!btnGoogleLogin || !btnLinkedinLogin) {
-            setTimeout(initSocialLoginButtons, 100);
-            return;
-          }
-          
-          // Map des providers avec leurs informations
-          const PROVIDERS_MAP = {
-            'google': {
-              name: 'Google',
-              path: '/emploi/auth/google',
-              gaLabel: 'clic_page_inscription_Google',
-            },
-            'linkedin': {
-              name: 'LinkedIn',
-              path: '/emploi/auth/linkedin',
-              gaLabel: 'clic_page_inscription_LinkedIn',
-            }
-          };
-          
-          // Fonction pour vérifier si un cookie SESSION existe
-          function hasSessionCookie() {
-            const cookies = document.cookie;
-            return cookies.includes('SESSION=');
-          }
-          
-          // Fonction pour gérer la connexion sociale
-          async function handleSocialLogin(provider) {
-            try {
-              const providerInfo = PROVIDERS_MAP[provider];
-              if (!providerInfo) return;
-              
-              // Si pas de session, essayer d'en créer une
-              if (!hasSessionCookie()) {
-                // Appel pour créer une session
-                try {
-                  await fetch('/emploi/api/session/create', {
-                    method: 'POST',
-                    credentials: 'include',
-                  });
-                } catch (err) {
-                  console.warn('Session creation failed:', err);
-                }
-              }
-              
-              // Préparer la redirection
-              try {
-                const response = await fetch('/emploi/api/social/prepare-redirect', {
-                  method: 'POST',
-                  credentials: 'include',
-                  headers: {
-                    'Content-Type': 'application/json',
-                  },
-                  body: JSON.stringify({
-                    currentUrl: window.location.href,
-                  }),
-                });
-                
-                if (!response.ok) {
-                  throw new Error('API Error');
-                }
-              } catch (err) {
-                console.warn('Prepare redirect failed:', err);
-              }
-              
-              // Rediriger vers le provider
-              window.location.href = providerInfo.path;
-            } catch (error) {
-              console.error('Social login error:', error);
-              // En cas d'erreur, tenter quand même la redirection
-              const providerInfo = PROVIDERS_MAP[provider];
-              if (providerInfo && providerInfo.path) {
-                window.location.href = providerInfo.path;
-              }
-            }
-          }
-          
-          // Ajouter les gestionnaires d'événements
-          btnGoogleLogin.addEventListener('click', function(e) {
-            e.preventDefault();
-            handleSocialLogin('google');
-          });
-          
-          btnLinkedinLogin.addEventListener('click', function(e) {
-            e.preventDefault();
-            handleSocialLogin('linkedin');
-          });
-        }
-        
-        // Fonction pour gérer la modal de connexion
-        function initAuthModal() {
-          const btnMonCompte = document.getElementById('btn-mon-compte');
-          const authModal = document.getElementById('auth-modal');
-          const closeModalBtn = document.getElementById('close-modal');
-          
-          if (!btnMonCompte || !authModal || !closeModalBtn) {
-            setTimeout(initAuthModal, 100);
-            return;
-          }
-          
-          // Gérer le toggle "Lire plus"
-          const privacyToggle = document.getElementById('privacy-toggle');
-          const privacyTextShort = document.getElementById('privacy-text-short');
-          const privacyTextFull = document.getElementById('privacy-text-full');
-          
-          if (privacyToggle && privacyTextShort && privacyTextFull) {
-            privacyToggle.addEventListener('click', function(e) {
-              e.preventDefault();
-              if (privacyTextFull.style.display === 'none') {
-                privacyTextShort.style.display = 'none';
-                privacyTextFull.style.display = 'inline';
-                privacyToggle.textContent = 'Lire moins';
-              } else {
-                privacyTextShort.style.display = 'inline';
-                privacyTextFull.style.display = 'none';
-                privacyToggle.textContent = 'Lire plus';
-              }
-            });
-          }
-          
-          // Gérer le toggle afficher/masquer mot de passe
-          const togglePassword = document.getElementById('toggle-password');
-          const passwordInput = document.getElementById('password-input');
-          
-          if (togglePassword && passwordInput) {
-            const eyeIcon = togglePassword.querySelector('svg path');
-            const eyeOpenPath = 'M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z';
-            const eyeClosedPath = 'M11.83,9L15,12.16C15,12.11 15,12.05 15,12A3,3 0 0,0 12,9C11.94,9 11.89,9 11.83,9M7.53,9.8L9.08,11.35C9.03,11.56 9,11.77 9,12A3,3 0 0,0 12,15C12.22,15 12.44,14.97 12.65,14.92L14.2,16.47C13.53,16.8 12.79,17 12,17A5,5 0 0,1 7,12C7,11.21 7.2,10.47 7.53,9.8M2,4.27L4.28,6.55L4.73,7C3.08,8.3 1.78,10 1,12C2.73,16.39 7,19.5 12,19.5C13.55,19.5 15.03,19.2 16.38,18.66L16.81,19.08L19.73,22L21,20.73L3.27,3M12,7A5,5 0 0,1 17,12C17,12.64 16.87,13.26 16.64,13.82L19.57,16.75C21.07,15.5 22.27,13.86 23,12C21.27,7.61 17,4.5 12,4.5C10.6,4.5 9.26,4.75 8,5.2L10.17,7.35C10.74,7.13 11.35,7 12,7Z';
-            
-            togglePassword.addEventListener('click', function() {
-              const type = passwordInput.getAttribute('type');
-              if (type === 'password') {
-                passwordInput.setAttribute('type', 'text');
-                if (eyeIcon) eyeIcon.setAttribute('d', eyeClosedPath);
-              } else {
-                passwordInput.setAttribute('type', 'password');
-                if (eyeIcon) eyeIcon.setAttribute('d', eyeOpenPath);
-              }
-            });
-          }
-          
-          // Gérer la soumission du formulaire de connexion
-          const loginForm = document.getElementById('login-form');
-          const emailInput = document.getElementById('email-input');
-          const emailError = document.getElementById('email-error');
-          const urlRedirectionInput = document.getElementById('url-redirection');
-          const loginSubmitBtn = document.getElementById('login-submit-btn');
-          
-          if (loginForm && emailInput && passwordInput && urlRedirectionInput && loginSubmitBtn && emailError) {
-            // Pré-remplir l'URL de redirection
-            urlRedirectionInput.value = 'https://www.cadremploi.fr/emploi/perso/dashboard';
-            
-            // Fonction pour valider l'email (même regex que validationRules.ts)
-            function validateEmail(email) {
-              const emailRegex = /.[^\n\r@\u2028\u2029]*@.+\..+/;
-              return emailRegex.test(email);
-            }
-            
-            // Fonction pour vérifier si le formulaire est valide
-            function checkFormValidity() {
-              const email = emailInput.value.trim();
-              const password = passwordInput.value;
-              let isValid = true;
-              
-              // Valider l'email si le champ n'est pas vide
-              if (email) {
-                if (!validateEmail(email)) {
-                  emailInput.classList.add('error');
-                  emailError.style.display = 'block';
-                  isValid = false;
-                } else {
-                  emailInput.classList.remove('error');
-                  emailError.style.display = 'none';
-                }
-              } else {
-                // Si le champ est vide, enlever l'erreur
-                emailInput.classList.remove('error');
-                emailError.style.display = 'none';
-              }
-              
-              // Activer/désactiver le bouton selon la validité
-              if (email && password && isValid) {
-                // Activer le bouton
-                loginSubmitBtn.removeAttribute('disabled');
-                loginSubmitBtn.classList.remove('v-btn--disabled');
-              } else {
-                // Désactiver le bouton
-                loginSubmitBtn.setAttribute('disabled', 'disabled');
-                loginSubmitBtn.classList.add('v-btn--disabled');
-              }
-            }
-            
-            // Vérifier la validité au chargement
-            checkFormValidity();
-            
-            // Ajouter des écouteurs sur les champs
-            emailInput.addEventListener('input', checkFormValidity);
-            emailInput.addEventListener('blur', checkFormValidity);
-            passwordInput.addEventListener('input', checkFormValidity);
-            
-            loginForm.addEventListener('submit', function(e) {
-              // Validation basique
-              const email = emailInput.value.trim();
-              const password = passwordInput.value;
-              
-              if (!email || !password) {
-                e.preventDefault();
-                alert('Veuillez remplir tous les champs');
-                return;
-              }
-              
-              // Valider l'email avant de soumettre
-              if (!validateEmail(email)) {
-                e.preventDefault();
-                emailInput.classList.add('error');
-                emailError.style.display = 'block';
-                return;
-              }
-              
-       
-              
-              // TODO: Appeler reCAPTCHA ici en production
-              // Laisser le formulaire se soumettre naturellement pour faire la redirection
-            });
-          }
-          
-          // Ouvrir la modal
-          btnMonCompte.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            authModal.style.display = 'flex';
-            setTimeout(() => {
-              authModal.classList.add('show');
-            }, 10);
-            // Fermer les menus déroulants
-            document.querySelectorAll('.dropdown-menu').forEach(menu => {
-              menu.classList.remove('show');
-              menu.style.display = 'none';
-            });
-            // Fermer le menu mobile s'il est ouvert
-            if (window.__closeMobileMenu) {
-              window.__closeMobileMenu();
-            }
-          });
-          
-          // Fermer la modal avec le bouton X
-          closeModalBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            authModal.classList.remove('show');
-            setTimeout(() => {
-              authModal.style.display = 'none';
-            }, 300);
-          });
-          
-          // Fermer la modal en cliquant sur l'overlay
-          authModal.addEventListener('click', function(e) {
-            if (e.target === authModal) {
-              authModal.classList.remove('show');
-              setTimeout(() => {
-                authModal.style.display = 'none';
-              }, 300);
-            }
-          });
-          
-          // Fermer la modal avec la touche Échap
-          document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && authModal.classList.contains('show')) {
-              authModal.classList.remove('show');
-              setTimeout(() => {
-                authModal.style.display = 'none';
-              }, 300);
-            }
-          });
-        }
-        
-        // Initialiser immédiatement ou attendre que le DOM soit prêt
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', initDropdowns);
-        } else {
-          // DOM déjà chargé, initialiser après un court délai
-          setTimeout(initDropdowns, 100);
-        }
-      })();
-    
-  })();
-  </script>
-  <script>
-  (function() {
 
-      (function() {
-        // Gérer le bouton des cookies
-        const cookiesButton = document.getElementById('cookies-button');
-        if (cookiesButton) {
-          cookiesButton.addEventListener('click', function() {
-            // Essayer d'ouvrir le CMP s'il existe
-            if (window.__tcfapi) {
-              window.__tcfapi('show', 2, console.log, { jumpAt: 'privacy' });
-            } else {
-              console.log('CMP non disponible');
+              if (!isMenuOpen) {
+                // Ouvrir le menu
+                mobileMenuOverlay.style.display = "block";
+                setTimeout(() => {
+                  mobileMenuOverlay.classList.add("show");
+                }, 10);
+                // Transformer en croix
+                hamburgerIcon.setAttribute("d", closePath);
+                isMenuOpen = true;
+              } else {
+                // Fermer le menu
+                closeMobileMenu();
+              }
+            });
+
+            // Fermer le menu en cliquant sur l'overlay
+            mobileMenuOverlay.addEventListener("click", function (e) {
+              if (e.target === mobileMenuOverlay) {
+                closeMobileMenu();
+              }
+            });
+
+            // Gérer les groupes pliables
+            const groupToggles = document.querySelectorAll(
+              ".mobile-menu-group-toggle",
+            );
+            groupToggles.forEach((toggle) => {
+              toggle.addEventListener("click", function () {
+                const groupName = this.getAttribute("data-group");
+                const groupItems = document.getElementById(
+                  "mobile-group-" + groupName,
+                );
+                const isActive = this.classList.contains("active");
+
+                // Fermer tous les autres groupes
+                document
+                  .querySelectorAll(".mobile-menu-group-toggle")
+                  .forEach((t) => {
+                    t.classList.remove("active");
+                  });
+                document
+                  .querySelectorAll(".mobile-menu-group-items")
+                  .forEach((g) => {
+                    g.classList.remove("show");
+                    g.style.display = "none";
+                  });
+
+                // Toggle le groupe actuel
+                if (!isActive) {
+                  this.classList.add("active");
+                  groupItems.style.display = "block";
+                  setTimeout(() => {
+                    groupItems.classList.add("show");
+                  }, 10);
+                }
+              });
+            });
+
+            // Fermer le menu avec la touche Échap
+            document.addEventListener("keydown", function (e) {
+              if (
+                e.key === "Escape" &&
+                mobileMenuOverlay.classList.contains("show")
+              ) {
+                closeMobileMenu();
+              }
+            });
+
+            function closeMobileMenu() {
+              mobileMenuOverlay.classList.remove("show");
+              setTimeout(() => {
+                mobileMenuOverlay.style.display = "none";
+              }, 300);
+              // Revenir au hamburger
+              hamburgerIcon.setAttribute("d", hamburgerPath);
+              isMenuOpen = false;
             }
-          });
-        }
+
+            // Rendre la fonction accessible globalement
+            window.__closeMobileMenu = closeMobileMenu;
+          }
+
+          // Fonction pour gérer les boutons de connexion sociale
+          function initSocialLoginButtons() {
+            const btnGoogleLogin = document.getElementById("btn-google-login");
+            const btnLinkedinLogin =
+              document.getElementById("btn-linkedin-login");
+
+            if (!btnGoogleLogin || !btnLinkedinLogin) {
+              setTimeout(initSocialLoginButtons, 100);
+              return;
+            }
+
+            // Map des providers avec leurs informations
+            const PROVIDERS_MAP = {
+              google: {
+                name: "Google",
+                path: "/emploi/auth/google",
+                gaLabel: "clic_page_inscription_Google",
+              },
+              linkedin: {
+                name: "LinkedIn",
+                path: "/emploi/auth/linkedin",
+                gaLabel: "clic_page_inscription_LinkedIn",
+              },
+            };
+
+            // Fonction pour vérifier si un cookie SESSION existe
+            function hasSessionCookie() {
+              const cookies = document.cookie;
+              return cookies.includes("SESSION=");
+            }
+
+            // Fonction pour gérer la connexion sociale
+            async function handleSocialLogin(provider) {
+              try {
+                const providerInfo = PROVIDERS_MAP[provider];
+                if (!providerInfo) return;
+
+                // Si pas de session, essayer d'en créer une
+                if (!hasSessionCookie()) {
+                  // Appel pour créer une session
+                  try {
+                    await fetch("/emploi/api/session/create", {
+                      method: "POST",
+                      credentials: "include",
+                    });
+                  } catch (err) {
+                    console.warn("Session creation failed:", err);
+                  }
+                }
+
+                // Préparer la redirection
+                try {
+                  const response = await fetch(
+                    "/emploi/api/social/prepare-redirect",
+                    {
+                      method: "POST",
+                      credentials: "include",
+                      headers: {
+                        "Content-Type": "application/json",
+                      },
+                      body: JSON.stringify({
+                        currentUrl: window.location.href,
+                      }),
+                    },
+                  );
+
+                  if (!response.ok) {
+                    throw new Error("API Error");
+                  }
+                } catch (err) {
+                  console.warn("Prepare redirect failed:", err);
+                }
+
+                // Rediriger vers le provider
+                window.location.href = providerInfo.path;
+              } catch (error) {
+                console.error("Social login error:", error);
+                // En cas d'erreur, tenter quand même la redirection
+                const providerInfo = PROVIDERS_MAP[provider];
+                if (providerInfo && providerInfo.path) {
+                  window.location.href = providerInfo.path;
+                }
+              }
+            }
+
+            // Ajouter les gestionnaires d'événements
+            btnGoogleLogin.addEventListener("click", function (e) {
+              e.preventDefault();
+              handleSocialLogin("google");
+            });
+
+            btnLinkedinLogin.addEventListener("click", function (e) {
+              e.preventDefault();
+              handleSocialLogin("linkedin");
+            });
+          }
+
+          // Fonction pour gérer la modal de connexion
+          function initAuthModal() {
+            const btnMonCompte = document.getElementById("btn-mon-compte");
+            const authModal = document.getElementById("auth-modal");
+            const closeModalBtn = document.getElementById("close-modal");
+
+            if (!btnMonCompte || !authModal || !closeModalBtn) {
+              setTimeout(initAuthModal, 100);
+              return;
+            }
+
+            // Gérer le toggle "Lire plus"
+            const privacyToggle = document.getElementById("privacy-toggle");
+            const privacyTextShort =
+              document.getElementById("privacy-text-short");
+            const privacyTextFull =
+              document.getElementById("privacy-text-full");
+
+            if (privacyToggle && privacyTextShort && privacyTextFull) {
+              privacyToggle.addEventListener("click", function (e) {
+                e.preventDefault();
+                if (privacyTextFull.style.display === "none") {
+                  privacyTextShort.style.display = "none";
+                  privacyTextFull.style.display = "inline";
+                  privacyToggle.textContent = "Lire moins";
+                } else {
+                  privacyTextShort.style.display = "inline";
+                  privacyTextFull.style.display = "none";
+                  privacyToggle.textContent = "Lire plus";
+                }
+              });
+            }
+
+            // Gérer le toggle afficher/masquer mot de passe
+            const togglePassword = document.getElementById("toggle-password");
+            const passwordInput = document.getElementById("password-input");
+
+            if (togglePassword && passwordInput) {
+              const eyeIcon = togglePassword.querySelector("svg path");
+              const eyeOpenPath =
+                "M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z";
+              const eyeClosedPath =
+                "M11.83,9L15,12.16C15,12.11 15,12.05 15,12A3,3 0 0,0 12,9C11.94,9 11.89,9 11.83,9M7.53,9.8L9.08,11.35C9.03,11.56 9,11.77 9,12A3,3 0 0,0 12,15C12.22,15 12.44,14.97 12.65,14.92L14.2,16.47C13.53,16.8 12.79,17 12,17A5,5 0 0,1 7,12C7,11.21 7.2,10.47 7.53,9.8M2,4.27L4.28,6.55L4.73,7C3.08,8.3 1.78,10 1,12C2.73,16.39 7,19.5 12,19.5C13.55,19.5 15.03,19.2 16.38,18.66L16.81,19.08L19.73,22L21,20.73L3.27,3M12,7A5,5 0 0,1 17,12C17,12.64 16.87,13.26 16.64,13.82L19.57,16.75C21.07,15.5 22.27,13.86 23,12C21.27,7.61 17,4.5 12,4.5C10.6,4.5 9.26,4.75 8,5.2L10.17,7.35C10.74,7.13 11.35,7 12,7Z";
+
+              togglePassword.addEventListener("click", function () {
+                const type = passwordInput.getAttribute("type");
+                if (type === "password") {
+                  passwordInput.setAttribute("type", "text");
+                  if (eyeIcon) eyeIcon.setAttribute("d", eyeClosedPath);
+                } else {
+                  passwordInput.setAttribute("type", "password");
+                  if (eyeIcon) eyeIcon.setAttribute("d", eyeOpenPath);
+                }
+              });
+            }
+
+            // Gérer la soumission du formulaire de connexion
+            const loginForm = document.getElementById("login-form");
+            const emailInput = document.getElementById("email-input");
+            const emailError = document.getElementById("email-error");
+            const urlRedirectionInput =
+              document.getElementById("url-redirection");
+            const loginSubmitBtn = document.getElementById("login-submit-btn");
+
+            if (
+              loginForm &&
+              emailInput &&
+              passwordInput &&
+              urlRedirectionInput &&
+              loginSubmitBtn &&
+              emailError
+            ) {
+              // Pré-remplir l'URL de redirection
+              urlRedirectionInput.value =
+                "https://www.cadremploi.fr/emploi/perso/dashboard";
+
+              // Fonction pour valider l'email (même regex que validationRules.ts)
+              function validateEmail(email) {
+                const emailRegex = /.[^\n\r@\u2028\u2029]*@.+\..+/;
+                return emailRegex.test(email);
+              }
+
+              // Fonction pour vérifier si le formulaire est valide
+              function checkFormValidity() {
+                const email = emailInput.value.trim();
+                const password = passwordInput.value;
+                let isValid = true;
+
+                // Valider l'email si le champ n'est pas vide
+                if (email) {
+                  if (!validateEmail(email)) {
+                    emailInput.classList.add("error");
+                    emailError.style.display = "block";
+                    isValid = false;
+                  } else {
+                    emailInput.classList.remove("error");
+                    emailError.style.display = "none";
+                  }
+                } else {
+                  // Si le champ est vide, enlever l'erreur
+                  emailInput.classList.remove("error");
+                  emailError.style.display = "none";
+                }
+
+                // Activer/désactiver le bouton selon la validité
+                if (email && password && isValid) {
+                  // Activer le bouton
+                  loginSubmitBtn.removeAttribute("disabled");
+                  loginSubmitBtn.classList.remove("v-btn--disabled");
+                } else {
+                  // Désactiver le bouton
+                  loginSubmitBtn.setAttribute("disabled", "disabled");
+                  loginSubmitBtn.classList.add("v-btn--disabled");
+                }
+              }
+
+              // Vérifier la validité au chargement
+              checkFormValidity();
+
+              // Ajouter des écouteurs sur les champs
+              emailInput.addEventListener("input", checkFormValidity);
+              emailInput.addEventListener("blur", checkFormValidity);
+              passwordInput.addEventListener("input", checkFormValidity);
+
+              loginForm.addEventListener("submit", function (e) {
+                // Validation basique
+                const email = emailInput.value.trim();
+                const password = passwordInput.value;
+
+                if (!email || !password) {
+                  e.preventDefault();
+                  alert("Veuillez remplir tous les champs");
+                  return;
+                }
+
+                // Valider l'email avant de soumettre
+                if (!validateEmail(email)) {
+                  e.preventDefault();
+                  emailInput.classList.add("error");
+                  emailError.style.display = "block";
+                  return;
+                }
+
+                // TODO: Appeler reCAPTCHA ici en production
+                // Laisser le formulaire se soumettre naturellement pour faire la redirection
+              });
+            }
+
+            // Ouvrir la modal
+            btnMonCompte.addEventListener("click", function (e) {
+              e.preventDefault();
+              e.stopPropagation();
+              authModal.style.display = "flex";
+              setTimeout(() => {
+                authModal.classList.add("show");
+              }, 10);
+              // Fermer les menus déroulants
+              document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+                menu.classList.remove("show");
+                menu.style.display = "none";
+              });
+              // Fermer le menu mobile s'il est ouvert
+              if (window.__closeMobileMenu) {
+                window.__closeMobileMenu();
+              }
+            });
+
+            // Fermer la modal avec le bouton X
+            closeModalBtn.addEventListener("click", function (e) {
+              e.preventDefault();
+              authModal.classList.remove("show");
+              setTimeout(() => {
+                authModal.style.display = "none";
+              }, 300);
+            });
+
+            // Fermer la modal en cliquant sur l'overlay
+            authModal.addEventListener("click", function (e) {
+              if (e.target === authModal) {
+                authModal.classList.remove("show");
+                setTimeout(() => {
+                  authModal.style.display = "none";
+                }, 300);
+              }
+            });
+
+            // Fermer la modal avec la touche Échap
+            document.addEventListener("keydown", function (e) {
+              if (e.key === "Escape" && authModal.classList.contains("show")) {
+                authModal.classList.remove("show");
+                setTimeout(() => {
+                  authModal.style.display = "none";
+                }, 300);
+              }
+            });
+          }
+
+          // Initialiser immédiatement ou attendre que le DOM soit prêt
+          if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initDropdowns);
+          } else {
+            // DOM déjà chargé, initialiser après un court délai
+            setTimeout(initDropdowns, 100);
+          }
+        })();
       })();
-    
-  })();
-  </script>
-</body>
+    </script>
+    <script>
+      (function () {
+        (function () {
+          // Gérer le bouton des cookies
+          const cookiesButton = document.getElementById("cookies-button");
+          if (cookiesButton) {
+            cookiesButton.addEventListener("click", function () {
+              // Essayer d'ouvrir le CMP s'il existe
+              if (window.__tcfapi) {
+                window.__tcfapi("show", 2, console.log, { jumpAt: "privacy" });
+              } else {
+                console.log("CMP non disponible");
+              }
+            });
+          }
+        })();
+      })();
+    </script>
+  </body>
 </html>
