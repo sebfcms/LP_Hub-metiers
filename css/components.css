@@ -1,12 +1,18 @@
 /* ============================================================
    css/components.css
    Composants réutilisables — cards, profils, métiers, données...
+
+   RECETTE design-system (validée) :
+   - radius des cards : var(--r-xl) 24px → var(--r-lg) 8px (vrai standard
+     Vuetify rounded-lg côté ce-front ; 24px réservé aux cards statement)
+   - breakpoints : 768/769px → 960/961px, 1024px → 1280px (vrais paliers
+     ce-front, pivot mobile/desktop à 960px)
    ============================================================ */
 
 /* ── Job card ── */
 .job-card {
   border: 1px solid var(--border);
-  border-radius: var(--r-xl);
+  border-radius: var(--r-lg);
   padding: 16px;
   background: var(--white);
   cursor: pointer;
@@ -41,8 +47,8 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
-@media (max-width: 768px)  { .jobs-grid { grid-template-columns: 1fr; } }
-@media (min-width: 769px) and (max-width: 1024px) { .jobs-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 960px)  { .jobs-grid { grid-template-columns: 1fr; } }
+@media (min-width: 961px) and (max-width: 1280px) { .jobs-grid { grid-template-columns: repeat(2, 1fr); } }
 
 /* ── Métiers (spécialités) ── */
 .metiers-scroll {
@@ -55,7 +61,7 @@
 .metier-card {
   flex-shrink: 0; min-width: 152px;
   background: var(--white); border: 1.5px solid var(--border);
-  border-radius: var(--r-xl); padding: 16px;
+  border-radius: var(--r-lg); padding: 16px;
   cursor: pointer; transition: all var(--transition);
   display: flex; flex-direction: column; gap: 5px;
 }
@@ -98,7 +104,7 @@
 .profiles-card {
   background: var(--white);
   border: 1px solid var(--border);
-  border-radius: var(--r-xl);
+  border-radius: var(--r-lg);
   padding: 24px;
   box-shadow: var(--sh-3);
 }
@@ -146,12 +152,12 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 14px;
 }
-@media (max-width: 768px)  { .data-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 769px) and (max-width: 1024px) { .data-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 960px)  { .data-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 961px) and (max-width: 1280px) { .data-grid { grid-template-columns: repeat(2, 1fr); } }
 
 .data-card {
   background: var(--white); border: 1px solid var(--border);
-  border-radius: var(--r-xl); padding: 20px;
+  border-radius: var(--r-lg); padding: 20px;
   display: flex; flex-direction: column; gap: 10px;
   cursor: pointer; transition: all var(--transition);
 }
@@ -174,11 +180,11 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
-@media (max-width: 768px)  { .temos-grid { grid-template-columns: 1fr; } }
-@media (min-width: 769px) and (max-width: 1024px) { .temos-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 960px)  { .temos-grid { grid-template-columns: 1fr; } }
+@media (min-width: 961px) and (max-width: 1280px) { .temos-grid { grid-template-columns: repeat(2, 1fr); } }
 
 .temo-card {
-  border: 1px solid var(--border); border-radius: var(--r-xl);
+  border: 1px solid var(--border); border-radius: var(--r-lg);
   padding: 22px; background: var(--white);
   display: grid; grid-template-columns: auto 1fr; gap: 14px;
   transition: all var(--transition);
@@ -207,11 +213,11 @@
   grid-template-rows: auto auto;
   gap: 14px;
 }
-@media (max-width: 768px) { .edito-grid { grid-template-columns: 1fr; } }
-@media (min-width: 769px) and (max-width: 1024px) { .edito-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 960px) { .edito-grid { grid-template-columns: 1fr; } }
+@media (min-width: 961px) and (max-width: 1280px) { .edito-grid { grid-template-columns: 1fr 1fr; } }
 
 .edito-card {
-  border: 1px solid var(--border); border-radius: var(--r-xl);
+  border: 1px solid var(--border); border-radius: var(--r-lg);
   overflow: hidden; background: var(--white);
   cursor: pointer; transition: all var(--transition);
   display: flex; flex-direction: column;
@@ -221,8 +227,8 @@
 }
 .edito-card:hover { box-shadow: var(--sh-3); transform: translateY(-2px); }
 .edito-card--big  { grid-row: span 2; }
-@media (max-width: 1024px) { .edito-card--big { grid-row: span 1; grid-column: span 2; } }
-@media (max-width: 768px)  { .edito-card--big { grid-column: span 1; } }
+@media (max-width: 1280px) { .edito-card--big { grid-row: span 1; grid-column: span 2; } }
+@media (max-width: 960px)  { .edito-card--big { grid-column: span 1; } }
 
 .edito-card__img  { height: 140px; display: flex; align-items: flex-end; padding: 14px; position: relative; }
 .edito-card--big .edito-card__img { height: 270px; }
@@ -247,7 +253,7 @@
 .modal-overlay.open { display: flex; }
 
 .modal {
-  background: var(--white); border-radius: var(--r-xl);
+  background: var(--white); border-radius: var(--r-lg);
   padding: 36px; max-width: 460px; width: calc(100% - 32px);
   position: relative; box-shadow: 0 24px 48px rgba(0,0,0,.25);
 }
@@ -265,7 +271,7 @@
 
 .form-input {
   width: 100%; height: 44px; padding: 0 14px; margin-bottom: 10px;
-  border: 1px solid var(--border); border-radius: var(--r-xl);
+  border: 1px solid var(--border); border-radius: var(--r-lg);
   font-size: .875rem; font-family: var(--font); color: var(--fg);
   outline: none; transition: border-color var(--transition);
 }
@@ -275,7 +281,7 @@
 .freq-row { display: flex; gap: 7px; margin-bottom: 12px; }
 .freq-btn {
   flex: 1; padding: 8px 0; border: 1px solid var(--border);
-  border-radius: var(--r-xl); font-size: .8rem; font-weight: 500;
+  border-radius: var(--r-lg); font-size: .8rem; font-weight: 500;
   background: var(--white); color: var(--fg);
   transition: all var(--transition); font-family: var(--font); cursor: pointer;
 }
@@ -296,7 +302,7 @@
   background: linear-gradient(90deg, var(--muted-bg) 25%, #e8eaf0 50%, var(--muted-bg) 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
-  border-radius: var(--r-xl);
+  border-radius: var(--r-lg);
 }
 @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
 .skeleton--title  { height: 20px; width: 80%; margin-bottom: 8px; }
@@ -354,6 +360,10 @@
   scrollbar-width: none; -ms-overflow-style: none;
   padding: 4px 2px 8px;
   flex: 1;
+  min-width: 0; /* FIX : empêche ce flex-item de forcer la largeur de toute la page
+                   (bug classique Flexbox — sans ça, .ent-carousel-wrap et ses
+                   parents s'élargissent pour contenir les .ent-card au lieu de
+                   laisser le scroll horizontal interne faire son travail) */
 }
 .ent-carousel::-webkit-scrollbar { display: none; }
 
@@ -417,11 +427,11 @@
   background: var(--naval-pale);
   border-color: #c5d3ec;
 }
-@media (max-width: 768px)  { .metiers-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 769px) and (max-width: 1024px) { .metiers-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 960px)  { .metiers-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 961px) and (max-width: 1280px) { .metiers-grid { grid-template-columns: repeat(3, 1fr); } }
 
 /* ── Corrections responsive mobile ── */
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   /* Section header : empile le titre et le CTA */
   .section-header {
     flex-direction: column; align-items: flex-start; gap: 12px;

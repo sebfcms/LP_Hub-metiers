@@ -1,0 +1,227 @@
+/* ============================================================
+   references/cadremploi-components.css
+   Composants réutilisables pour landing pages CADREMPLOI
+   Basés sur les vrais patterns de components/home/*.vue (ce-front)
+   traduits en CSS vanille. Nécessite cadremploi-tokens.css.
+   ============================================================ */
+
+@import url('cadremploi-tokens.css');
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: var(--ce-font-body);
+  color: var(--ce-text);
+  line-height: 1.5;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+a:hover { opacity: .7; }
+a:focus-visible {
+  outline: 1px dotted var(--ce-focus);
+  outline-offset: 2px;
+}
+
+/* ── Titres de section (calqué sur <h2 class="text-h5 font-weight-bold">) ── */
+.ce-section-title {
+  font-size: var(--ce-text-h5);
+  font-weight: var(--ce-fw-bold);
+  color: var(--ce-grey-900);
+  text-align: center;
+  margin-bottom: 8px;
+}
+.ce-section-subtitle {
+  font-size: var(--ce-text-body-2);
+  color: var(--ce-grey-600);
+  text-align: center;
+  max-width: 42rem;
+  margin: 0 auto 32px;
+}
+
+/* ── Boutons ──
+   Défaut : flat, rounded 8px, pas d'uppercase (text-none dans ce-front).
+   .ce-btn--pill : CTA proéminents (dépôt CV, cards outils).             */
+.ce-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  font-family: var(--ce-font-body);
+  font-weight: var(--ce-fw-semibold);
+  font-size: .875rem;
+  padding: .75rem 1.25rem;
+  border-radius: var(--ce-r-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: opacity var(--ce-transition), background-color var(--ce-transition);
+  text-transform: none; /* jamais d'uppercase sur un bouton */
+}
+.ce-btn:hover { opacity: .88; }
+.ce-btn:focus-visible { box-shadow: 0 0 0 3px var(--ce-primary); }
+
+.ce-btn--primary {
+  background: var(--ce-primary);
+  color: var(--ce-white);
+}
+.ce-btn--cta {
+  background: var(--ce-cta);
+  color: var(--ce-white);
+}
+.ce-btn--outline {
+  background: transparent;
+  border-color: var(--ce-primary);
+  color: var(--ce-primary);
+}
+.ce-btn--outline:hover { background: var(--ce-bg-alt); opacity: 1; }
+.ce-btn--pill { border-radius: var(--ce-r-pill); }
+.ce-btn--small { padding: .5rem 1rem; font-size: .8125rem; }
+
+/* ── Badges (JobPostingOfferBadge — teinte pâle + bordure/texte foncé) ── */
+.ce-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: var(--ce-r-badge);
+  font-size: .75rem;
+  font-weight: var(--ce-fw-medium);
+  white-space: nowrap;
+  border: .5px solid transparent;
+}
+.ce-badge--blue   { background: var(--ce-blue-50);    border-color: var(--ce-blue-600);   color: var(--ce-blue-600); }
+.ce-badge--red    { background: var(--ce-red-50);     border-color: var(--ce-red-600);    color: var(--ce-red-600); }
+.ce-badge--purple { background: var(--ce-purple-100); border-color: var(--ce-legacy-purple); color: var(--ce-legacy-purple); }
+.ce-badge--green  { background: var(--ce-green-50);   border-color: var(--ce-green-700);  color: var(--ce-green-700); }
+.ce-badge--grey   { background: var(--ce-grey-50);    border-color: var(--ce-grey-200);   color: var(--ce-grey-600); }
+
+/* ── Chips (ex. "Emplois populaires") ── */
+.ce-chip {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 12px;
+  border-radius: var(--ce-r-pill);
+  border: 1.5px solid var(--ce-primary);
+  color: var(--ce-primary);
+  font-size: .75rem;
+  background: none;
+  transition: background-color var(--ce-transition);
+}
+.ce-chip:hover { background: var(--ce-blue-100); opacity: 1; }
+
+/* ── Card "outil" (icône flottante + fond pastel + CTA pill) ──
+   Pattern réel : icon avatar en overflow au-dessus d'une v-card
+   rounded-xl colorée, titre + texte centrés, CTA pill outline.     */
+.ce-tool-card-wrapper {
+  position: relative;
+  padding-top: 24px;
+}
+.ce-tool-card-icon {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--ce-white);
+  border: 1px solid var(--ce-grey-200);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1;
+}
+.ce-tool-card {
+  border-radius: var(--ce-r-xl);
+  text-align: center;
+  padding: 40px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.ce-tool-card__title {
+  font-size: var(--ce-text-subtitle-1);
+  font-weight: var(--ce-fw-bold);
+  color: var(--ce-grey-900);
+  margin-bottom: 8px;
+}
+.ce-tool-card__text {
+  font-size: var(--ce-text-caption-size);
+  color: var(--ce-grey-600);
+  flex-grow: 1;
+}
+.ce-tool-card__cta { margin-top: 16px; }
+
+/* Variantes de fond — une par couleur du nuancier (voir tokens) */
+.ce-tool-card--blue    { background: var(--ce-tool-blue); }
+.ce-tool-card--purple  { background: var(--ce-tool-purple); }
+.ce-tool-card--red     { background: var(--ce-tool-red); }
+.ce-tool-card--grey    { background: var(--ce-tool-grey); }
+.ce-tool-card--warning { background: var(--ce-tool-warning); }
+
+/* ── Bannière CTA dégradée (ex. HomeDepotCV — "Soyez visible des recruteurs") ── */
+.ce-cta-banner {
+  border-radius: var(--ce-r-xl);
+  padding: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: linear-gradient(135deg, var(--ce-grey-50) 0%, var(--ce-red-50) 60%);
+}
+.ce-cta-banner__content { display: flex; align-items: flex-start; gap: 16px; }
+.ce-cta-banner__icon {
+  flex-shrink: 0;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--ce-white);
+  display: flex; align-items: center; justify-content: center;
+}
+.ce-cta-banner__title {
+  font-size: var(--ce-text-subtitle-1);
+  font-weight: var(--ce-fw-bold);
+  color: var(--ce-grey-900);
+  margin-bottom: 4px;
+}
+.ce-cta-banner__text {
+  font-size: var(--ce-text-body-2);
+  color: var(--ce-grey-600);
+}
+
+/* ── Bande de recherche "hero" (JobSearch homeSearchBlock) ──
+   Bande plate --ce-blue-400, 300px desktop / 200px mobile, avec une
+   carte de recherche blanche flottante par-dessus (radius 25px,
+   translatée vers le haut de -150px sur desktop).                  */
+.ce-search-hero {
+  background: var(--ce-blue-400);
+  position: relative;
+  height: 300px;
+}
+@media (max-width: 960px) {
+  .ce-search-hero { height: auto; min-height: 200px; }
+}
+.ce-search-card {
+  position: relative;
+  background: var(--ce-white);
+  border-radius: 25px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, .15);
+  padding: 32px;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+@media (min-width: 961px) {
+  .ce-search-card { top: -150px; margin-bottom: -150px; }
+}
+.ce-search-card__row { display: flex; gap: 8px; margin-bottom: 10px; }
+.ce-search-card__input {
+  flex: 1; height: 44px; padding: 0 14px;
+  border: 1px solid var(--ce-border); border-radius: var(--ce-r-md);
+  font-size: .875rem; font-family: var(--ce-font-body); color: var(--ce-text);
+  outline: none; transition: border-color var(--ce-transition);
+}
+.ce-search-card__input:focus { border-color: var(--ce-primary); }
+.ce-search-card__btn {
+  height: 44px; padding: 0 20px; border: none; border-radius: var(--ce-r-md);
+  font-size: .875rem; font-weight: var(--ce-fw-bold); color: var(--ce-white);
+  background: linear-gradient(90deg, var(--ce-blue-500), var(--ce-blue-600), var(--ce-legacy-purple));
+  cursor: pointer;
+}

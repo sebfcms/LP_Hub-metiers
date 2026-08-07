@@ -1,6 +1,11 @@
 /* ============================================================
    css/layout.css
    Header, hero, sections spécifiques au layout, footer
+
+   RECETTE design-system (validée) : breakpoints 768/769px → 960/961px,
+   1024px → 1280px. Radius : company-logo-block 24px → 8px. La search-card
+   et le hero__stat gardent --r-xl (24px), ce sont de vraies cards
+   "statement" confirmées côté ce-front.
    ============================================================ */
 
 /* ── HEADER — fidèle à Header.tsx Lovable ── */
@@ -65,12 +70,12 @@
 .hd-mobile__link:hover { color: var(--naval); }
 .hd-mobile__sep { border: none; border-top: 1px solid var(--border); margin: 6px 0; }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .hd-inner { height: 56px; }
   .hd-nav, .hd-actions { display: none; }
   .hd-burger { display: flex; }
 }
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 961px) and (max-width: 1280px) {
   .hd-nav { gap: 10px; }
   .hd-nav__link { font-size: .75rem; }
   .hd-actions { gap: 8px; }
@@ -162,7 +167,7 @@
 .hero__stat-n span { color: var(--red); }
 .hero__stat-l { font-size: .68rem; color: rgba(255,255,255,.4); margin-top: 2px; }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .hero__inner { grid-template-columns: 1fr; min-height: auto; gap: 0; }
   .hero__left  { padding: 24px 0 0; }
   .hero__right { padding: 12px 0 24px; }
@@ -225,7 +230,7 @@
 }
 .search-card__alerte:hover { background: var(--red); color: var(--white); }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .search-card { padding: 14px; margin-top: -8px; } /* remonte légèrement */
   .search-card__row { flex-direction: column; gap: 6px; }
   .search-card__input { width: 100%; }  /* pleine largeur */
@@ -262,7 +267,7 @@
   content: ''; width: 5px; height: 5px; border-radius: 50%;
   background: var(--naval); flex-shrink: 0; display: block;
 }
-@media (max-width: 768px) { .cvtheque-section__inner { grid-template-columns: 1fr; } }
+@media (max-width: 960px) { .cvtheque-section__inner { grid-template-columns: 1fr; } }
 
 /* ── Entreprises ── */
 .companies-grid {
@@ -271,14 +276,15 @@
   gap: 12px;
 }
 .company-logo-block {
-  height: 72px; border: 1px solid var(--border); border-radius: var(--r-xl);
+  /* RECETTE : r-xl (24px) → r-lg (8px), élément courant, pas une card statement */
+  height: 72px; border: 1px solid var(--border); border-radius: var(--r-lg);
   display: flex; align-items: center; justify-content: center;
   font-size: .8rem; font-weight: 800;
   transition: border-color var(--transition); cursor: default;
 }
 .company-logo-block:hover { border-color: var(--naval); }
-@media (max-width: 768px)  { .companies-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 769px) and (max-width: 1024px) { .companies-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 960px)  { .companies-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 961px) and (max-width: 1280px) { .companies-grid { grid-template-columns: repeat(4, 1fr); } }
 
 /* ── FOOTER — fidèle à Footer.tsx Lovable ── */
 .ft-root { font-family: var(--font); }
@@ -337,13 +343,13 @@
 .ft-bottom__icons a { color: #000; transition: opacity var(--transition); }
 .ft-bottom__icons a:hover { opacity: .6; }
 
-@media (min-width: 768px) {
+@media (min-width: 960px) {
   .ft-band { flex-direction: row; align-items: center; gap: 40px; padding: 12px 200px; }
   .ft-band__tagline { font-size: 1.5rem; }
   .ft-body { padding: 40px 200px 24px; }
   .ft-bottom { flex-direction: row; justify-content: space-between; align-items: flex-end; }
 }
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .ft-cols { grid-template-columns: 1fr 1fr; gap: 16px; }
   .ft-col__title { font-size: .9375rem; }
 }
@@ -373,7 +379,7 @@
 }
 .hd-dropdown__panel.open { display: block; }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .hd-dropdown__panel { top: 56px; } /* header mobile = 56px */
   .hd-dropdown__inner { margin-left: 0; padding: 12px 16px; }
   .hd-dropdown__col { width: 100%; }

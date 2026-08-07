@@ -1,6 +1,9 @@
 /* ============================================================
    css/base.css
    Reset + utilitaires globaux
+
+   RECETTE design-system (validée) : pivot mobile/desktop 768px → 960px
+   (vrai breakpoint "md" de ce-front).
    ============================================================ */
 
 /* ── Reset ── */
@@ -231,7 +234,7 @@ ol {
 }
 
 /* ── Responsive helpers ── */
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   :root {
     --px: 16px;
     --py: 32px;
@@ -240,7 +243,7 @@ ol {
     display: none !important;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 961px) {
   .hide-desktop {
     display: none !important;
   }

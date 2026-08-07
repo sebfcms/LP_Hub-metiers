@@ -1,0 +1,195 @@
+/* ============================================================
+   references/cadremploi-tokens.css
+   Design tokens CADREMPLOI — nuancier officiel (Figma)
+
+   Source de vérité : repo figarocms/ce-front
+     - assets/scss/abstracts/_colors.scss  (nuancier complet)
+     - vuetify.config.ts                    (thème ceTheme)
+     - assets/scss/settings.scss            (breakpoints, fonts)
+   Vérifié le 2026-08-07 par lecture directe du repo.
+
+   Ce fichier est AUTONOME — copiable tel quel dans n'importe quel
+   nouveau projet de landing page, sans dépendance à ce repo-ci.
+   ============================================================ */
+
+:root {
+  /* ── Blue — couleur primaire (CTA secondaires, liens, focus) ── */
+  --ce-blue-50:  #ECF0F9;
+  --ce-blue-100: #D8E1F3;
+  --ce-blue-200: #B2C3E6;
+  --ce-blue-300: #8BA5DA;
+  --ce-blue-400: #6588CD;   /* = bande hero derrière la barre de recherche HP */
+  --ce-blue-500: #3E6AC1;
+  --ce-blue-600: #32559A;   /* couleur CTA/lien/focus principale */
+  --ce-blue-700: #253F74;
+  --ce-blue-800: #192A4D;
+  --ce-blue-900: #0C1527;
+  --ce-blue-950: #060A14;
+
+  /* ── Red — accent fort (CTA candidature, alertes) ── */
+  --ce-red-50:  #FFE6EF;
+  --ce-red-100: #FFCCDF;
+  --ce-red-200: #FE9AC0;
+  --ce-red-300: #FE67A0;
+  --ce-red-400: #FD3581;
+  --ce-red-500: #FD0261;
+  --ce-red-600: #E6005A;
+  --ce-red-700: #98013A;
+  --ce-red-800: #650127;
+  --ce-red-900: #330013;
+  --ce-red-950: #1A000A;
+
+  /* ── Grey — neutres ── */
+  --ce-grey-50:  #F1F2F4;
+  --ce-grey-100: #E2E4E9;
+  --ce-grey-200: #C5C9D3;
+  --ce-grey-300: #A9AEBC;
+  --ce-grey-400: #8C93A6;
+  --ce-grey-500: #6F7890;
+  --ce-grey-600: #575D70;
+  --ce-grey-700: #434856;
+  --ce-grey-800: #2C303A;
+  --ce-grey-900: #16181D;
+  --ce-grey-950: #0B0C0F;
+
+  /* ── Warning ── */
+  --ce-warning-50:  #FEF0E6;
+  --ce-warning-100: #FEE4D2;
+  --ce-warning-200: #FDC6A1;
+  --ce-warning-300: #FBAB74;
+  --ce-warning-400: #FA9047;
+  --ce-warning-500: #F97316;
+  --ce-warning-600: #D65B06;
+  --ce-warning-700: #9F4404;
+  --ce-warning-800: #682C03;
+  --ce-warning-900: #371701;
+  --ce-warning-950: #190B01;
+
+  /* ── Danger ── */
+  --ce-danger-50:  #FEECEF;
+  --ce-danger-100: #FCD9DF;
+  --ce-danger-200: #FAB3BF;
+  --ce-danger-300: #F78C9F;
+  --ce-danger-400: #F4627B;
+  --ce-danger-500: #EF1038;
+  --ce-danger-600: #BF0D2C;
+  --ce-danger-700: #8A0A20;
+  --ce-danger-800: #5F0716;
+  --ce-danger-900: #39040D;
+  --ce-danger-950: #260309;
+
+  /* ── Purple — CVthèque ── */
+  --ce-purple-50:  #F6EEF6;
+  --ce-purple-100: #ECDDEE;
+  --ce-purple-200: #D9BBDD;
+  --ce-purple-300: #C799CC;
+  --ce-purple-400: #B477BB;
+  --ce-purple-500: #A155AA;
+  --ce-purple-600: #84458C;
+  --ce-purple-700: #613366;
+  --ce-purple-800: #402244;
+  --ce-purple-900: #201122;
+  --ce-purple-950: #100911;
+
+  /* ── Green — succès ── */
+  --ce-green-50:  #E5FFF7;
+  --ce-green-100: #CCFFEF;
+  --ce-green-200: #99FFDF;
+  --ce-green-300: #66FFCF;
+  --ce-green-400: #33FFBE;
+  --ce-green-500: #00E59D;
+  --ce-green-600: #00CC8B;
+  --ce-green-700: #009969;
+  --ce-green-800: #006B47;
+  --ce-green-900: #003323;
+  --ce-green-950: #001A11;
+
+  --ce-white: #FFFFFF;
+  --ce-black: #000000;
+
+  /* ── Alias sémantiques (à utiliser en priorité dans le code) ── */
+  --ce-primary:        var(--ce-blue-600);
+  --ce-primary-hover:  var(--ce-blue-700);
+  --ce-cta:            var(--ce-red-600);
+  --ce-cta-hover:      var(--ce-red-700);
+  --ce-text:           var(--ce-grey-900);
+  --ce-text-muted:     var(--ce-grey-600);
+  --ce-text-caption:   var(--ce-grey-500);
+  --ce-border:         var(--ce-grey-200);
+  --ce-bg-page:        var(--ce-white);
+  --ce-bg-alt:         var(--ce-grey-50);
+  --ce-focus:          var(--ce-blue-600);
+
+  /* ── Tool blocks — fonds pastel des cards "outils" (HomeSectionOutils) ── */
+  --ce-tool-blue:    var(--ce-blue-50);
+  --ce-tool-purple:  var(--ce-purple-50);
+  --ce-tool-red:     var(--ce-red-50);
+  --ce-tool-grey:    var(--ce-grey-50);
+  --ce-tool-warning: var(--ce-warning-50);
+
+  /* ── Typographie ──
+     Constat repo : la homepage entière (titres inclus, ex. <h2 class="text-h5">)
+     utilise la police body Vuetify = Inter. Poppins existe (self-hosted,
+     poids 400/500 uniquement) mais n'est utilisé QUE dans des composants
+     spécifiques du parcours candidature (JobDetails*), pas sur les pages
+     d'atterrissage. Pour une landing page : Inter suffit, ne pas
+     systématiser Poppins sans raison précise. */
+  --ce-font-body: 'Inter', 'Source Sans Pro', 'Open Sans', 'Noto Sans', Arial, sans-serif;
+  --ce-font-heading: 'Poppins', 'Inter', sans-serif; /* usage ponctuel seulement — voir SKILL.md */
+  --ce-fw-regular:  400;
+  --ce-fw-medium:   500;
+  --ce-fw-semibold: 600; /* Poppins n'a pas de fichier 600 chargé → gras synthétique navigateur si utilisé */
+  --ce-fw-bold:     700;
+
+  /* Échelle typographique observée sur la vraie homepage (classes Vuetify text-*) */
+  --ce-text-h5: 1.5rem;          /* 24px — titres de section (h2) */
+  --ce-text-subtitle-1: 1rem;    /* 16px — titre de card */
+  --ce-text-subtitle-2: 0.875rem;
+  --ce-text-body-1: 1rem;
+  --ce-text-body-2: 0.875rem;    /* 14px — texte courant des sections */
+  --ce-text-caption-size: 0.75rem; /* 12px */
+
+  /* ── Radius ──
+     8px = standard (rounded-lg Vuetify, boutons/cards par défaut).
+     24-25px = cards "statement" (cards outils, bannière CTA, carte
+     de recherche flottante de la HP) — PAS le défaut de toutes les cards. */
+  --ce-r-badge: 4px;
+  --ce-r-md:    8px;
+  --ce-r-lg:    12px;
+  --ce-r-xl:    24px;
+  --ce-r-pill:  9999px;
+
+  /* ── Transition ── */
+  --ce-transition: 0.15s ease;
+}
+
+/* ============================================================
+   Breakpoints réels (Vuetify / $ce-screen-breakpoint-*)
+   CSS ne permet pas les var() dans @media : reporter ces valeurs
+   à la main dans vos media queries.
+     xxs: 375px   xs: 480px   sm: 600px
+     md:  960px   ← pivot mobile/desktop principal de ce-front
+     lg:  1280px  xl: 1920px
+   ============================================================ */
+
+/* ============================================================
+   LEGACY — présentes dans le code de production ce-front mais
+   explicitement commentées "// pas dans le nuancier — à migrer"
+   dans _colors.scss. NE PAS UTILISER pour du nouveau travail.
+
+   Documentées ici uniquement parce qu'elles apparaissent encore
+   dans des écrans réels (ex. bg-primary sur la bande du footer,
+   pyrholidon-purple-40 sur l'icône "Dépôt CV") — pour reconnaître
+   ces couleurs si vous devez répliquer un écran existant à
+   l'identique.
+   ============================================================ */
+:root {
+  --ce-legacy-primary:      #26AAE1; /* utilisée en prod sur la bande "top-footer" (bg-primary) */
+  --ce-legacy-primary-dark: #12729A;
+  --ce-legacy-purple:       #814488; /* alias "pyrholidon-purple-40" — icône Dépôt CV */
+  --ce-legacy-red:          #F90404;
+  --ce-legacy-success:      #5ADFB7;
+  --ce-legacy-dark-grey:    #333333;
+  --ce-legacy-medium-grey:  #999999;
+  --ce-legacy-link-blue:    #1565C0;
+}

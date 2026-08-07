@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "projet-reel",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8094",
+        "--directory",
+        "G:\\Mon Drive\\5. PROJETS\\LP_Hub-metiers"
+      ],
+      "port": 8094
+    }
+  ]
+}

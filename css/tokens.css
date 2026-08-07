@@ -10,13 +10,18 @@
   --naval:        #32559A;   /* Primary blue */
   --naval-dark:   #1d3d75;   /* Variante foncée hero/CVthèque */
   --naval-pale:   #F3F6FC;   /* Background neutre */
-  --hero-bg:      #6588CD;   /* Bleu clair hero & section conseils */
-  --footer-blue:  #2D5AB4;   /* Royal Blue bande haute footer */
-  --red:          #E6005A;   /* Accent rouge/rose — CTAs forts */
+  --hero-bg:      #6588CD;   /* Bleu clair hero & section conseils — confirmé = blue-400 réel (ce-front) */
+  --footer-blue:  #32559A;   /* RECETTE : anciennement #2D5AB4 (non retrouvé côté ce-front).
+                                 La vraie bande footer de prod utilise #26AAE1, mais c'est une
+                                 couleur "legacy" à ne pas répliquer. blue-600 (naval) retenu
+                                 par défaut — à reconfirmer avec design si besoin. */
+  --red:          #E6005A;   /* Accent rouge/rose — CTAs forts — confirmé = red-600 réel */
   --red-pale:     #FFE6EF;   /* Rose pâle */
   --green:        hsl(158, 75%, 40%);
   --green-pale:   hsl(158, 70%, 96%);
-  --purple:       #814488;   /* CV-thèque */
+  --purple:       #A155AA;   /* RECETTE : anciennement #814488 = couleur "legacy" côté ce-front
+                                 (pyrholidon-purple-40). #A155AA = purple-500 officiel du nuancier.
+                                 Non utilisée actuellement dans ce projet (aucun impact visuel). */
 
   /* ── Tool blocks (charte officielle) ── */
   --tool-blue:    #ECF0F9;
@@ -36,7 +41,9 @@
   --r-sm:   4px;
   --r-md:   4px;
   --r-lg:   8px;
-  --r-xl:   24px;   /* rounded-2xl — cards standard */
+  --r-xl:   24px;   /* rounded-2xl — RECETTE : réservé aux cards "statement" (carte de recherche
+                       hero, bannières CTA) — ce n'est PAS le radius standard des cards.
+                       Le standard réel (rounded-lg Vuetify) = --r-lg (8px), voir plus bas. */
   --r-2xl:  24px;   /* alias rounded-2xl */
   --r-3xl:  28px;   /* rounded-3xl — logos entreprises */
   --r-pill: 9999px;
