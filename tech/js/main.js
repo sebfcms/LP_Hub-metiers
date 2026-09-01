@@ -408,15 +408,21 @@ document.addEventListener('DOMContentLoaded', async () => {
   updateCarouselBtns()
   Profiles.init('profiles-list', 'profiles-count')
 
-  /* 3. Offres — skeleton puis données réelles */
+  /* 3. Offres — skeleton puis données réelles
+     Appel API désormais conditionné par les mêmes feature flags que
+     l'affichage (FEATURES.offres / FEATURES.ticker) : tant qu'ils sont
+     à false, aucun appel n'est fait vers CONFIG.API_BASE (pas encore
+     de clé/endpoint prêt pour cet environnement). */
   renderJobsSkeleton('jobs-grid-main', 6)
 
-  const offres = await API.fetchOffres(CONFIG.SECTOR.limit)
+  if (CONFIG.FEATURES.offres || CONFIG.FEATURES.ticker) {
+    const offres = await API.fetchOffres(CONFIG.SECTOR.limit)
 
-  /* 4. Ticker — 15 premières offres */
-  Ticker.init('ticker-track', offres.slice(0, 15))
+    /* 4. Ticker — 15 premières offres */
+    Ticker.init('ticker-track', offres.slice(0, 15))
 
-  /* 5. Grille — 6 premières offres */
-  renderJobsGrid(offres.slice(0, 6), 'jobs-grid-main')
+    /* 5. Grille — 6 premières offres */
+    renderJobsGrid(offres.slice(0, 6), 'jobs-grid-main')
+  }
 
 })
