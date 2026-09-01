@@ -1,63 +1,86 @@
-# Cadremploi — Hubs sectoriels
+# Cadremploi — Landing pages métier
 
-Landing pages sectorielles pour Cadremploi.
-Actuellement en SPA (HTML/CSS/JS). Migration Next.js prévue en V2.
+Landing pages statiques (HTML/CSS/JS, sans framework) pour Cadremploi, organisées en
+mono-repo : un dossier par landing, un design system partagé.
 
 ## Structure du projet
 
 ```
-cadremploi-hubs/
-├── index.html              ← Hub Tech & Digital (page principale)
-├── sectors/
-│   ├── sante.html          ← Hub Santé (à créer)
-│   ├── finance.html        ← Hub Finance (à créer)
-│   └── industrie.html      ← Hub Industrie (à créer)
-├── css/
-│   ├── tokens.css          ← Design tokens Cadremploi (couleurs, typo, radius...)
-│   ├── base.css            ← Reset + utilitaires globaux
-│   ├── components.css      ← Composants réutilisables (cards, tags, boutons...)
-│   └── layout.css          ← Header, hero, sections, footer
-├── js/
-│   ├── config.js           ← Configuration (clé API, endpoints, paramètres secteur)
-│   ├── api.js              ← Appels API offres + locations autocomplete
-│   ├── profiles.js         ← Simulation profils live CVthèque
-│   ├── ticker.js           ← Ticker défilement offres
-│   ├── modal.js            ← Modale alerte emploi
-│   └── main.js             ← Initialisation et orchestration
-└── assets/
-    └── icons/              ← SVG icons (Lucide)
+LP_Hub-metiers/
+├── .claude/
+│   ├── launch.json               ← config du serveur de preview local
+│   └── skills/
+│       └── design-system-ce/     ← skill Claude Code : charte Cadremploi
+│                                    (vérifiée contre le repo ce-front)
+├── assets/
+│   └── css/
+│       └── design-system-ce.css  ← design system PARTAGÉ — modifier ici,
+│                                    appliqué à toutes les landings
+└── tech/                         ← landing "Tech & Digital"
+    ├── index.html                → cible : www.cadremploi.fr/carriere/tech/
+    ├── css/
+    │   ├── base.css               ← reset + utilitaires globaux
+    │   ├── components.css         ← composants réutilisables (cards, tags, boutons...)
+    │   └── layout.css             ← header, hero, sections, footer
+    ├── js/
+    │   ├── config.js              ← config (clé API, endpoints, contenu éditorial)
+    │   ├── api.js                 ← appels API offres + autocomplete locations
+    │   ├── profiles.js            ← simulation profils live CVthèque
+    │   ├── ticker.js              ← ticker offres défilantes
+    │   ├── modal.js                ← modale alerte emploi
+    │   └── main.js                 ← initialisation et orchestration
+    └── assets/
+        └── og-tech-cadremploi.png ← image Open Graph/Twitter de cette landing
 ```
+
+Chaque landing est **autonome** (son propre `css/`, `js/`, `assets/`) et ne dépend que du
+design system partagé en `assets/css/design-system-ce.css` — jamais dupliqué dans une
+landing individuelle, pour éviter que la charte diverge entre les pages au fil du temps.
 
 ## Lancer en local
 
-Ouvrir `index.html` dans Chrome.
+Config de preview déjà en place dans `.claude/launch.json` (serveur Python statique sur
+le port 8094). Avec Claude Code, demander de lancer la config `projet-reel`, puis ouvrir :
 
-> ⚠️ L'appel API nécessite ModHeader (extension Chrome) pour injecter le header `x-api-key`.
-> Voir section Configuration ci-dessous.
-
-## Configuration
-
-Modifier `js/config.js` :
-```js
-const CONFIG = {
-  API_KEY: 'ta-clé-ici',       // clé API staging
-  API_BASE: 'https://ce-search-api.staging.fcms.io',
-  SECTOR: { ... }              // paramètres du secteur
-}
+```
+http://localhost:8094/tech/
 ```
 
-## Dupliquer pour un nouveau secteur
+Sans Claude Code, équivalent manuel :
+```bash
+python -m http.server 8094
+```
+puis ouvrir `http://localhost:8094/tech/`.
 
-1. Copier `index.html` → `sectors/sante.html`
-2. Modifier `js/config.js` : changer `SECTOR.fonction`, `SECTOR.label`, etc.
-3. Adapter les textes dans le HTML (titre H1, copy CVthèque...)
-4. C'est tout.
+> ⚠️ Les appels API (`js/api.js`) sont désactivés par défaut (`CONFIG.FEATURES` à `false`
+> dans `js/config.js`) — voir [AVANT_MISE_EN_PROD.md](AVANT_MISE_EN_PROD.md). Tant qu'ils
+> sont désactivés, aucun appel réseau n'est fait vers l'API de staging.
 
-## Migration Next.js (V2)
+## Ajouter une nouvelle landing métier
 
-Chaque fichier JS correspond à un futur composant :
-- `js/api.js`      → `lib/api.ts` + Server Component fetch
-- `js/profiles.js` → `components/ui/ProfilesLive.tsx` (Client Component)
-- `js/ticker.js`   → `components/ui/Ticker.tsx` (Client Component)
-- `js/modal.js`    → `components/ui/AlerteModal.tsx` (Client Component)
-- `css/tokens.css` → `app/globals.css` (tokens identiques)
+1. Dupliquer un dossier existant (ex. `tech/` → `immobilier/`)
+2. Lier `<link rel="stylesheet" href="../assets/css/design-system-ce.css" />` en premier
+   dans le nouveau `index.html` (chemin relatif vers le design system partagé — ne pas
+   dupliquer ce fichier)
+3. Adapter `js/config.js` (`SECTOR`, `CONTENT`, `CHIFFRES`, `PROFILES_POOL`...) et les
+   textes du HTML
+4. Mettre à jour canonical/`og:url`/JSON-LD vers `www.cadremploi.fr/carriere/<nom-landing>/`
+5. Travailler sur une branche dédiée, ouvrir une PR (jamais de commit direct sur `main`)
+
+## Design system
+
+Voir le skill [.claude/skills/design-system-ce/](.claude/skills/design-system-ce/SKILL.md)
+pour les règles complètes (nuancier, typographie, radius, composants) — vérifiées contre
+le repo de production `figarocms/ce-front`. Le fichier CSS partagé correspondant est
+[assets/css/design-system-ce.css](assets/css/design-system-ce.css).
+
+## Cible de mise en production
+
+Ces pages sont aujourd'hui des **prototypes statiques** (`noindex, nofollow`), hébergés
+sur GitHub Pages pour recette visuelle uniquement. Le pipeline de mise en prod réelle
+sur `cadremploi.fr` n'est pas encore défini — discussion en cours avec l'équipe infra,
+probablement inspiré du fonctionnement de `ce-spark`. Le vrai Cadremploi tourne en
+Vue/Nuxt (`ce-front`) ; si ces landings sont un jour intégrées nativement à l'app plutôt
+que servies en statique, ce sera vers ce stack-là — rien n'est tranché à ce stade.
+
+Voir [AVANT_MISE_EN_PROD.md](AVANT_MISE_EN_PROD.md) pour la checklist avant toute mise en ligne.
