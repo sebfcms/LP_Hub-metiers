@@ -1,12 +1,14 @@
-# ✅ Checklist avant mise en production
+# ✅ Checklist avant mise en production — landing `tech/`
 
-> À faire par Seb + valider avec la tech avant déploiement sur cadremploi.fr/tech
+> À faire par Seb + valider avec la tech avant tout déploiement réel sur cadremploi.fr.
+> Cible actuelle : `www.cadremploi.fr/carriere/tech/` — à confirmer avec l'infra
+> (pattern d'URL et mécanisme de routage pas encore validés officiellement).
 
 ---
 
 ## 1. SEO — Balises robots
 
-**Fichier :** `index.html` · ligne ~26
+**Fichier :** `tech/index.html` · ligne ~26
 
 **Actuellement (staging) :**
 
@@ -24,39 +26,25 @@
 
 ## 2. Open Graph — URLs images
 
-**Fichier :** `index.html` · lignes ~44 et ~65
+**Fichier :** `tech/index.html` · balises `og:image` et `twitter:image`
 
-**Actuellement (staging — pointe vers GitHub Pages) :**
-
-```html
-<meta
-  property="og:image"
-  content="https://sebfcms.github.io/LP_Hub-metiers/assets/og-tech-cadremploi.png"
-/>
-<meta
-  name="twitter:image"
-  content="https://sebfcms.github.io/LP_Hub-metiers/assets/og-tech-cadremploi.png"
-/>
-```
-
-**À changer en prod (demander le chemin exact au CTO) :**
+**✅ Déjà fait** — pointent désormais vers le pattern de prod cible plutôt que vers l'URL
+de test GitHub Pages :
 
 ```html
-<meta
-  property="og:image"
-  content="https://www.cadremploi.fr/tech/assets/og-tech-cadremploi.png"
-/>
-<meta
-  name="twitter:image"
-  content="https://www.cadremploi.fr/tech/assets/og-tech-cadremploi.png"
-/>
+<meta property="og:image" content="https://www.cadremploi.fr/carriere/tech/assets/og-tech-cadremploi.png" />
+<meta name="twitter:image" content="https://www.cadremploi.fr/carriere/tech/assets/og-tech-cadremploi.png" />
 ```
+
+⚠️ Suppose que les assets sont servis au même chemin que la page (`/carriere/tech/assets/...`).
+**À confirmer avec l'infra** — si les images finissent sur un CDN dédié (ex. `static.cadremploi.fr`),
+ces URLs devront être ajustées.
 
 ---
 
 ## 3. Feature flags — Activer les blocs masqués
 
-**Fichier :** `js/config.js` · lignes ~13-17
+**Fichier :** `tech/js/config.js` · ligne ~13
 
 **Actuellement (désactivé) :**
 
@@ -68,7 +56,7 @@ FEATURES: {
 },
 ```
 
-**À activer en prod quand CORS ouvert + clé API valide (CTO) :**
+**À activer en prod quand CORS ouvert + clé API valide (voir point 7) :**
 
 ```javascript
 FEATURES: {
@@ -78,13 +66,17 @@ FEATURES: {
 },
 ```
 
-> ⚠️ Ne pas activer avant validation de l'intagration (pas pu tester et faire correctement l'implémentation) puis que la tech ait ouvert le CORS sur l'endpoint staging/prod &
+> ✅ Depuis la réorganisation du repo, `tech/js/main.js` ne fait plus l'appel API
+> (`fetchOffres`) tant que `FEATURES.offres`/`FEATURES.ticker` sont à `false` — avant,
+> l'appel partait quand même en arrière-plan malgré les flags, provoquant un échec CORS
+> systématique. Rien à changer côté code pour activer : basculer les flags à `true`
+> suffit, une fois l'endpoint prod prêt et le CORS ouvert.
 
 ---
 
 ## 4. Chiffres clés — Vérifier avant publication
 
-**Fichier :** `js/config.js` · lignes ~53-59
+**Fichier :** `tech/js/config.js` · ligne ~53
 
 ```javascript
 CHIFFRES: {
@@ -98,50 +90,68 @@ CHIFFRES: {
 
 ---
 
-## 5. Contenu & Lien
+## 5. Contenu & liens
 
-**Fichier :** `index.html` · contenu & lien
+**Fichier :** `tech/index.html`
 
-- bien valider les contenus
-- vérifier les liens vers les offres (bon format) et s'assurer d'un bon volume d'offres (à faire apres APEC et autres sources)`cadremploi.fr`
+- Bien valider les contenus (copy hero, CVthèque, etc.)
+- Vérifier les liens vers les offres (bon format) et s'assurer d'un bon volume d'offres
+  (à recouper avec APEC et autres sources après ouverture de l'API)
 
 ---
 
-## 6. URL canonique
+## 6. URL canonique et pattern de routage
 
-**Fichier :** `index.html` · ligne ~27
+**Fichier :** `tech/index.html` · ligne ~27
 
-Vérifier que l'URL finale correspond bien à l'URL de déploiement :
+**✅ Déjà mis à jour** vers le pattern "hub par métier" :
 
 ```html
-<link rel="canonical" href="https://www.cadremploi.fr/tech" />
+<link rel="canonical" href="https://www.cadremploi.fr/carriere/tech/" />
 ```
 
-ou changer l'url final pour penser un peu plus en hub (car demain on aura santé, industrie...)
+Pattern général visé : `cadremploi.fr/carriere/<nom-landing>/`, un dossier du repo =
+une landing (voir [README.md](README.md)). **Non confirmé officiellement par l'infra** —
+à valider avant que ce soit considéré comme définitif (échange en cours avec le CTO sur
+le process de mise en ligne).
 
 ---
 
 ## 7. CORS — Endpoint API offres
 
-**Fichier :** `js/config.js`
+**Fichier :** `tech/js/config.js`
 
-Demander à la tech d'ouvrir le CORS sur l'endpoint prod :
+Demander à la tech d'ouvrir le CORS sur l'endpoint prod (l'URL de staging ci-dessous
+n'est qu'une référence, il faudra appeler l'endpoint de **production**, pas celui-ci) :
 
 ```
 GET https://ce-search-api.staging.fcms.io/web/offers
 ```
 
 → autoriser le domaine `https://www.cadremploi.fr`
-attention après il faudra appeler l'API de production
 
 ---
 
-## Rappel workflow Git pour déployer une modification
+## 8. Visibilité du repo
+
+Le repo GitHub est aujourd'hui **public**. À passer en privé avant la mise en prod réelle
+(Settings → Danger Zone → Change repository visibility). ⚠️ Sur un compte GitHub gratuit,
+passer en privé désactive GitHub Pages — l'URL de recette actuelle
+(`sebfcms.github.io/LP_Hub-metiers/tech/`) cessera de fonctionner. Prévoir un autre moyen
+de recette si besoin à ce moment-là (serveur local, ou environnement de recette fourni
+par l'infra).
+
+---
+
+## Workflow Git
+
+Jamais de commit direct sur `main`. Pour toute modification :
 
 ```bash
-git add .
+git checkout -b nom-de-la-branche
+# ... modifications ...
+git add -A
 git commit -m "Description de la modif"
-git push
+git push -u origin nom-de-la-branche
+# ouvrir une Pull Request vers main, faire relire, merger
 ```
-
-GitHub Pages se met à jour en 1-3 minutes après le push.
