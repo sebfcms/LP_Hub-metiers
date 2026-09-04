@@ -1,7 +1,6 @@
 /* ============================================================
    js/profiles.js
-   Simulation profils live CVthèque — 100 profils crédibles
-   Rythme réaliste : actif 8h-20h, ralenti 20h-23h, nuit 23h-7h
+   Profils CVtèque (100 profils)
    ============================================================ */
 
 const Profiles = {
@@ -11,6 +10,7 @@ const Profiles = {
   _volume: 68214,
   _activeIdx: [], // indices des profils déjà affichés (évite les doublons)
   _timestamps: [], // timestamps réels des 5 profils affichés
+  _seedBucketMinutes: 10, // largeur de la fenêtre de stabilité au refresh
 
   init(listId, countId) {
     this._listEl = document.getElementById(listId);
@@ -23,44 +23,48 @@ const Profiles = {
     setInterval(() => this._tickVolume(), 180000); // volume toutes les 3 min
   },
 
-  /* ── Rendu initial ── */
+  /* ── Rendu initial ──
+     Seedé sur une fenêtre de temps fixe : tant qu'on reste dans la même
+     fenêtre (_seedBucketMinutes), un refresh de page reproduit exactement
+     la même liste. Elle n'évolue qu'au changement de fenêtre. */
   _renderInitial() {
     const now = Date.now();
     const h = new Date().getHours();
+    const rng = this._seedRandom(this._timeBucketSeed());
 
     // Échelonnement crédible selon l'heure actuelle
     let offsets; // en minutes dans le passé
     if (h >= 8 && h < 20) {
       // Journée : inscriptions récentes, espacées de façon variable
       offsets = [
-        this._rand(3, 18),
-        this._rand(22, 55),
-        this._rand(60, 110),
-        this._rand(120, 200),
-        this._rand(220, 360),
+        this._rand(3, 18, rng),
+        this._rand(22, 55, rng),
+        this._rand(60, 110, rng),
+        this._rand(120, 200, rng),
+        this._rand(220, 360, rng),
       ];
     } else if (h >= 20 && h < 23) {
       // Soirée : moins fréquent
       offsets = [
-        this._rand(15, 45),
-        this._rand(60, 120),
-        this._rand(140, 240),
-        this._rand(260, 400),
-        this._rand(420, 600),
+        this._rand(15, 45, rng),
+        this._rand(60, 120, rng),
+        this._rand(140, 240, rng),
+        this._rand(260, 400, rng),
+        this._rand(420, 600, rng),
       ];
     } else {
       // Nuit : dernière inscription plusieurs heures avant
       offsets = [
-        this._rand(60, 180),
-        this._rand(200, 360),
-        this._rand(380, 600),
-        this._rand(620, 900),
-        this._rand(920, 1440),
+        this._rand(60, 180, rng),
+        this._rand(200, 360, rng),
+        this._rand(380, 600, rng),
+        this._rand(620, 900, rng),
+        this._rand(920, 1440, rng),
       ];
     }
 
     offsets.forEach((offset) => {
-      const profile = this._pick();
+      const profile = this._pick(rng);
       const ts = now - offset * 60 * 1000;
       this._timestamps.push(ts);
       this._listEl.appendChild(this._buildRow(profile, ts, false));
@@ -114,13 +118,14 @@ const Profiles = {
     }, delay);
   },
 
-  /* ── Pick un profil sans doublon consécutif ── */
-  _pick() {
+  /* ── Pick un profil sans doublon consécutif ──
+     Accepte un générateur aléatoire optionnel (seedé ou Math.random). */
+  _pick(rng = Math.random) {
     const pool = CONFIG.PROFILES_POOL;
     let idx;
     let attempts = 0;
     do {
-      idx = Math.floor(Math.random() * pool.length);
+      idx = Math.floor(rng() * pool.length);
       attempts++;
     } while (this._activeIdx.includes(idx) && attempts < 20);
 
@@ -129,7 +134,7 @@ const Profiles = {
 
     return {
       ...pool[idx],
-      letter: this._randomLetter(),
+      letter: this._randomLetter(rng),
     };
   },
 
@@ -187,11 +192,29 @@ const Profiles = {
     return `il y a ${diffD} jours`;
   },
 
-  _rand(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+  _rand(min, max, rng = Math.random) {
+    return Math.floor(rng() * (max - min + 1)) + min;
   },
-  _randomLetter() {
+  _randomLetter(rng = Math.random) {
     const l = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    return l[Math.floor(Math.random() * l.length)];
+    return l[Math.floor(rng() * l.length)];
+  },
+
+  /* ── Fenêtre de temps courante (identifiant qui ne change que
+       toutes les _seedBucketMinutes minutes) ── */
+  _timeBucketSeed() {
+    return Math.floor(Date.now() / (this._seedBucketMinutes * 60 * 1000));
+  },
+
+  /* ── PRNG déterministe (mulberry32) : mêmes tirages pour un même seed,
+       donc pour une même fenêtre de temps ── */
+  _seedRandom(seed) {
+    let s = seed | 0;
+    return function () {
+      s = (s + 0x6d2b79f5) | 0;
+      let t = Math.imul(s ^ (s >>> 15), 1 | s);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
   },
 };
