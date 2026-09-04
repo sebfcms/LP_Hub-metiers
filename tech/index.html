@@ -140,7 +140,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Poppins:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;family=Poppins:wght@400;500;600;700&amp;display=swap"
       rel="stylesheet"
     />
 
@@ -924,10 +924,7 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
 
-      .d-print-none {
-        /* Caché à l'impression */
-      }
-
+      /* Caché à l'impression */
       @media print {
         .d-print-none {
           display: none !important;
@@ -970,9 +967,6 @@
 
       .dropdown-menu .pa-4 {
         padding: 16px;
-      }
-
-      #login-submit-btn {
       }
 
       .title-espace-perso {
@@ -1625,9 +1619,6 @@
         background-color: #f5f5f5;
       }
 
-      .mobile-menu-group {
-      }
-
       .mobile-menu-group-toggle {
         width: 100%;
         display: flex;
@@ -2137,7 +2128,6 @@
           <button
             type="button"
             class="v-btn v-btn--icon v-theme--ceTheme v-btn--density-default v-btn--size-small v-btn--variant-plain hidden-md-and-up v-app-bar-nav-icon"
-            style=""
             aria-label="Menu mobile"
             data-v-ba1a373a=""
           >
@@ -2146,7 +2136,6 @@
             <span class="v-btn__content" data-no-activator="">
               <i
                 class="v-icon notranslate v-theme--ceTheme v-icon--size-default"
-                style=""
                 aria-hidden="true"
               >
                 <svg
@@ -2552,7 +2541,7 @@
           </a>
         </nav>
 
-        <div class="v-spacer" style=""></div>
+        <div class="v-spacer"></div>
 
         <a
           href="/emploi/creer_compte"
@@ -3582,7 +3571,8 @@
 
     <!-- ══════════════════════════════════════════
      OFFRES RÉCENTES
-     ══════════════════════════════════════════ -->
+     Désactivé : bloc masqué tant que l'appel API n'est pas branché
+     ══════════════════════════════════════════
     <section
       class="section"
       aria-label="Offres d'emploi Tech récentes"
@@ -3600,10 +3590,11 @@
           </div>
           <a href="#" class="btn-outline-sm">Voir toutes les offres →</a>
         </div>
-        <!-- Injecté par js/main.js après fetch API -->
+        Injecté par js/main.js après fetch API
         <div class="jobs-grid" id="jobs-grid-main"></div>
       </div>
     </section>
+    -->
 
     <!-- ══════════════════════════════════════════
      SPÉCIALITÉS TECH
@@ -4226,7 +4217,7 @@
             <div class="app-store-download">
               <div class="title">Téléchargez notre appli</div>
               <a
-                href="https://itunes.apple.com/app/apple-store/id383089648?pt=318717&ct=footerCadremploi&mt=8"
+                href="https://itunes.apple.com/app/apple-store/id383089648?pt=318717&amp;ct=footerCadremploi&amp;mt=8"
                 target="_blank"
                 rel="noopener"
                 aria-label="Application sur l'App Store"
