@@ -32,8 +32,14 @@
 de test GitHub Pages :
 
 ```html
-<meta property="og:image" content="https://www.cadremploi.fr/carriere/tech/assets/og-tech-cadremploi.png" />
-<meta name="twitter:image" content="https://www.cadremploi.fr/carriere/tech/assets/og-tech-cadremploi.png" />
+<meta
+  property="og:image"
+  content="https://www.cadremploi.fr/carriere/tech/assets/og-tech-cadremploi.png"
+/>
+<meta
+  name="twitter:image"
+  content="https://www.cadremploi.fr/carriere/tech/assets/og-tech-cadremploi.png"
+/>
 ```
 
 ⚠️ Suppose que les assets sont servis au même chemin que la page (`/carriere/tech/assets/...`).
@@ -52,7 +58,7 @@ ces URLs devront être ajustées.
 FEATURES: {
   alertes: false,   // boutons "Créer mon alerte" + modale
   ticker:  false,   // ticker offres défilantes sous le hero
-  offres:  false,   // bloc "Dernières offres" (grille 6 cards)
+  offres:  false,   // bloc "Dernières offres" (grille 6 cards), dans le code le bloc est en commentaire également
 },
 ```
 
