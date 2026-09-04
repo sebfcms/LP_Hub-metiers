@@ -32,7 +32,12 @@ fourni par l'infra).
 
 ## Workflow Git
 
-Jamais de commit direct sur `main`. Pour toute modification, sur n'importe quelle landing :
+Jamais de commit direct sur `main`. Pour toute modification, sur n'importe quelle landing.
+
+> Depuis la mise en place de **GitHub CLI (`gh`)** + l'extension VS Code **"GitHub Pull
+> Requests"**, la Pull Request se crée (et se merge) en ligne de commande — plus besoin
+> d'aller sur github.com pour ça. Vérifier que `gh` est authentifié avec `gh auth status`
+> si besoin (`gh auth login` sinon).
 
 ```bash
 # 1. Créer une nouvelle branche à partir de main, et basculer dessus
@@ -49,27 +54,32 @@ git commit -m "Description de la modif"
 # 5. Envoyer la branche sur GitHub (-u = mémorise le lien pour les prochains push)
 git push -u origin nom-de-la-branche
 
-# 6. Sur GitHub : ouvrir une Pull Request de "nom-de-la-branche" vers "main",
-#    faire relire par quelqu'un, puis merger une fois validée
+# 6. Créer la Pull Request depuis le terminal (--fill reprend le message du commit
+#    comme titre/description, pas besoin de les ressaisir)
+gh pr create --fill
 ```
 
-**Le merge (étape 6) se fait sur GitHub, pas en ligne de commande :**
-
-1. Ouvrir la Pull Request (bouton "Compare & pull request" qui apparaît après le
-   `git push`, ou onglet "Pull requests" → "New pull request").
-2. Une fois relue et validée, cliquer sur le bouton vert **"Merge pull request"**
-   en bas de la PR, puis "Confirm merge".
-3. GitHub propose de supprimer la branche (`nom-de-la-branche`) : accepter, elle
-   ne sert plus une fois mergée.
-4. En local, repartir propre en récupérant le merge sur `main` :
+**Relecture puis merge — une fois la PR prête à merger :**
 
 ```bash
-# Revenir sur la branche main...
-git checkout main
-# ...et récupérer le commit de merge fait sur GitHub
-git pull
+# 7. Merger en "squash" (regroupe tous les commits de la branche en un seul sur
+#    main, comme pour les PR précédentes) et supprimer la branche distante
+gh pr merge --squash --delete-branch
 ```
 
-> Il existe aussi un merge en ligne de commande (`git merge`), mais on passe ici
-> par le bouton GitHub : ça garde une trace de la review/PR et respecte la règle
-> "jamais de commit direct sur main".
+> `--squash` garde l'historique de `main` propre (1 commit par PR, cohérent avec les PR
+> précédentes #1/#2/#3). Sans argument, `gh pr merge` demande le mode de merge à chaque
+> fois — `--squash` évite la question.
+
+```bash
+# 8. En local, repartir propre : revenir sur main, récupérer le commit de merge,
+#    et supprimer la branche locale qui ne sert plus
+git checkout main
+git pull
+git branch -D nom-de-la-branche
+```
+
+**Alternative via l'interface** : la Pull Request peut aussi se créer et se merger
+depuis l'onglet **GitHub** de VS Code (icône dans la barre latérale), ou directement sur
+github.com (bouton "Compare & pull request" après le push, puis "Merge pull request") —
+au choix, selon ce qui est le plus pratique sur le moment.
