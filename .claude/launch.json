@@ -7,11 +7,11 @@
       "runtimeArgs": [
         "-m",
         "http.server",
-        "8094",
+        "5500",
         "--directory",
         "G:\\Mon Drive\\5. PROJETS\\LP_Hub-metiers"
       ],
-      "port": 8094
+      "port": 5500
     }
   ]
 }
