@@ -39,15 +39,23 @@ landing individuelle, pour éviter que la charte diverge entre les pages au fil 
 
 ## Lancer en local
 
-Config de preview déjà en place dans `.claude/launch.json` (serveur Python statique sur
-le port 5500, aligné sur le port par défaut de l'extension VS Code Live Server). Avec
-Claude Code, demander de lancer la config `projet-reel`, puis ouvrir :
+Toutes les méthodes servent le projet sur le **port 5500**, pour ne jamais avoir à retenir
+plusieurs adresses selon la façon dont la preview a été lancée.
+
+**Méthode par Claude** — demander à Claude Code de lancer la config `projet-reel`
+(définie dans `.claude/launch.json`, un serveur Python statique sur le port 5500), puis
+ouvrir :
 
 ```
 http://localhost:5500/tech/
 ```
 
-Sans Claude Code, équivalent manuel :
+**Méthode rapide dans VS Code** — clic droit sur `tech/index.html` → **"Open with Live
+Server"** (ou bouton "Go Live" en bas à droite), extension déjà réglée sur le port 5500
+par défaut. Pratique pour éditer et voir le résultat se recharger automatiquement à
+chaque sauvegarde, sans repasser par Claude.
+
+Équivalent manuel en ligne de commande (sans Claude ni extension) :
 ```bash
 python -m http.server 5500
 ```
