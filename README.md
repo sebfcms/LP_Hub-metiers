@@ -53,8 +53,8 @@ python -m http.server 8094
 puis ouvrir `http://localhost:8094/tech/`.
 
 > ⚠️ Les appels API (`js/api.js`) sont désactivés par défaut (`CONFIG.FEATURES` à `false`
-> dans `js/config.js`) — voir [AVANT_MISE_EN_PROD.md](AVANT_MISE_EN_PROD.md). Tant qu'ils
-> sont désactivés, aucun appel réseau n'est fait vers l'API de staging.
+> dans `js/config.js`) — voir [tech/AVANT_MISE_EN_PROD.md](tech/AVANT_MISE_EN_PROD.md). Tant
+> qu'ils sont désactivés, aucun appel réseau n'est fait vers l'API de staging.
 
 ## Ajouter une nouvelle landing métier
 
@@ -65,7 +65,9 @@ puis ouvrir `http://localhost:8094/tech/`.
 3. Adapter `js/config.js` (`SECTOR`, `CONTENT`, `CHIFFRES`, `PROFILES_POOL`...) et les
    textes du HTML
 4. Mettre à jour canonical/`og:url`/JSON-LD vers `www.cadremploi.fr/carriere/<nom-landing>/`
-5. Travailler sur une branche dédiée, ouvrir une PR (jamais de commit direct sur `main`)
+5. Dupliquer `tech/AVANT_MISE_EN_PROD.md` → `<nom-landing>/AVANT_MISE_EN_PROD.md` et l'adapter
+   (numéros de ligne, flags, chiffres, contenu propres à la nouvelle landing)
+6. Travailler sur une branche dédiée, ouvrir une PR (jamais de commit direct sur `main`)
 
 ## Design system
 
@@ -83,4 +85,6 @@ probablement inspiré du fonctionnement de `ce-spark`. Le vrai Cadremploi tourne
 Vue/Nuxt (`ce-front`) ; si ces landings sont un jour intégrées nativement à l'app plutôt
 que servies en statique, ce sera vers ce stack-là — rien n'est tranché à ce stade.
 
-Voir [AVANT_MISE_EN_PROD.md](AVANT_MISE_EN_PROD.md) pour la checklist avant toute mise en ligne.
+Voir [AVANT_MISE_EN_PROD.md](AVANT_MISE_EN_PROD.md) pour la checklist commune à toutes les
+landings, et [tech/AVANT_MISE_EN_PROD.md](tech/AVANT_MISE_EN_PROD.md) pour celle spécifique
+à `tech/` (chaque landing a la sienne).
