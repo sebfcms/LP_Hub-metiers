@@ -39,6 +39,32 @@ Jamais de commit direct sur `main`. Pour toute modification, sur n'importe quell
 > d'aller sur github.com pour ça. Vérifier que `gh` est authentifié avec `gh auth status`
 > si besoin (`gh auth login` sinon).
 
+### Procédure rapide (petits changements)
+
+Pour un petit changement simple (typo, config, réglage...), pas besoin de passer par les
+étapes détaillées une par une ci-dessous — deux raccourcis, au choix :
+
+**Méthode par Claude** — dire **"publie"** à Claude Code. Il enchaîne tout seul, sans
+pause intermédiaire : branche dédiée → commit → push → `gh pr create --fill` →
+`gh pr merge --squash --delete-branch` → nettoyage local (retour sur `main`, `git pull`,
+suppression de la branche locale). Rien d'autre à faire.
+
+**Méthode rapide dans VS Code** — via l'onglet **"Source Control"** (icône branche dans
+la barre latérale) :
+1. Modifier les fichiers, puis dans "Source Control" : message de commit → **✓ Commit**
+2. Bouton **"Publish Branch"** (ou "Sync Changes" si la branche existe déjà sur GitHub)
+3. Onglet **"GitHub Pull Requests"** (icône à côté) → **"Create Pull Request"** → **"Create"**
+4. Une fois la PR ouverte dans VS Code : bouton **"Merge Pull Request"** (choisir "Squash
+   and merge" pour rester cohérent avec le reste de l'historique)
+5. VS Code propose de supprimer la branche mergée : accepter, puis `git checkout main` +
+   `git pull` pour repartir propre en local
+
+Pour un changement plus gros ou qui mérite une vraie relecture, préférer la procédure
+détaillée ci-dessous (une PR qu'on laisse ouverte le temps de la relire, au lieu d'un
+merge immédiat).
+
+### Procédure détaillée
+
 ```bash
 # 1. Créer une nouvelle branche à partir de main, et basculer dessus
 git checkout -b nom-de-la-branche
