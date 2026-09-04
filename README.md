@@ -40,17 +40,18 @@ landing individuelle, pour éviter que la charte diverge entre les pages au fil 
 ## Lancer en local
 
 Config de preview déjà en place dans `.claude/launch.json` (serveur Python statique sur
-le port 8094). Avec Claude Code, demander de lancer la config `projet-reel`, puis ouvrir :
+le port 5500, aligné sur le port par défaut de l'extension VS Code Live Server). Avec
+Claude Code, demander de lancer la config `projet-reel`, puis ouvrir :
 
 ```
-http://localhost:8094/tech/
+http://localhost:5500/tech/
 ```
 
 Sans Claude Code, équivalent manuel :
 ```bash
-python -m http.server 8094
+python -m http.server 5500
 ```
-puis ouvrir `http://localhost:8094/tech/`.
+puis ouvrir `http://localhost:5500/tech/`.
 
 > ⚠️ Les appels API (`js/api.js`) sont désactivés par défaut (`CONFIG.FEATURES` à `false`
 > dans `js/config.js`) — voir [tech/AVANT_MISE_EN_PROD.md](tech/AVANT_MISE_EN_PROD.md). Tant
