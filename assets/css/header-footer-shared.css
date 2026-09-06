@@ -75,8 +75,11 @@ body {
    S'inscrire/Mon compte ne tiennent pas dans le header sans ce
    resserrement, y compris une fois l'icône Mon compte masquée à
    1468px — d'où ce seuil plus haut. Bug constaté sur les résolutions
-   labtop courantes 1280/1366/1440/1468 — corrigé sept. 2026. */
-@media (max-width: 1499px) {
+   labtop courantes 1280/1366/1440/1468 — corrigé sept. 2026.
+   Seuil aligné à 1641px sept. 2026 sur la valeur mesurée du passage
+   14px/16px de la police des boutons du header (même cause, même
+   seuil sur la vraie prod). */
+@media (max-width: 1641px) {
   nav[aria-label="Principale"].ga-lg-4 {
     gap: 8px !important;
   }
@@ -93,6 +96,9 @@ body {
 }
 .ps-2 {
   padding-left: 8px !important;
+}
+.ps-4 {
+  padding-left: 16px !important;
 }
 .py-3 {
   padding-top: 12px !important;
@@ -213,9 +219,22 @@ a.v-btn.text-grey-800 .v-btn__content * {
   opacity: 1 !important;
 }
 
-/* Classes responsive */
+/* Classes responsive — noms et seuils Vuetify (breakpoints
+   xs<600 / sm 600-959 / md 960-1279 / lg 1280-1919 / xl≥1920).
+   "hidden-X-and-down" masque X et tout ce qui est plus petit,
+   "hidden-X-and-up" masque X et tout ce qui est plus grand.
+   Vérifié sept. 2026 sur la vraie prod (matched CSS rule :
+   ".hidden-md-and-down { display:none }" sous exactement 1279.98px)
+   — .hidden-md-and-down masque donc tout sous 1280px, PAS sous 960px
+   comme l'ancienne version de ce fichier le supposait (l'icône
+   "Mon compte" et le "Mon compte"-texte se partagent le seuil 1280 en
+   miroir : l'un est .hidden-lg-and-up, l'autre .hidden-md-and-down —
+   ce n'est pas une redondance, les deux ne sont jamais visibles en
+   même temps). "Espace recruteur" masque, lui, à 960px : c'est
+   .hidden-sm-and-down, une classe différente malgré le nom voisin. */
 /* Par défaut, tous les éléments sont visibles */
 .hidden-md-and-down,
+.hidden-sm-and-down,
 .hidden-lg-and-up,
 .hidden-md-and-up {
   display: initial;
@@ -226,7 +245,7 @@ a.v-btn.text-grey-800 .v-btn__content * {
   .d-md-flex {
     display: none !important;
   }
-  .hidden-md-and-down {
+  .hidden-sm-and-down {
     display: none !important;
   }
   .d-none.d-md-block {
@@ -243,7 +262,7 @@ a.v-btn.text-grey-800 .v-btn__content * {
   }
 }
 
-/* >= 1468px (tablettes et desktop) */
+/* >= 960px (tablettes et desktop) */
 @media (min-width: 960px) {
   .d-md-flex {
     display: flex !important;
@@ -254,7 +273,7 @@ a.v-btn.text-grey-800 .v-btn__content * {
   .hidden-md-and-up {
     display: none !important;
   }
-  .hidden-md-and-down {
+  .hidden-sm-and-down {
     display: initial !important;
   }
   .py-md-4 {
@@ -268,22 +287,20 @@ a.v-btn.text-grey-800 .v-btn__content * {
   }
 }
 
+/* < 1280px (seuil Vuetify lg) */
+@media (max-width: 1279px) {
+  .hidden-md-and-down {
+    display: none !important;
+  }
+}
+
 /* >= 1280px (grands écrans) */
 @media (min-width: 1280px) {
   .hidden-lg-and-up {
     display: none !important;
   }
-
-  /* Exception pour l'icône Mon compte : reste visible jusqu'à 1468px */
-  #btn-mon-compte .hidden-lg-and-up {
-    display: inline !important;
-  }
-}
-
-/* >= 1468px : cacher l'icône Mon compte en mode desktop */
-@media (min-width: 1468px) {
-  #btn-mon-compte .hidden-lg-and-up {
-    display: none !important;
+  .hidden-md-and-down {
+    display: initial !important;
   }
 }
 
@@ -432,16 +449,75 @@ button {
   max-width: unset;
 }
 
-/* Boutons de navigation (variant text) - padding réduit */
-nav[aria-label="Principale"] .v-btn--variant-text {
-  padding: 0.75rem 0.8rem;
+/* Taille de police réelle des boutons du header — système à 3 paliers
+   mesuré pas à pas sur la vraie prod (liste_offres), calé sur les
+   seuils Vuetify standard md=960/lg=1280 + un seuil custom ~1642 :
+     - ≥ 1642px : 16px, padding nav "8px 16px", gap "16px"
+     - 1280-1641px : 14px, padding nav "8px 4px", gap "8px"
+     - < 1280px : 13px, mêmes padding/gap que le palier du dessus
+   ("Mon compte"/"Espace recruteur" suivent la même police mais un
+   padding propre : "8px" ≥1280px, "8px 4px" en dessous — l'icône
+   "Mon compte" bascule aussi exactement à 1280px, cf. .hidden-lg-and-up
+   plus haut). Base = palier large (≥1642px). */
+.menu-button,
+.signup-link,
+.company-site-link,
+.my-account-link {
+  font-size: 1rem;
 }
 
-/* Resserrer encore le padding des liens de nav entre 1280 et 1499px
-   (voir le commentaire sur ga-lg-4 plus haut — même cause) */
-@media (max-width: 1499px) {
+.company-site-link,
+.my-account-link {
+  padding: 8px;
+}
+
+nav[aria-label="Principale"] .v-btn--variant-text {
+  padding: 8px 16px;
+}
+
+/* Palier "medium" : 1280-1641px */
+@media (max-width: 1641px) {
   nav[aria-label="Principale"] .v-btn--variant-text {
-    padding: 0.75rem 0.4rem;
+    padding: 8px 4px;
+  }
+}
+
+/* Palier "narrow" (< 1280px, seuil Vuetify lg) : la partie padding
+   vit ici, la partie font-size est plus bas (après le palier medium
+   1280-1641px, pour gagner la bataille de cascade sur le même
+   sélecteur nav[aria-label="Principale"] — les deux règles sont
+   !important donc c'est l'ORDRE dans le fichier qui tranche). */
+@media (max-width: 1279px) {
+  .company-site-link,
+  .my-account-link {
+    padding: 8px 4px;
+  }
+}
+
+/* Marge de sécurité résiduelle sous 1642px (tout le palier
+   medium+narrow). Police Google Fonts oblige (voir plus haut), notre
+   rendu d'"Inter" n'est pas strictement identique en métrique à celui
+   de la prod (autohébergé) : mesuré ~10% plus large à taille égale
+   une fois les 3 paliers ci-dessus appliqués. Sans cette marge
+   résiduelle, le header déborde encore horizontalement (notamment
+   960-1279px, et 1280-1641px une fois "Mon compte" en texte et/ou
+   "S'inscrire" réapparus) malgré des valeurs de police/padding par
+   ailleurs identiques à la prod. */
+@media (max-width: 1641px) {
+  nav[aria-label="Principale"] .v-btn--variant-text {
+    padding: 8px 2px;
+  }
+  nav[aria-label="Principale"].ga-lg-4 {
+    gap: 4px !important;
+  }
+}
+
+@media (max-width: 1279px) {
+  nav[aria-label="Principale"] .v-btn--variant-text {
+    padding: 8px 0;
+  }
+  nav[aria-label="Principale"].ga-lg-4 {
+    gap: 2px !important;
   }
 }
 
@@ -601,21 +677,49 @@ nav[aria-label="Principale"] .v-btn--variant-text:hover {
   }
 }
 
-/* Resserrer encore la nav entre 1280 et 1499px : texte légèrement
-   plus petit (hérité par les boutons via --v-btn-size non défini,
-   cf. .v-btn--size-default) + icône "Mon compte" masquée plus tôt
-   (redondante avec le texte, déjà masquée au-delà de 1468px par la
-   règle plus bas — ici on couvre aussi 1468-1499px où le reste du
-   header repasse en taille normale mais où ça ne suffit pas encore).
-   Ne touche pas à overflow : #header nav a besoin de overflow:visible
-   pour que les menus déroulants ne soient pas coupés (règle plus bas,
-   ne pas la contourner). */
-@media (max-width: 1499px) {
+/* Seuils mesurés directement sur la prod (liste_offres, resize pas à
+   pas + lecture des styles calculés une fois l'app Vue hydratée —
+   son vrai système est piloté par ResizeObserver, cf. les classes
+   "hidden-custom-width-1390", pas de simples media queries CSS ;
+   ce fichier statique les approxime avec les seuils CSS classiques
+   ci-dessous, mesurés un par un plutôt que devinés) :
+   - texte des boutons du header (nav + S'inscrire/Mon compte/Espace
+     recruteur) : 14px sous ~1642px, 16px au-delà (mesuré : 14px
+     encore à 1640px, 16px dès 1645px)
+   - "S'inscrire" : masqué à 1390px et en dessous, visible dès 1391px
+   - icône "Mon compte" : déjà gérée par .hidden-lg-and-up, seuil
+     unique 1280px (voir plus haut — pas de palier à 1468px, supprimé
+     après mesure) */
+@media (max-width: 1641px) {
   nav[aria-label="Principale"] {
     font-size: 14px !important;
   }
-  #btn-mon-compte .hidden-lg-and-up {
+  .menu-button,
+  .company-site-link,
+  .my-account-link {
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 1390px) {
+  .signup-link {
     display: none !important;
+  }
+}
+
+/* Palier "narrow" : < 1280px (seuil Vuetify lg) — placé APRÈS le
+   palier medium ci-dessus pour gagner la cascade (même sélecteur,
+   même !important, l'ordre dans le fichier décide). La partie
+   padding de ce palier est plus haut, avec le reste du système à
+   3 paliers (cf. son commentaire). */
+@media (max-width: 1279px) {
+  nav[aria-label="Principale"] {
+    font-size: 13px !important;
+  }
+  .menu-button,
+  .company-site-link,
+  .my-account-link {
+    font-size: 13px !important;
   }
 }
 
@@ -823,10 +927,11 @@ nav[aria-label="Principale"] .v-btn {
   transition: transform 0.2s ease;
 }
 
-/* Bouton S'inscrire - ajustement pour correspondre à l'original */
+/* Bouton S'inscrire - ajustement pour correspondre à l'original
+   (font-size mesuré sur la prod : 16px, pas 13px) */
 .v-btn--variant-outlined.v-btn--size-small {
   padding: 8px 16px !important;
-  font-size: 13px !important;
+  font-size: 16px !important;
   font-weight: 500 !important;
   line-height: normal !important;
   border-radius: 8px !important;
@@ -862,27 +967,24 @@ nav[aria-label="Principale"] .v-btn {
 
 .cadremploi-logo img {
   max-width: 100%;
-  height: auto;
+  /* Pas de height:auto : en prod l'image n'a pas de hauteur CSS propre,
+     elle garde l'attribut HTML height="36" tel quel (rendu non
+     proportionnel, cf. width="240" height="36" plus haut dans le
+     markup) — un height:auto ici recalcule la hauteur depuis le ratio
+     naturel du SVG (~9.4:1) et écrase le logo à ~17px au lieu de 36px. */
 }
 
-/* Sur mobile, réduire la taille du logo */
-@media (max-width: 1467px) {
-  .cadremploi-logo {
-    flex: 0 0 auto;
-    max-width: 140px;
-    margin-left: 0.5rem;
-  }
+/* Pas de variation de taille du logo selon la largeur d'écran :
+   mesuré fixe à 160×36 sur la prod de 375px à 1920px (les anciennes
+   règles ci-dessous, qui le réduisaient à 140px sous 1467px et
+   l'élargissaient à 240px au-delà de 1920px, ne correspondaient à
+   rien d'observé — supprimées sept. 2026). */
 
-  .cadremploi-logo img {
-    width: 140px;
-    height: auto;
-  }
-}
-
-@media (min-width: 1920px) {
-  .cadremploi-logo {
-    width: 240px;
-  }
+/* Séparateur vertical avant "Espace recruteur" (repris de la prod) */
+.h-divider {
+  border-left: 1px solid rgb(var(--v-theme-pale-grey-40));
+  height: 40px;
+  margin: 0 12px;
 }
 
 /* S'assurer que le header permet l'overflow et a la bonne bordure */
@@ -897,8 +999,16 @@ nav[aria-label="Principale"] .v-btn {
   box-sizing: border-box;
 }
 
+/* overflow:hidden ici (pas visible) — comme en prod : le
+   `.v-toolbar__content` de la vraie prod a overflow:hidden. Les
+   méga-menus déroulants (.dropdown-menu) sont en position:fixed,
+   donc jamais rognés par ce overflow:hidden (le fixed échappe aux
+   ancêtres qui clippent, sauf transform/filter actif — absent ici).
+   Ce réglage absorbe aussi, sans barre de défilement horizontale,
+   le léger surplus de largeur dû à nos polices Google Fonts (voir
+   plus haut) sur les largeurs les plus tendues (~960-1150px). */
 #header .v-toolbar__content {
-  overflow: visible !important;
+  overflow: hidden;
 }
 
 #header nav {
@@ -1711,13 +1821,11 @@ footer {
   justify-content: center;
 }
 
-.v-btn--size-small {
-  --v-btn-size: 0.875rem;
-  --v-btn-height: 36px;
-  font-size: var(--v-btn-size);
-}
-
-/* Surcharger les variables Vuetify pour les boutons sociaux */
+/* Surcharger les variables Vuetify pour les boutons sociaux
+   (bloc non scopé ".v-btn--size-small" supprimé sept. 2026 : il
+   dupliquait — en l'écrasant, faute d'!important — la vraie règle
+   de taille du header ligne ~419, ramenant à 14px tous les boutons
+   du menu principal censés faire 13px comme en prod) */
 .reseaux-sociaux .v-btn--size-small {
   --v-btn-size: 0.875rem !important;
   --v-btn-height: 36px !important;
