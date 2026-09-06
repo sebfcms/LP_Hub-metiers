@@ -1,0 +1,1893 @@
+/* ============================================================
+   assets/css/header-footer-shared.css
+   Styles communs header/footer/modales — partagés par toutes
+   les pages hub-métiers (tech, et les futures).
+
+   Extrait du <style> inline de tech/index.html (audit SEO,
+   sept. 2026) : ce bloc était dupliqué en clair dans chaque
+   page HTML et jamais mis en cache par le navigateur.
+   Externalisé ici pour être chargé une seule fois et réutilisé
+   sur toutes les pages métier via un <link rel="stylesheet">.
+   ============================================================ */
+
+/* Import des polices Google Fonts - Inter, Open Sans, Source Sans Pro */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&family=Open+Sans:wght@300;400;600;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap");
+
+/* Reset et styles de base */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family:
+    Inter, "Source Sans Pro", "Open Sans", "Noto Sans", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Classes utilitaires Vuetify essentielles */
+.d-none {
+  display: none !important;
+}
+.d-flex {
+  display: flex !important;
+}
+.d-inline-block {
+  display: inline-block !important;
+}
+.align-center {
+  align-items: center !important;
+}
+.flex-fill {
+  flex: 1 !important;
+}
+.flex-column {
+  flex-direction: column !important;
+}
+/* Classes de gap - échelle Vuetify : 1 unité = 4px */
+.ga-1 {
+  gap: 4px !important;
+}
+.ga-3 {
+  gap: 12px !important;
+}
+.ga-4 {
+  gap: 16px !important;
+}
+
+/* Gaps responsive - appliquent les valeurs par breakpoint */
+.ga-md-2 {
+  gap: 8px !important;
+}
+.ga-lg-4 {
+  gap: 16px !important;
+}
+
+/* Sur petits et moyens écrans (< 1500px), ga-md-2 prend le dessus.
+   Seuil élargi à 1500px (au-delà du seuil Vuetify 1280/1468 habituel) :
+   entre 1280 et ~1485px, la nav complète (6 liens) + les boutons
+   S'inscrire/Mon compte ne tiennent pas dans le header sans ce
+   resserrement, y compris une fois l'icône Mon compte masquée à
+   1468px — d'où ce seuil plus haut. Bug constaté sur les résolutions
+   labtop courantes 1280/1366/1440/1468 — corrigé sept. 2026. */
+@media (max-width: 1499px) {
+  nav[aria-label="Principale"].ga-lg-4 {
+    gap: 8px !important;
+  }
+}
+
+/* Sur grands écrans (>= 1500px), ga-lg-4 prend le dessus */
+@media (min-width: 1500px) {
+  nav[aria-label="Principale"].ga-lg-4 {
+    gap: 16px !important;
+  }
+}
+.pa-4 {
+  padding: 16px !important;
+}
+.ps-2 {
+  padding-left: 8px !important;
+}
+.py-3 {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+.py-md-4 {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+.mb-2 {
+  margin-bottom: 8px !important;
+}
+.ml-2 {
+  margin-left: 8px !important;
+}
+.me-4 {
+  margin-right: 16px !important;
+}
+.me-6 {
+  margin-right: 24px !important;
+}
+.mx-3 {
+  margin-left: 12px !important;
+  margin-right: 12px !important;
+}
+.text-right {
+  text-align: right !important;
+  justify-content: flex-end !important;
+}
+.text-caption {
+  font-size: 12px !important;
+  line-height: 1.25 !important;
+}
+
+/* Si un élément a .text-right ET .text-caption, l'alignement à droite prime */
+.text-right.text-caption {
+  text-align: right !important;
+}
+.font-weight-medium {
+  font-weight: 500 !important;
+}
+.font-weight-bold {
+  font-weight: 700 !important;
+}
+.text-decoration-underline {
+  text-decoration: underline !important;
+}
+.rounded-lg {
+  border-radius: 8px !important;
+}
+.elevation-0 {
+  box-shadow: none !important;
+}
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+/* Variables CSS Vuetify (couleurs du thème ceTheme) */
+:root {
+  --v-theme-grey-800: 44, 48, 58;
+  --v-theme-pale-grey-40: 89, 96, 115;
+  --v-theme-grey-200: 197, 201, 211;
+  --v-theme-grey-100: 226, 228, 233;
+  --v-theme-pale-grey-95: 241, 241, 244;
+  --v-theme-blue-600: 50, 85, 154;
+  --v-theme-blue-500: 62, 106, 193;
+  --v-theme-blue-50: 236, 240, 249;
+  --v-theme-red-600: 230, 0, 90;
+  --v-theme-white: 255, 255, 255;
+  --v-border-color: 0, 0, 0;
+  --v-border-opacity: 0.12;
+  --v-high-emphasis-opacity: 1;
+  --v-medium-emphasis-opacity: 0.6;
+  --v-hover-opacity: 0.04;
+  --v-focus-opacity: 0.12;
+  --v-activated-opacity: 0.12;
+  --v-theme-overlay-multiplier: 1;
+}
+
+/* Classes de couleur avec haute spécificité - CORRECTION */
+/* Les textes de navigation utilisent pale-grey-40, pas grey-800 */
+.text-grey-800,
+.v-btn.text-grey-800,
+a.text-grey-800,
+button.text-grey-800,
+.v-btn.text-grey-800 .v-btn__content,
+a.text-grey-800 .v-btn__content,
+button.text-grey-800 .v-btn__content {
+  color: #596073 !important;
+  color: rgb(var(--v-theme-pale-grey-40)) !important;
+}
+
+/* Pour les boutons variant text, utiliser pale-grey-40 */
+.v-btn--variant-text.text-grey-800,
+.v-btn--variant-text.text-grey-800 *,
+.v-btn--variant-text.text-grey-800 .v-btn__content,
+.v-btn--variant-text.text-grey-800 .v-btn__content *,
+a.v-btn.text-grey-800,
+a.v-btn.text-grey-800 *,
+a.v-btn.text-grey-800 .v-btn__content,
+a.v-btn.text-grey-800 .v-btn__content * {
+  color: #596073 !important;
+  color: rgb(var(--v-theme-pale-grey-40)) !important;
+}
+
+.text-pale-grey-40 {
+  color: #596073 !important;
+  color: rgb(var(--v-theme-pale-grey-40)) !important;
+}
+
+.text-blue-600,
+.v-icon.text-blue-600 {
+  color: #32559a !important;
+  color: rgb(var(--v-theme-blue-600)) !important;
+}
+
+.text-high-emphasis {
+  opacity: 1 !important;
+}
+
+/* Classes responsive */
+/* Par défaut, tous les éléments sont visibles */
+.hidden-md-and-down,
+.hidden-lg-and-up,
+.hidden-md-and-up {
+  display: initial;
+}
+
+/* < 960px (mobile uniquement) */
+@media (max-width: 959px) {
+  .d-md-flex {
+    display: none !important;
+  }
+  .hidden-md-and-down {
+    display: none !important;
+  }
+  .d-none.d-md-block {
+    display: none !important;
+  }
+  .py-md-4 {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+
+  /* Sur mobile, le bouton hamburger est visible et le v-toolbar__prepend a un margin-right */
+  .v-toolbar__prepend {
+    margin-right: 16px !important;
+  }
+}
+
+/* >= 1468px (tablettes et desktop) */
+@media (min-width: 960px) {
+  .d-md-flex {
+    display: flex !important;
+  }
+  .d-md-block {
+    display: block !important;
+  }
+  .hidden-md-and-up {
+    display: none !important;
+  }
+  .hidden-md-and-down {
+    display: initial !important;
+  }
+  .py-md-4 {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+
+  /* Sur desktop, le bouton hamburger est caché et le v-toolbar__prepend ne doit pas avoir de margin */
+  .v-toolbar__prepend {
+    display: none !important;
+  }
+}
+
+/* >= 1280px (grands écrans) */
+@media (min-width: 1280px) {
+  .hidden-lg-and-up {
+    display: none !important;
+  }
+
+  /* Exception pour l'icône Mon compte : reste visible jusqu'à 1468px */
+  #btn-mon-compte .hidden-lg-and-up {
+    display: inline !important;
+  }
+}
+
+/* >= 1468px : cacher l'icône Mon compte en mode desktop */
+@media (min-width: 1468px) {
+  #btn-mon-compte .hidden-lg-and-up {
+    display: none !important;
+  }
+}
+
+/* Reset pour les liens et boutons */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Styles Vuetify pour les boutons - d'après VBtn.sass */
+.v-btn {
+  --color: currentColor;
+  align-items: center;
+  border-radius: 4px;
+  display: inline-grid;
+  grid-template-areas: "prepend content append";
+  grid-template-columns: max-content auto max-content;
+  font-weight: 500;
+  justify-content: center;
+  letter-spacing: normal;
+  line-height: normal;
+  max-width: 100%;
+  outline: none;
+  position: relative;
+  text-decoration: none;
+  text-indent: normal;
+  text-transform: none;
+  transition-property: box-shadow, transform, opacity, background;
+  transition-duration: 0.28s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  vertical-align: middle;
+  flex-shrink: 0;
+  border-color: rgba(var(--v-border-color), var(--v-border-opacity));
+  border-style: solid;
+  border-width: 0;
+  cursor: pointer;
+}
+
+.v-btn.v-btn--density-default {
+  height: calc(var(--v-btn-height) + 0px);
+}
+
+.v-btn .v-icon {
+  --v-icon-size-multiplier: 1;
+}
+
+.v-btn__content,
+.v-btn__append {
+  align-items: center;
+  display: flex;
+  transition:
+    transform,
+    opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.v-btn__append {
+  grid-area: append;
+  margin-inline: calc(var(--v-btn-height) / 4.5)
+    calc(var(--v-btn-height) / -9);
+}
+
+.v-btn__content {
+  grid-area: content;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.v-btn__content img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.v-btn__overlay {
+  background-color: currentColor;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.v-btn__overlay,
+.v-btn__underlay {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.v-btn:hover > .v-btn__overlay {
+  opacity: calc(
+    var(--v-hover-opacity) * var(--v-theme-overlay-multiplier)
+  );
+}
+
+.v-btn:focus-visible > .v-btn__overlay {
+  opacity: calc(
+    var(--v-focus-opacity) * var(--v-theme-overlay-multiplier)
+  );
+}
+
+.v-btn--variant-plain,
+.v-btn--variant-outlined,
+.v-btn--variant-text {
+  background: transparent;
+  color: inherit;
+}
+
+.v-btn--variant-text .v-btn__overlay {
+  background: currentColor;
+}
+
+.v-btn--variant-outlined {
+  border: thin solid currentColor;
+}
+
+.v-btn--size-default {
+  font-size: var(--v-btn-size);
+  min-width: 64px;
+  padding: 0 16px;
+}
+
+.v-btn--size-small {
+  --v-btn-size: 0.8125rem;
+  --v-btn-height: 24px;
+  font-size: var(--v-btn-size);
+  min-width: 42px;
+  padding: 0 10px;
+}
+
+/* Surcharges de BaseButton.vue - appliquées après les styles Vuetify */
+.v-btn {
+  min-width: unset !important;
+  padding: 4px;
+  column-gap: 0.4rem;
+  max-width: unset;
+}
+
+/* Boutons de navigation (variant text) - padding réduit */
+nav[aria-label="Principale"] .v-btn--variant-text {
+  padding: 0.75rem 0.8rem;
+}
+
+/* Resserrer encore le padding des liens de nav entre 1280 et 1499px
+   (voir le commentaire sur ga-lg-4 plus haut — même cause) */
+@media (max-width: 1499px) {
+  nav[aria-label="Principale"] .v-btn--variant-text {
+    padding: 0.75rem 0.4rem;
+  }
+}
+
+/* Effet hover sur les boutons de navigation */
+nav[aria-label="Principale"] .v-btn--variant-text:hover {
+  background-color: rgba(89, 96, 115, 0.08) !important;
+}
+
+/* Réduire le gap uniquement pour les boutons dropdown */
+.dropdown-toggle {
+  column-gap: 0.25rem;
+}
+
+.v-btn--size-small {
+  padding-block: 0.5rem;
+}
+
+.v-btn--density-default:not(.v-btn--icon) {
+  height: auto;
+  align-self: center;
+}
+
+.v-btn:not(.v-btn--variant-text) {
+  border: 1px solid var(--color);
+}
+
+.v-btn:focus-visible {
+  box-shadow: 0 0 0 3px var(--color);
+}
+
+.v-btn--icon {
+  border-radius: 50%;
+  min-width: 0;
+  padding: 0;
+}
+
+.v-btn--icon.v-btn--density-default {
+  width: calc(var(--v-btn-height) + 12px);
+  height: calc(var(--v-btn-height) + 12px);
+}
+
+/* Bouton hamburger sur mobile - cercle blanc */
+.v-app-bar-nav-icon {
+  margin: 0 !important;
+  background: white !important;
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.v-app-bar-nav-icon *,
+.v-app-bar-nav-icon .v-btn__overlay,
+.v-app-bar-nav-icon .v-btn__underlay {
+  border: none !important;
+  outline: none !important;
+}
+
+.v-app-bar-nav-icon .v-btn__overlay,
+.v-app-bar-nav-icon .v-btn__underlay {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+.v-app-bar-nav-icon:hover,
+.v-app-bar-nav-icon:focus,
+.v-app-bar-nav-icon:active {
+  background: white !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.v-app-bar-nav-icon:before,
+.v-app-bar-nav-icon:after {
+  display: none !important;
+  content: none !important;
+}
+
+.v-app-bar-nav-icon .v-icon {
+  color: #2c303a !important;
+}
+
+.v-app-bar-nav-icon svg,
+.v-app-bar-nav-icon svg path {
+  fill: #2c303a !important;
+  stroke: none !important;
+}
+
+/* Styles pour les icônes */
+.v-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.v-icon.notranslate {
+  transform: none;
+}
+
+.v-icon--size-default {
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+}
+
+.v-icon__svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* Toolbar */
+.v-toolbar {
+  display: flex;
+  background-color: white;
+  box-shadow: none;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.v-app-bar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.v-toolbar__content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 16px 0 0;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.v-toolbar__content > .v-btn:first-child {
+  margin-inline-start: 4px;
+}
+
+.v-toolbar__content > .v-btn:last-child {
+  margin-inline-end: 4px;
+}
+
+@media (max-width: 1467px) {
+  .v-toolbar__content {
+    padding: 0 8px 0 0;
+    position: relative;
+  }
+}
+
+/* Resserrer encore la nav entre 1280 et 1499px : texte légèrement
+   plus petit (hérité par les boutons via --v-btn-size non défini,
+   cf. .v-btn--size-default) + icône "Mon compte" masquée plus tôt
+   (redondante avec le texte, déjà masquée au-delà de 1468px par la
+   règle plus bas — ici on couvre aussi 1468-1499px où le reste du
+   header repasse en taille normale mais où ça ne suffit pas encore).
+   Ne touche pas à overflow : #header nav a besoin de overflow:visible
+   pour que les menus déroulants ne soient pas coupés (règle plus bas,
+   ne pas la contourner). */
+@media (max-width: 1499px) {
+  nav[aria-label="Principale"] {
+    font-size: 14px !important;
+  }
+  #btn-mon-compte .hidden-lg-and-up {
+    display: none !important;
+  }
+}
+
+/* Navigation principale */
+nav[aria-label="Principale"] {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  flex: 0 1 auto;
+}
+
+nav[aria-label="Principale"] .v-btn {
+  font-weight: 500;
+}
+
+.v-toolbar__prepend {
+  margin-inline: 4px auto;
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+}
+
+.v-spacer {
+  flex: 1 1 auto;
+}
+
+/* V-sheet */
+.v-sheet {
+  display: block;
+  background-color: white;
+}
+
+/* V-overlay pour les modals */
+.v-overlay__content {
+  position: relative;
+}
+
+/* V-form */
+.v-form {
+  width: 100%;
+}
+
+/* V-label */
+.v-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 8px;
+  line-height: 17.6px;
+}
+
+/* V-field */
+.v-field__input {
+  width: 100%;
+  max-width: 100%;
+  padding: 12px;
+  border: 1px solid #c0c0c0;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 17.6px;
+  color: #2c303a;
+  outline: none;
+  font-family: inherit;
+  box-sizing: border-box;
+  display: block;
+}
+
+.v-field__input::placeholder {
+  color: #999;
+}
+
+.v-field__input:focus {
+  border-color: #3e6ac1;
+}
+
+/* Styles pour le header app bar */
+.header-app-bar {
+  background-color: white !important;
+}
+
+.v-app-bar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Caché à l'impression */
+@media print {
+  .d-print-none {
+    display: none !important;
+  }
+}
+
+.dropdown-wrapper {
+  position: static;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  position: fixed;
+  top: 72px;
+  left: 0 !important;
+  right: 0;
+  width: 100vw !important;
+  max-width: none !important;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  z-index: 10000 !important;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+  border-top: 4px solid #3e6ac1;
+}
+
+.dropdown-menu.show {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.dropdown-menu .v-sheet {
+  background: white;
+}
+
+.dropdown-menu .pa-4 {
+  padding: 16px;
+}
+
+.title-espace-perso {
+  display: block;
+  padding-bottom: 12px;
+  margin: 0;
+  margin-bottom: 12px;
+  font-family:
+    "Inter", "Source Sans Pro", "Open Sans", "Noto Sans", "Arial",
+    sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.sous-menu-container {
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: clamp(2rem, -12rem + 23.3333vw, 16rem);
+  font-size: 14px;
+  line-height: 26px;
+}
+
+.sous-menu-container > div:not(:last-child) {
+  width: 300px;
+  margin-bottom: 1rem;
+}
+
+.menu-column strong {
+  color: #2c303a;
+  font-weight: 700;
+}
+
+.my-2 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.level2 {
+  display: block;
+  color: black;
+  margin-bottom: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 26px;
+}
+
+.level2:hover {
+  color: #3e6ac1;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.dropdown-toggle:hover {
+  background-color: rgba(89, 96, 115, 0.08);
+}
+
+.dropdown-toggle[aria-expanded="true"] {
+  background-color: #dddedf;
+}
+
+.dropdown-toggle[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.dropdown-toggle svg {
+  transition: transform 0.2s ease;
+}
+
+/* Bouton S'inscrire - ajustement pour correspondre à l'original */
+.v-btn--variant-outlined.v-btn--size-small {
+  padding: 8px 16px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  line-height: normal !important;
+  border-radius: 8px !important;
+  height: auto !important;
+  min-height: 33.5px !important;
+  border-color: rgb(var(--v-theme-blue-600)) !important;
+}
+
+.v-btn--variant-outlined.v-btn--size-small:hover {
+  background-color: rgba(var(--v-theme-blue-600), 0.08) !important;
+}
+
+/* Bouton Mon compte - forcer l'espacement à droite */
+#btn-mon-compte,
+.js-connection-espace-perso {
+  margin-right: 24px !important;
+}
+
+/* Sur mobile, réduire la marge du bouton Mon compte */
+@media (max-width: 1467px) {
+  #btn-mon-compte,
+  .js-connection-espace-perso {
+    margin-right: 8px !important;
+  }
+}
+
+/* Style du logo - 160px de large (comme l'original TheHeader.vue) */
+.cadremploi-logo {
+  display: flex;
+  flex: 0 0 160px;
+  margin-left: 0.5rem;
+}
+
+.cadremploi-logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Sur mobile, réduire la taille du logo */
+@media (max-width: 1467px) {
+  .cadremploi-logo {
+    flex: 0 0 auto;
+    max-width: 140px;
+    margin-left: 0.5rem;
+  }
+
+  .cadremploi-logo img {
+    width: 140px;
+    height: auto;
+  }
+}
+
+@media (min-width: 1920px) {
+  .cadremploi-logo {
+    width: 240px;
+  }
+}
+
+/* S'assurer que le header permet l'overflow et a la bonne bordure */
+#header {
+  overflow: visible !important;
+  border-bottom: 4px solid #3e6ac1 !important;
+  background-color: white !important;
+  transition: transform 0.2s ease;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+#header .v-toolbar__content {
+  overflow: visible !important;
+}
+
+#header nav {
+  overflow: visible !important;
+}
+
+#header .v-toolbar__prepend {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* S'assurer que les liens dans le header respectent les couleurs */
+#header nav a,
+#header nav button {
+  text-decoration: none;
+}
+
+/* Appliquer la couleur grise aux éléments de navigation */
+#header nav a.text-grey-800,
+#header nav button.text-grey-800,
+#header nav a.text-grey-800 .v-btn__content,
+#header nav button.text-grey-800 .v-btn__content {
+  color: #596073 !important;
+  color: rgb(var(--v-theme-pale-grey-40)) !important;
+}
+
+/* Forcer la couleur sur le contenu des boutons de navigation */
+nav[aria-label="Principale"] .v-btn.text-grey-800,
+nav[aria-label="Principale"] .v-btn.text-grey-800 span {
+  color: #596073 !important;
+  color: rgb(var(--v-theme-pale-grey-40)) !important;
+}
+
+/* Modal de connexion */
+.auth-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 16px;
+}
+
+@media (max-width: 1467px) {
+  .auth-modal-overlay {
+    padding: 0;
+  }
+}
+
+.auth-modal-overlay.show {
+  opacity: 1;
+}
+
+.auth-modal-overlay.show .modal-container {
+  transform: translateY(0);
+}
+
+.modal-container {
+  background: white;
+  border-radius: 4px;
+  max-width: 665px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 32px 48px 48px 48px;
+  transition: transform 0.3s ease;
+  z-index: 100000;
+}
+
+@media (max-width: 959px) {
+  .modal-container {
+    padding: 24px 24px 32px 24px;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 16px;
+    max-height: 85vh;
+    position: relative;
+    margin: 0;
+    -webkit-overflow-scrolling: touch;
+    z-index: 100001;
+  }
+
+  .auth-modal-overlay {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .modal-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+  z-index: 1;
+}
+
+@media (max-width: 1467px) {
+  .close-modal-btn {
+    top: 16px;
+    right: 16px;
+    padding: 8px;
+  }
+}
+
+.close-modal-btn:hover {
+  background-color: #f5f5f5;
+}
+
+.close-modal-btn svg {
+  fill: #666;
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 1467px) {
+  .close-modal-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.modal-content {
+  padding-top: 16px;
+  width: 100%;
+}
+
+@media (max-width: 1467px) {
+  .modal-content {
+    padding-top: 8px;
+    width: 100%;
+  }
+}
+
+.modal-content .d-flex {
+  width: 100%;
+}
+
+.modal-content .v-form {
+  width: 100%;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+@media (max-width: 1467px) {
+  .divider {
+    margin: 24px 0;
+  }
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: #d0d0d0;
+}
+
+.divider-text {
+  font-size: 14px;
+  color: #666;
+  white-space: nowrap;
+}
+
+@media (max-width: 1467px) {
+  .divider-text {
+    font-size: 12px;
+  }
+}
+
+.social-btn {
+  width: 100%;
+  height: 54px !important;
+  padding: 16px !important;
+  background-color: #f5f5f5 !important;
+  border: 1px solid #e0e0e0 !important;
+  font-size: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+}
+
+@media (max-width: 1467px) {
+  .social-btn {
+    height: 48px !important;
+    padding: 12px !important;
+  }
+}
+
+.social-btn:hover {
+  background-color: #eeeeee !important;
+}
+
+.social-icon {
+  width: 36px;
+  height: 20px;
+  display: block;
+}
+
+.field-wrapper {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+@media (max-width: 1467px) {
+  .field-wrapper {
+    margin-bottom: 16px;
+    width: 100%;
+  }
+}
+
+.v-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 8px;
+  line-height: 17.6px;
+}
+
+@media (max-width: 1467px) {
+  .v-label {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+}
+
+.v-field__input {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 56px !important;
+  padding: 16px !important;
+  border: 1px solid #c0c0c0 !important;
+  border-radius: 8px !important;
+  font-size: 16px !important;
+  line-height: 17.6px !important;
+  color: #2c303a !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  display: block !important;
+}
+
+@media (max-width: 1467px) {
+  .v-field__input {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 48px !important;
+    padding: 12px !important;
+    font-size: 14px !important;
+  }
+}
+
+.modal-content input {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Icône d'œil pour le mot de passe */
+.v-field__append-inner {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  pointer-events: auto;
+}
+
+.v-icon--clickable {
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.v-icon--clickable:hover {
+  color: #32559a;
+}
+
+.v-icon--size-default {
+  width: 24px;
+  height: 24px;
+}
+
+.v-icon__svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* "J'ai oublié mon mot de passe" - aligné à droite */
+.modal-content .text-right.mb-2.text-caption,
+.modal-content .text-right.text-caption,
+.modal-content .text-right.mb-2,
+.modal-content .text-right,
+.modal-content div.text-right {
+  text-align: right !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+.modal-content .text-right a {
+  display: inline-block !important;
+}
+
+/* "Vous avez déjà un compte" - aligné à gauche */
+/* SAUF si l'élément a aussi .text-right */
+.modal-content .d-flex.flex-column .text-caption:not(.text-right),
+.modal-content .d-flex.flex-column div.text-caption:not(.text-right) {
+  text-align: left !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+/* Force sur mobile aussi */
+@media (max-width: 1467px) {
+  .modal-content .text-right.mb-2,
+  .modal-content div.text-right {
+    text-align: right !important;
+  }
+}
+
+.v-field__input::placeholder {
+  color: #999 !important;
+}
+
+.v-field__input:focus {
+  border-color: #3e6ac1 !important;
+}
+
+.v-form .connection-button {
+  width: 100%;
+}
+
+.connection-button {
+  width: 100%;
+  height: 45px !important;
+  padding: 12px 16px !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: normal !important;
+  border: none !important;
+  border-radius: 8px !important;
+  cursor: pointer;
+}
+
+@media (max-width: 1467px) {
+  .connection-button {
+    height: 45px !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+  }
+}
+
+.bg-red-600 {
+  background-color: #e6005a !important;
+  color: white !important;
+}
+
+.bg-red-600:hover {
+  background-color: #cc0050 !important;
+}
+
+.v-btn--disabled {
+  pointer-events: none;
+  opacity: 0.26 !important;
+}
+
+.v-btn--disabled .v-btn__overlay {
+  opacity: 0 !important;
+}
+
+/* État d'erreur pour les champs */
+.v-field__input.error,
+input.v-field__input.error {
+  border-color: #e6005a !important;
+  border-color: rgb(var(--v-theme-red-600)) !important;
+}
+
+.error-message {
+  color: #e6005a;
+  color: rgb(var(--v-theme-red-600));
+  font-size: 12px;
+  margin-top: 4px;
+  line-height: 1.25;
+}
+
+.text-blue-600 {
+  color: rgb(50, 85, 154) !important;
+}
+
+.text-pale-grey-40 {
+  color: #596073 !important;
+}
+
+.text-right {
+  text-align: right !important;
+  justify-content: flex-end !important;
+}
+
+/* Force l'alignement à droite pour TOUS les .text-right */
+[class*="text-right"],
+.text-right,
+div.text-right,
+.text-right.text-caption,
+.text-right.mb-2 {
+  text-align: right !important;
+  justify-content: flex-end !important;
+}
+
+.v-form {
+  width: 100%;
+}
+
+/* Menu mobile */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 76px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 76px);
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-menu-overlay.show {
+  opacity: 1;
+}
+
+.mobile-menu-drawer {
+  position: fixed;
+  top: 76px;
+  left: 0;
+  width: 85%;
+  max-width: 400px;
+  height: calc(100% - 76px);
+  background: white;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  z-index: 1001;
+}
+
+.mobile-menu-overlay.show .mobile-menu-drawer {
+  transform: translateX(0);
+}
+
+.mobile-menu-content {
+  padding: 24px 0;
+}
+
+.mobile-menu-item {
+  display: block;
+  padding: 16px 24px;
+  color: #2c303a;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  transition: background-color 0.2s;
+}
+
+.mobile-menu-item:hover {
+  background-color: #f5f5f5;
+}
+
+.mobile-menu-group-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: none;
+  border: none;
+  color: #2c303a;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.mobile-menu-group-toggle:hover {
+  background-color: #f5f5f5;
+}
+
+.mobile-menu-group-toggle.active .mobile-menu-icon {
+  transform: rotate(180deg);
+}
+
+.mobile-menu-icon {
+  flex-shrink: 0;
+  fill: #596073;
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu-group-items {
+  background: #f9f9f9;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+.mobile-menu-group-items.show {
+  max-height: 1000px;
+}
+
+.mobile-menu-subitem {
+  display: block;
+  padding: 12px 24px 12px 48px;
+  color: #596073;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.mobile-menu-subitem:hover {
+  background-color: #f0f0f0;
+}
+
+.mobile-menu-section-title {
+  display: block;
+  padding: 16px 24px 8px 48px;
+  color: #2c303a;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.mobile-menu-section-title:first-child {
+  margin-top: 0;
+}
+
+.mobile-menu-buttons {
+  padding: 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobile-menu-btn {
+  display: block;
+  padding: 12px 24px;
+  text-align: center;
+  color: #3e6ac1;
+  background: white;
+  border: 1px solid #3e6ac1;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.mobile-menu-btn:hover {
+  background: #3e6ac1;
+  color: white;
+}
+
+/* Reset et styles de base */
+* {
+  box-sizing: border-box;
+}
+
+footer {
+  background-color: white;
+  color: #333;
+}
+
+.top-footer {
+  padding: 16px 0;
+}
+
+.top-footer a {
+  cursor: default;
+  text-decoration: none;
+}
+
+.top-footer a:hover {
+  opacity: 0.8;
+}
+
+.bg-primary {
+  background-color: #26aae1 !important;
+}
+
+.wrapper {
+  width: 90vw;
+  width: clamp(16rem, 90vw, 70rem);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.09rem, 1rem + 0.47vw, 1.33rem);
+  padding-right: clamp(1.09rem, 1rem + 0.47vw, 1.33rem);
+  position: relative;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.mr-6 {
+  margin-right: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.py-2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.py-6 {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+@media (max-width: 959px) {
+  .py-6 {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
+.text-h6 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+}
+
+.font-weight-medium {
+  font-weight: 500;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-body-2 {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.logo {
+  height: 32px;
+  width: auto;
+}
+
+/* Vuetify row et col */
+.v-row {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  margin: -12px;
+}
+
+.v-col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 12px;
+}
+
+@media (min-width: 600px) {
+  .v-col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 960px) {
+  .v-col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+
+  .order-md-4 {
+    order: 4;
+  }
+
+  .order-md-5 {
+    order: 5;
+  }
+
+  .order-6 {
+    order: 6;
+  }
+}
+
+.mr-4 {
+  margin-right: 16px !important;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #333;
+}
+
+.footer-links a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s;
+  cursor: default;
+}
+
+.footer-links a:hover {
+  color: #999;
+  text-decoration: none;
+}
+
+.cmp-button {
+  background-color: white;
+  border: none;
+  padding: 0;
+  text-align: left;
+  color: #333;
+  cursor: default;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.cmp-button:hover {
+  color: #999;
+  text-decoration: none;
+}
+
+.title {
+  color: #000;
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.reseaux-sociaux {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reseaux-sociaux .title {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.social-buttons-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+}
+
+.reseaux-sociaux .v-btn.mr-4 {
+  margin-right: 0 !important;
+}
+
+.reseaux-sociaux .v-btn {
+  display: inline-flex;
+}
+
+/* Styles pour les boutons icône sociaux Vuetify */
+.v-btn--icon {
+  border-radius: 50%;
+  min-width: 0;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.v-btn--size-small {
+  --v-btn-size: 0.875rem;
+  --v-btn-height: 36px;
+  font-size: var(--v-btn-size);
+}
+
+/* Surcharger les variables Vuetify pour les boutons sociaux */
+.reseaux-sociaux .v-btn--size-small {
+  --v-btn-size: 0.875rem !important;
+  --v-btn-height: 36px !important;
+  line-height: 36px !important;
+}
+
+/* Forcer la taille 36x36 pour les boutons sociaux */
+.reseaux-sociaux .v-btn,
+.reseaux-sociaux .v-btn--icon,
+.reseaux-sociaux .v-btn--density-default {
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+  box-sizing: border-box !important;
+  padding: 0 !important;
+  line-height: normal !important;
+  font-size: 0 !important;
+}
+
+.v-btn--variant-elevated {
+  background: white !important;
+  color: #2c303a !important;
+  box-shadow:
+    0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+.v-btn--variant-elevated *,
+.v-btn--variant-elevated::before,
+.v-btn--variant-elevated::after {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none;
+}
+
+.v-btn--variant-elevated:hover {
+  background: #f5f5f5 !important;
+  box-shadow:
+    0 3px 3px -2px rgba(0, 0, 0, 0.3),
+    0 3px 4px 0 rgba(0, 0, 0, 0.2),
+    0 1px 8px 0 rgba(0, 0, 0, 0.16) !important;
+}
+
+.v-btn--variant-elevated:focus,
+.v-btn--variant-elevated:active {
+  outline: none !important;
+  border: none !important;
+}
+
+/* Supprimer tout cercle/border sur les liens et boutons sociaux */
+.reseaux-sociaux a,
+.reseaux-sociaux a:focus,
+.reseaux-sociaux a:active,
+.reseaux-sociaux .v-btn,
+.reseaux-sociaux .v-btn:focus,
+.reseaux-sociaux .v-btn:active {
+  border: none !important;
+  outline: none !important;
+  box-shadow:
+    0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+.reseaux-sociaux a:hover {
+  box-shadow:
+    0 3px 3px -2px rgba(0, 0, 0, 0.3),
+    0 3px 4px 0 rgba(0, 0, 0, 0.2),
+    0 1px 8px 0 rgba(0, 0, 0, 0.16) !important;
+  background: #f5f5f5 !important;
+}
+
+/* Forcer la taille 36x36 pour les liens sociaux aussi */
+.reseaux-sociaux a {
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  box-sizing: border-box !important;
+  padding: 0 !important;
+  cursor: default !important;
+}
+
+.v-btn__overlay,
+.v-btn__underlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.v-btn__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* S'assurer que le contenu des boutons sociaux ne dépasse pas 36x36 */
+.reseaux-sociaux .v-btn__content {
+  width: 100%;
+  height: 100%;
+}
+
+.reseaux-sociaux .v-btn__overlay,
+.reseaux-sociaux .v-btn__underlay {
+  border-radius: 50% !important;
+}
+
+.v-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.v-icon--size-default {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+/* Ajuster la taille des icônes dans les boutons sociaux */
+.reseaux-sociaux .v-icon {
+  font-size: 20px !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.reseaux-sociaux .v-icon__svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.v-icon__svg {
+  fill: currentColor;
+  width: 100%;
+  height: 100%;
+}
+
+/* Forcer la couleur des icônes sociales */
+.reseaux-sociaux .v-btn--variant-elevated .v-icon {
+  color: #2c303a !important;
+}
+
+.reseaux-sociaux .v-btn--variant-elevated svg {
+  fill: #2c303a !important;
+}
+
+.app-store-download img {
+  width: 130px;
+  border-radius: 5px;
+}
+
+@media (max-width: 599px) {
+  .wrapper {
+    padding: 0 16px;
+  }
+}

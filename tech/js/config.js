@@ -59,42 +59,12 @@ const CONFIG = {
   },
 
   /* ── Contenu éditorial ────────────────────────────────────
-     Textes spécifiques au secteur
+     ⚠️ Le contenu éditorial (title, meta, H1, hero, CVthèque, tags
+     de recherche, stats) n'est PAS piloté depuis ce fichier : rien
+     dans main.js ne lit ces valeurs. Pour dupliquer vers un autre
+     secteur, éditer directement le texte dans index.html (head +
+     sections hero/cvtheque/search/stats).
      --------------------------------------------------------- */
-  CONTENT: {
-    hero: {
-      eyebrow: "4 200 offres Tech actives en ce moment",
-      title:
-        'La Tech cadre recrute <span class="accent">ici</span>.<br><span class="light">Enfin.</span>',
-      subtitle:
-        "De développeur confirmé à CTO, de data engineer à VP Engineering — <strong>Cadremploi couvre tout le spectre de la Tech au niveau cadre</strong>. Offres sérieuses, salaires affichés, entreprises qui recrutent vraiment.",
-    },
-    cvtheque: {
-      title: "Arrêtez de postuler.<br>Laissez les recruteurs<br>venir à vous.",
-      desc: "1 840 entreprises Tech utilisent notre CVthèque pour trouver leurs cadres, managers et experts. Sans attendre vos candidatures, ils viennent à vous.",
-      perks: [
-        "Les recruteurs Tech cherchent avant même de publier une annonce",
-        "Soyez visible sans postuler, sans démarche",
-        "Une CVthèque réservée aux profils cadres",
-      ],
-    },
-    search: {
-      placeholder_poste: "Poste, compétences (React, PM, DevOps…)",
-      placeholder_lieu: "Ville ou télétravail",
-      popular_tags: [
-        "Full Stack",
-        "Product Manager",
-        "Data Engineer",
-        "DevOps",
-        "CTO",
-      ],
-    },
-    stats: [
-      { value: "4 200<span>+</span>", label: "offres actives" },
-      { value: "72k<span>€</span>", label: "salaire médian" },
-      { value: "92<span>%</span>", label: "salaire affiché" },
-    ],
-  },
 
   /* ── Profils CVthèque ─────────────────────────────────────
      100 profils crédibles — distribution réaliste du marché Tech cadre
