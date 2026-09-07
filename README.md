@@ -13,24 +13,37 @@ LP_Hub-metiers/
 │       └── design-system-ce/     ← skill Claude Code : charte Cadremploi
 │                                    (vérifiée contre le repo ce-front)
 ├── assets/
-│   └── css/
-│       └── design-system-ce.css  ← design system PARTAGÉ — modifier ici,
-│                                    appliqué à toutes les landings
-└── tech/                         ← landing "Tech & Digital"
-    ├── index.html                → cible : www.cadremploi.fr/carriere/tech/
-    ├── css/
-    │   ├── base.css               ← reset + utilitaires globaux
-    │   ├── components.css         ← composants réutilisables (cards, tags, boutons...)
-    │   └── layout.css             ← header, hero, sections, footer
-    ├── js/
-    │   ├── config.js              ← config (clé API, endpoints, contenu éditorial)
-    │   ├── api.js                 ← appels API offres + autocomplete locations
-    │   ├── profiles.js            ← simulation profils live CVthèque
-    │   ├── ticker.js              ← ticker offres défilantes
-    │   ├── modal.js                ← modale alerte emploi
-    │   └── main.js                 ← initialisation et orchestration
-    └── assets/
-        └── og-tech-cadremploi.png ← image Open Graph/Twitter de cette landing
+│   ├── css/
+│   │   ├── design-system-ce.css     ← design system PARTAGÉ — modifier ici,
+│   │   │                               appliqué à toutes les landings
+│   │   └── header-footer-shared.css ← CSS du header/footer prod, partagé
+│   └── js/
+│       └── header-footer-shared.js  ← comportement JS du header/footer prod
+│                                        (menus, menu mobile, modale de connexion),
+│                                        partagé entre toutes les landings
+├── tech/                         ← landing "Tech & Digital" (1 page)
+│   ├── index.html                → cible : www.cadremploi.fr/carriere/tech/
+│   ├── css/
+│   │   ├── base.css               ← reset + utilitaires globaux
+│   │   ├── components.css         ← composants réutilisables (cards, tags, boutons...)
+│   │   └── layout.css             ← header, hero, sections, footer
+│   ├── js/
+│   │   ├── config.js              ← config (clé API, endpoints, contenu éditorial)
+│   │   ├── api.js                 ← appels API offres + autocomplete locations
+│   │   ├── profiles.js            ← simulation profils live CVthèque
+│   │   ├── ticker.js              ← ticker offres défilantes
+│   │   ├── modal.js                ← modale alerte emploi
+│   │   └── main.js                 ← initialisation et orchestration
+│   └── assets/
+│       └── og-tech-cadremploi.png ← image Open Graph/Twitter de cette landing
+└── immo/                         ← landing "Immobilier" (3 pages — voir immo/AVANT_MISE_EN_PROD.md)
+    ├── index.html                     → cible : .../carriere/immobilier/ (hub)
+    ├── agent-independant/index.html   → landing captation opt-in (→ Google Form)
+    ├── barometre/rhone/index.html     → baromètre départemental — gabarit du futur
+    │                                     générateur Yanport (une page par département)
+    ├── css/ (base.css, components.css, layout.css — même logique que tech/)
+    ├── js/ (modal.js : calque détail ville · form.js : soumission Google Form)
+    └── assets/                        ← image OG à produire (voir AVANT_MISE_EN_PROD.md)
 ```
 
 Chaque landing est **autonome** (son propre `css/`, `js/`, `assets/`) et ne dépend que du
@@ -67,16 +80,23 @@ puis ouvrir `http://localhost:5500/tech/`.
 
 ## Ajouter une nouvelle landing métier
 
-1. Dupliquer un dossier existant (ex. `tech/` → `immobilier/`)
-2. Lier `<link rel="stylesheet" href="../assets/css/design-system-ce.css" />` en premier
-   dans le nouveau `index.html` (chemin relatif vers le design system partagé — ne pas
-   dupliquer ce fichier)
-3. Adapter `js/config.js` (`SECTOR`, `CONTENT`, `CHIFFRES`, `PROFILES_POOL`...) et les
-   textes du HTML
-4. Mettre à jour canonical/`og:url`/JSON-LD vers `www.cadremploi.fr/carriere/<nom-landing>/`
-5. Dupliquer `tech/AVANT_MISE_EN_PROD.md` → `<nom-landing>/AVANT_MISE_EN_PROD.md` et l'adapter
-   (numéros de ligne, flags, chiffres, contenu propres à la nouvelle landing)
-6. Travailler sur une branche dédiée, ouvrir une PR (jamais de commit direct sur `main`)
+1. Dupliquer un dossier existant (ex. `tech/` → `<nom-landing>/`, ou `immo/` si la
+   nouvelle landing a elle aussi plusieurs pages plutôt qu'une seule)
+2. Lier `<link rel="stylesheet" href="../assets/css/design-system-ce.css" />` (chemin
+   relatif à adapter selon la profondeur de la page) et
+   `<link rel="stylesheet" href="../assets/css/header-footer-shared.css" />` en dernier —
+   ne jamais dupliquer ces fichiers partagés
+3. Reprendre tel quel le header/footer prod (balisage) + charger
+   `<script src="../assets/js/header-footer-shared.js"></script>` juste avant
+   `</body>` pour le comportement (menus, menu mobile, modale de connexion) — voir
+   `immo/index.html` pour un exemple, ce script est partagé et ne se duplique pas
+4. Adapter le contenu propre à la landing (config JS si la landing en a une, textes du
+   HTML, données)
+5. Mettre à jour canonical/`og:url`/JSON-LD vers `www.cadremploi.fr/carriere/<nom-landing>/`
+6. Dupliquer `tech/AVANT_MISE_EN_PROD.md` (ou `immo/AVANT_MISE_EN_PROD.md` si plusieurs
+   pages) → `<nom-landing>/AVANT_MISE_EN_PROD.md` et l'adapter (numéros de ligne, flags,
+   chiffres, contenu propres à la nouvelle landing)
+7. Travailler sur une branche dédiée, ouvrir une PR (jamais de commit direct sur `main`)
 
 ## Design system
 
