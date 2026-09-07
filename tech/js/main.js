@@ -121,10 +121,26 @@ function initSearch() {
     dropLieu?.classList.remove('open')
   }
 
+  /* ── Insensible aux accents : "developpeur" doit remonter "développeur" ── */
+  function normalize(str) {
+    return str.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
+  }
+
   function highlight(text, query) {
     if (!query) return text
-    const re = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi')
-    return text.replace(re, '<mark>$1</mark>')
+    // Recherche sur les versions sans accent (mêmes longueurs/indices que le
+    // texte original — un caractère accentué se décompose en 1 lettre de base
+    // + 1 accent, qu'on retire), puis on surligne le texte ORIGINAL à cette
+    // position pour ne pas perdre les accents affichés.
+    const normText  = normalize(text)
+    const normQuery = normalize(query)
+    const idx = normText.indexOf(normQuery)
+    if (idx === -1) return text
+    return (
+      text.slice(0, idx) +
+      '<mark>' + text.slice(idx, idx + normQuery.length) + '</mark>' +
+      text.slice(idx + normQuery.length)
+    )
   }
 
   /* ── Autocomplete POSTES (liste statique avec catégories) ── */
@@ -137,13 +153,13 @@ function initSearch() {
       dropPoste?.classList.remove('open')
       return
     }
-    const q = query.toLowerCase()
+    const q = normalize(query)
 
     // Chercher dans toutes les catégories
     const groups = []
     CONFIG.JOBS_SUGGESTIONS.forEach(group => {
       const matches = group.items
-        .filter(j => j.toLowerCase().includes(q))
+        .filter(j => normalize(j).includes(q))
         .slice(0, 5)
       if (matches.length) groups.push({ category: group.category, matches })
     })
