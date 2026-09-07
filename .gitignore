@@ -1,0 +1,13 @@
+# Secrets locaux — jamais commités (voir organizationInstructions : un secret entre en
+# git KMS-chiffré, ou pas du tout). Utilisé notamment par le futur générateur de pages
+# baromètre (clé API Yanport) — voir immo/AVANT_MISE_EN_PROD.md point 4/6.
+.env
+.env.*
+!.env.example
+
+# Outillage éventuel du générateur (Node), si introduit plus tard
+node_modules/
+
+# Fichiers système
+.DS_Store
+Thumbs.db

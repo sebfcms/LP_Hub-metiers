@@ -6,7 +6,7 @@
 > spécifique (SEO, feature flags, chiffres, contenu) :
 >
 > - [tech/AVANT_MISE_EN_PROD.md](tech/AVANT_MISE_EN_PROD.md)
-> - `immo/AVANT_MISE_EN_PROD.md` (à créer quand le dossier `immo/` existera)
+> - [immo/AVANT_MISE_EN_PROD.md](immo/AVANT_MISE_EN_PROD.md)
 
 ---
 
